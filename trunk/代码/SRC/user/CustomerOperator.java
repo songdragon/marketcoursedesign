@@ -6,7 +6,7 @@
 
 package user;
 import dbconnection.DBConnection;
-import encrypt.MD5;
+import tools.MD5;
 
 public class CustomerOperator extends CustomerAbstract{
 	
