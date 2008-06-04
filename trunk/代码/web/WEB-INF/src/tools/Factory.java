@@ -1,3 +1,8 @@
+/*
+ * 作者：宋肇腾
+ * 时间：2008-06-04
+ * 说明：
+ */
 package tools;
 import order.*;
 import user.*;
