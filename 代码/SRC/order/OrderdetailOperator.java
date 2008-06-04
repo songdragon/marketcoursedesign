@@ -6,9 +6,9 @@
 package order;
 import dbconnection.*;
 import java.util.*;
-import java.sql.*;
 import tools.*;
 
+/* 实现商品的读取*/
 public class OrderdetailOperator extends OrderdetailAbstract{
 	
 	public Iterator getOrderdetail(String orderid){

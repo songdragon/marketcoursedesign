@@ -1,3 +1,8 @@
+/*
+ * 作者：宋肇腾
+ *时间：2008-06-04
+ *说明：商品信息的接口类
+ */
 package order;
 
 public interface InterfaceOrderdetail {

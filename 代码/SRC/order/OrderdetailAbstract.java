@@ -4,9 +4,8 @@
  * 功能：实现客户端订单详细信息的获得和赋值的抽象类
  */
 package order;
-import dbconnection.*;
 
-public abstract class OrderdetailAbstract implements InterfaceOrderdetail{
+public abstract class OrderdetailAbstract implements InterfaceOrderdetail{//修改：实现商品详细信息接口 2008-06-04 宋
 	private String _orderid;        //订单号
 	private String _productsid;     //商品号
 	private String _productsname;   //商品名
