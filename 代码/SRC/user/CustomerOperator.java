@@ -6,6 +6,7 @@
 
 package user;
 import dbconnection.DBConnection;
+import encrypt.MD5;
 
 public class CustomerOperator extends CustomerAbstract{
 	
@@ -43,7 +44,7 @@ public class CustomerOperator extends CustomerAbstract{
 	public static int login(String customerId,String password){
 		try{
 			CustomerAbstract customer=getCustomerInfor(customerId);
-			if(customer.getPassword().equals(password)){
+			if(customer.getPassword().equals(MD5.toMD5(password))){          //添加了MD5加密 2008-6-4
 				return 1;                    //登录成功
 			}
 			return 0;                        //密码错误 
@@ -59,7 +60,7 @@ public class CustomerOperator extends CustomerAbstract{
 	 */
 	public static boolean saveUser(CustomerAbstract user){
 		String userId=user.getUserId();
-		String userPassword=user.getPassword();
+		String userPassword=MD5.toMD5(user.getPassword());     //添加用户密码MD5加密 2008-6-4
 		String customerType=user.getCustomType();
 		String email=user.getEmail();
 		float expenditure=user.getExpenditure();
@@ -89,8 +90,9 @@ public class CustomerOperator extends CustomerAbstract{
 		try{
 			CustomerAbstract customer=getCustomerInfor(customerId);
 			if(customer!=null){
-				if(customer.getPassword().equals(oldPassword)){
-					String sqlStr="update customer set cpassword='"+newPassword+"'"
+				if(customer.getPassword().equals(MD5.toMD5(oldPassword))){
+                                        String MD5NewPassword=MD5.toMD5(newPassword);       //添加了MD5加密 2008-6-4
+					String sqlStr="update customer set cpassword='"+MD5NewPassword+"'"
 					+"where customername='"+customerId+"'";
 					DBConnection dbconnection=null;
 					try{
