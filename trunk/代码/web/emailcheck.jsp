@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"%>
+﻿<%@ page language="java" contentType="text/html; charset=utf-8"%>
 <%
 //作者：宋肇腾
 //时间：2008-06-05
@@ -8,8 +8,8 @@
 <% 
 	DBConnection con=new DBConnection();
 	String email=request.getParameter("email");
-	String sql="select E_mail from customer where E_mail='"+email+"'";
-	con.excuteQuery(sql);
+	String sql="select E_mail from customer where E_mail='"+email.trim()+"'";
+	con.excuteQuery(sql,0);
 	if(con.rows()==0)
 		out.println("100");
 	else

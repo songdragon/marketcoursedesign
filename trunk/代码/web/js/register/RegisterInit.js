@@ -245,9 +245,9 @@ function txtVerifyCode_check()
     verifyclienterror.style.display = "none";
     
     var valaj = ShowCodeServerCheck();
- //   if(!valaj)
- //       return valaj;
- //   return true;
+    if(!valaj)
+        return valaj;
+    else return true;
 	//return requireFieldValid('txtVerifyCode','verifyCodeValidMsg') && regularExpressionValid//('txtVerifyCode',VERIFY_CODE_EXPRESSION,'verifyCodeValidMsg',MSG_VERIFY_CODE_FORMAT_ERROR);
 }
 
@@ -287,7 +287,8 @@ function btnCheckLogin_Click()
 	var repeatpassValid=txtRepeatPass_check();
 	var verifyCodeValid=txtVerifyCode_check();
 	//var codeservercheck = ShowCodeServerCheck();
- 
+
+
 	if(emailValid && nicknameValid && passwordValid &&  repeatpassValid && verifyCodeValid)
 	{
 	    document.getElementById("btnRegister").click();
