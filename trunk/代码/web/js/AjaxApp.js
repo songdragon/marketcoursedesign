@@ -1,6 +1,6 @@
 ﻿// JScript 文件
 
-var xmlReq ;
+var xmlReq = false;
 
 function createXMLHttpRequest() 
 {
@@ -35,14 +35,13 @@ function changeImage()
    
      num = Math.random();
      num = Math.round(num*10000000);
-   // var url = 'ShowRdmChange.aspx?t='+num;
-    var url='createMa.jsp?t='+num;
+    var url = 'ShowRdmChange.aspx?t='+num;
+    
     xmlReq.open("GET", url, false);   
     xmlReq.send(null);
     
     var img = document.getElementById("imgshowcode");
-    //img.src = 'ShowRdmDgtGif.aspx?t='+num;
-    img.src ='createMa.jsp?t='+num;
+    img.src = 'ShowRdmDgtGif.aspx?t='+num;
 
 }
 
@@ -52,18 +51,16 @@ function updateImage()
     if(xmlReq.readyState == 4  && xmlReq.status==200)
     {
         var img = document.getElementById("imgshowcode");
-        //img.src = 'ShowRdmDgtGif.aspx?t='+num;
-        img.src ='createMa.jsp?t='+num;
+        img.src = 'ShowRdmDgtGif.aspx?t='+num;
     }
 }
 
-var nicknamecheck ;
+var nicknamecheck = false;
 function NickNameCheck()
 {
     createXMLHttpRequest();
     var nickname=document.getElementById("txtNickName").value
-    //var url = 'Ajax_NickNameCheck.aspx?nickname='+nickname;
-    var url='nicknamecheck.jsp?nickname='+nickname;
+    var url = 'Ajax_NickNameCheck.aspx?nickname='+nickname;
     xmlReq.open("GET",url,false);
     //xmlReq.onreadystatechange = NickNameCheckMsg;
     xmlReq.send(null);
@@ -73,11 +70,11 @@ function NickNameCheck()
     var nameformat = document.getElementById("nickNameValidMsg1");
     var nameexist = document.getElementById("nickNameValidMsg2");
     retval = xmlReq.responseText;
-    if(retval == 100)
+    if(retval == "100")
     {
         nicknamecheck = true;
     }
-    else if(retval == -1)
+    else if(retval == "-1")
     {
         namemsg.style.display = "none";
         namenull.style.display = "none";
@@ -91,17 +88,16 @@ function NickNameCheck()
         nicknamecheck = false;
     }
     
-    return nickname;
+    return nicknamecheck;
 }
 
 
-var emailcheck ;
+var emailcheck = false;
 function EmailCheck()
 {
     createXMLHttpRequest();
     var email = document.getElementById("txtEmail").value
-    //var url = 'Ajax_EmailCheck.aspx?email='+email;
-    var url = 'emailcheck.jsp?email='+email;
+    var url = 'Ajax_EmailCheck.aspx?email='+email;
     xmlReq.open("GET",url,false);
     //xmlReq.onreadystatechange = EmailCheckMsg;
     xmlReq.send(null);
@@ -111,12 +107,11 @@ function EmailCheck()
     var emailformat = document.getElementById("emailValidMsg1");
     var emailexist = document.getElementById("emailValidMsg2");
     retval = xmlReq.responseText;
-	window.alert(retval);
-    if(retval == 100)
+    if(retval == "100")
     {
         emailcheck = true;
     }
-    else if(retval == -1)
+    else if(retval == "-1")
     {
         emailmsg.style.display = "none";
         emailnull.style.display = "none";
@@ -127,20 +122,19 @@ function EmailCheck()
     else
     {
         alert("邮箱验证出错！");
-        emailcheck =false;
+        emailcheck = false;
     }
     
     return emailcheck;
 }
 
 
-var codecheck ;
+var codecheck = false;
 function ShowCodeServerCheck()
 {
     createXMLHttpRequest();
     var code =  document.getElementById("txtVerifyCode").value;
-    //var url = 'ShowRdmCheck.aspx?c= '+code;
-    var url='checkMa.jsp?c='+code;
+    var url = 'ShowRdmCheck.aspx?c='+code;
     xmlReq.open("GET", url, false);
     //xmlReq.onreadystatechange = ShowCodeCheckMsg;
     xmlReq.send(null);
@@ -150,7 +144,7 @@ function ShowCodeServerCheck()
     var verifyerror= document.getElementById("verifyCodeValidMsgError");
     var verifyclienterror = document.getElementById("verifyerrorclient");
     retval = xmlReq.responseText;
-    if(retval == 1)
+    if(retval == "1")
     {
         verifymsg.style.display="block";
         verifyclienterror.style.display ="none";
@@ -163,7 +157,7 @@ function ShowCodeServerCheck()
         codecheck = false;
     }
     
-    return true;
+    return codecheck;
 }
  
     

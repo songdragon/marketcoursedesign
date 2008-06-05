@@ -67,7 +67,7 @@ public class CustomerOperator extends CustomerAbstract{
 		float discount=user.getDiscount();
 		int point=user.getPoint();
 		String sqlStr="insert into customer values('"+userId+"','"+customerType+"','"
-		               +userPassword+"',"+point+","+expenditure+","+discount+",'"+email+"'";
+		               +userPassword+"',"+point+","+expenditure+","+discount+",'"+email+"')";//–ﬁ’˝£∫»±…Ÿ”“¿®∫≈£¨song,2008-06-05
 		DBConnection dbconnection=null;
 		try{
 			dbconnection=new DBConnection();

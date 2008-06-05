@@ -14,7 +14,6 @@ public class DBConnection {
 	 */
 	private String _ConnectionUrl="jdbc:sqlserver://SONG-P7OCQJYLUO\\DATEBASE:1379;"+
 	"databaseName=shopping;user=sa;password=19880313";
-	private String url="java:comp/env/jdbc/sqlserver";
 	private Connection _con=null;
 	private Statement _stmt = null;
 	private ResultSet _rst;
@@ -99,7 +98,7 @@ public class DBConnection {
 	/*
 	 * 查询方法
 	 */
-	public ResultSet excuteQuery(String select){
+	public void excuteQuery(String select){
 		try{
 			if(_stmt!=null){
 				_rst=_stmt.executeQuery(select);
@@ -108,7 +107,7 @@ public class DBConnection {
 		catch(Exception e){
 			e.printStackTrace();
 		}
-		return _rst;
+		//return _rst;
 	}
 
 	/*
@@ -231,6 +230,17 @@ public class DBConnection {
 		catch(Exception e) {
 			e.printStackTrace();
 			return false;
+		}
+	}
+	
+	//返回结果集行数 2008-06-03添加，用于生成新的订单号、管理员编号
+	public int rows(){
+		try{
+		return _rst.getFetchSize();//修正返回行数方法
+		}
+		catch(Exception e){
+			e.printStackTrace();
+			return 0;
 		}
 	}
 

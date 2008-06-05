@@ -242,15 +242,13 @@ function txtVerifyCode_check()
     {
         verifymsg.style.display = "block";
     } 
-
     verifyclienterror.style.display = "none";
     
     var valaj = ShowCodeServerCheck();
-    //if(!valaj)
-    //    return valaj;
-    //return true;
+ //   if(!valaj)
+ //       return valaj;
+ //   return true;
 	//return requireFieldValid('txtVerifyCode','verifyCodeValidMsg') && regularExpressionValid//('txtVerifyCode',VERIFY_CODE_EXPRESSION,'verifyCodeValidMsg',MSG_VERIFY_CODE_FORMAT_ERROR);
-
 }
 
 var repeateList="";

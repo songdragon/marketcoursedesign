@@ -4,7 +4,7 @@
  *功能描述：实现管理员的登陆、修改密码操作
  */
 package manager;
-import dbconnection.*;                   /*包名待定*/
+import dbconnection.*;                  
 public class ManagerOperator extends ManagerAbstract{
 
 	/*验证用户名,若用户名正确将用户信息提取到此类中*/
@@ -43,7 +43,7 @@ public class ManagerOperator extends ManagerAbstract{
 		String sqlUpdate="update manager set mpassword="+newpassword+
 			"where manager_id='"+managerId+"' and mpassword='"+oldpassword+"'";
 
-		DBConnection conn=new DBConnection();                  /*连接字符串*/
+		DBConnection conn=new DBConnection();                 
 		if(conn.excuteUpdate(sqlUpdate)==0){
 			conn.Close();
 			return false;
