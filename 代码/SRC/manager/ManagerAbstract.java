@@ -6,34 +6,34 @@
 package manager;
 import user.*;
 public abstract class ManagerAbstract implements UserInterface{
-	private String managerId;   //管理员编号
-	private String managerName; //管理员名称
-	private String mpassword;    //密码
-	private String actor;       //角色
+	private String _managerid;   //管理员编号
+	private String _managername; //管理员名称
+	private String _mpassword;    //密码
+	private String _actor;       //角色
 
-	public void setUserId(String userId){
-		managerId=userId;
+	public void setUserId(String userid){
+		_managerid=userid;
 	}
 	public String getUserId(){
-		return managerId;
+		return _managerid;
 	}
 	public void setPassword(String password){
-		mpassword=password;
+		_mpassword=password;
 	}
 	public String getPassword(){
-		return mpassword;
+		return _mpassword;
 	}
 
 	public void setManagername(String managername){
-		managerName=managername;
+		_managername=managername;
 	}
 	public String getManagername(){
-		return managerName;
+		return _managername;
 	}
 	public void setActor(String actor){
-		this.actor=actor;
+		_actor=actor;
 	}
 	public String getActor(){
-		return actor;
+		return _actor;
 	}
 }
