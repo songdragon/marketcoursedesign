@@ -4,15 +4,16 @@
  *功能描述：实现管理员的登陆、修改密码操作
  */
 package manager;
-import dbconnection.*;                  
+import MD5.*;                     /*包名待定*/
+import dbconnection.*;                   /*包名待定*/
 public class ManagerOperator extends ManagerAbstract{
 
 	/*验证用户名,若用户名正确将用户信息提取到此类中*/
 	public boolean getManagerInfo(String managerid){
-		String sqlSelect="select * from manager where manager_id='"+managerid+"'";
+		String sqlselect="select * from manager where manager_id='"+managerid+"'";
 		
 		DBConnection conn=new DBConnection();                 
-		conn.excuteQuery(sqlSelect);
+		conn.excuteQuery(sqlselect);
 		try{
 			conn.next();
 			setUserId(conn.getString(1));
@@ -27,8 +28,10 @@ public class ManagerOperator extends ManagerAbstract{
 		}
 	}
 	/*验证密码*/
-	public boolean checkPassword(String password){                   
-		if(getPassword().equals(password)){
+	public boolean checkPassword(String password){
+		MD5 md5=new MD5();
+		String pwd=md5.getMD5ofStr(password);                   
+		if(getPassword().equals(pwd)){
 			return true;
 		}
 		else{
@@ -39,12 +42,16 @@ public class ManagerOperator extends ManagerAbstract{
 
 
 	/*修改密码*/
-	public boolean updateManagerpassword(String managerId,String oldpassword,String newpassword){
-		String sqlUpdate="update manager set mpassword="+newpassword+
-			"where manager_id='"+managerId+"' and mpassword='"+oldpassword+"'";
+	public boolean updateManagerpassword(String managerid,String oldpassword,String newpassword){
+		MD5 md5=new MD5();
+		String opwd=md5.getMD5ofStr(oldpassword); 
+		String npwd=md5.getMD5ofStr(newpassword); 
 
-		DBConnection conn=new DBConnection();                 
-		if(conn.excuteUpdate(sqlUpdate)==0){
+		String sqlupdate="update manager set mpassword='"+npwd+"' "+
+			"where manager_id='"+managerid+"' and mpassword='"+opwd+"'";
+
+		DBConnection conn=new DBConnection();                  /*连接字符串*/
+		if(conn.excuteUpdate(sqlupdate)==0){
 			conn.Close();
 			return false;
 		}
@@ -53,4 +60,37 @@ public class ManagerOperator extends ManagerAbstract{
 			return true;
 		}
 	}
+
+	/*删除管理员*/
+	public boolean deleteManager(String managerid){
+		String sqldelete="delete from manager where manager_id='"+managerid+"'";
+		
+		DBConnection conn=new DBConnection();
+		if(conn.excuteUpdate(sqldelete)==0){
+			conn.Close();
+			return false;
+		}
+		else{
+			conn.Close();
+			return true;
+		}
+	}
+        /*添加管理员*/
+	public boolean deleteManager(String managerid,String managername,String password,String actor){
+		MD5 md5=new MD5();
+		String pwd=md5.getMD5ofStr(password);  
+
+		String sqlinsert="insert into manager values('"+managerid+"','"+managername+"','"+pwd+"','"+actor+"')";
+		DBConnection conn=new DBConnection();
+		if(conn.excuteUpdate(sqlinsert)==0){
+			conn.Close();
+			return false;
+		}
+		else{
+			conn.Close();
+			return true;
+		}
+	}
+
+
 }
