@@ -16,14 +16,15 @@ public class DBConnection {
 	"databaseName=shopping;user=sa;password=19880313";
 	private Connection _con=null;
 	private Statement _stmt = null;
+	private Statement _selstmt=null;
 	private ResultSet _rst;
 	private PreparedStatement _pstmt;
 
 	private boolean init(){
 		try{
 			Context initCtx = new InitialContext();  
-		    Context envCtx = (Context) initCtx.lookup("java:comp/env");
-		    DataSource ds = (DataSource) envCtx.lookup("jdbc/mydb");
+			Context envCtx = (Context) initCtx.lookup("java:comp/env");
+			DataSource ds = (DataSource) envCtx.lookup("jdbc/mydb");
 			_con=ds.getConnection();
 		}
 		catch(Exception e){
@@ -40,7 +41,7 @@ public class DBConnection {
 		try{
 			if(init())
 				_stmt = _con.createStatement();	;
-			/*else
+				/*else
 			{
 				Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 				_con = DriverManager.getConnection(_ConnectionUrl);
@@ -108,6 +109,17 @@ public class DBConnection {
 			e.printStackTrace();
 		}
 		//return _rst;
+	}
+
+	public ResultSet excuteQuery(String select,int a){
+		try{
+			_selstmt = _con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
+			_rst=_selstmt.executeQuery(select);
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+		return _rst;
 	}
 
 	/*
@@ -223,7 +235,7 @@ public class DBConnection {
 	public String getString(String s)  throws Exception {			//取得字符串类型的字段，通过字段名
 		return _rst.getString(s); 
 	}
-	
+
 	//指针下移一位
 	public boolean next(){
 		try {return _rst.next();}
@@ -232,16 +244,18 @@ public class DBConnection {
 			return false;
 		}
 	}
-	
+
 	//返回结果集行数 2008-06-03添加，用于生成新的订单号、管理员编号
 	public int rows(){
+		int row=0;
 		try{
-		return _rst.getFetchSize();//修正返回行数方法
+			_rst.last();
+			row=_rst.getRow();
 		}
 		catch(Exception e){
 			e.printStackTrace();
-			return 0;
 		}
+		return row;
 	}
 
 

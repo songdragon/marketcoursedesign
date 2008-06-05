@@ -1,9 +1,9 @@
-<%@ page contentType="text/html; charset=gb2312" language="java" import="java.sql.*" errorPage="" %>
+<%@ page contentType="text/html; charset=utf-8" language="java" import="java.sql.*" errorPage="" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>�û�ע��</title>
+<title>用户注册</title>
 <META http-equiv=Content-Type content="text/html; charset=gb2312"><LINK 
 href="css/login.css" type=text/css rel=stylesheet>
 <SCRIPT src="js/register/AjaxApp.js" type=text/javascript></SCRIPT>
@@ -47,16 +47,16 @@ function sS(a){WebForm_DoCallback('__Page',a,rS,null,null,false);}function invok
 //]]>
 </SCRIPT>
 
-<SCRIPT src="�û�ע��%20-%20������_files/WebResource.axd" 
+<SCRIPT src="用户注册%20-%20当当网_files/WebResource.axd" 
 type=text/javascript></SCRIPT>
-<!--ҳͷ-->
+<!--页头-->
 <DIV class=login_top><IMG 
 class=logo src="images/logo.jpg" width=100px heigth=120px>
-<DIV class=new_help><B>[���û�ע��]</B></DIV></DIV>
-<DIV class=login_step>ע�Ჽ��:��1.��д��Ϣ��&gt;��<SPAN 
-class=red_bold>2.ע��ɹ�</SPAN></DIV>
+<DIV class=new_help><B>[新用户注册]</B></DIV></DIV>
+<DIV class=login_step>注册步骤:　1.填写信息　&gt;　<SPAN 
+class=red_bold>2.注册成功</SPAN></DIV>
 <DIV class=fill_message>
-ע��ɹ�������<a href=index.jsp>�˴�</a>������ҳ
+注册成功！单击<a href=index.jsp>此处</a>返回首页
 </DIV>
 <SCRIPT type=text/javascript>
 //<![CDATA[

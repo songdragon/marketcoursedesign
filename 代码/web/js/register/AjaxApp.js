@@ -73,6 +73,7 @@ function NickNameCheck()
     var nameformat = document.getElementById("nickNameValidMsg1");
     var nameexist = document.getElementById("nickNameValidMsg2");
     retval = xmlReq.responseText;
+//window.alert(retval);
     if(retval == 100)
     {
         nicknamecheck = true;
@@ -111,7 +112,7 @@ function EmailCheck()
     var emailformat = document.getElementById("emailValidMsg1");
     var emailexist = document.getElementById("emailValidMsg2");
     retval = xmlReq.responseText;
-	window.alert(retval);
+	//window.alert(retval);
     if(retval == 100)
     {
         emailcheck = true;
@@ -163,7 +164,7 @@ function ShowCodeServerCheck()
         codecheck = false;
     }
     
-    return true;
+    return codecheck;
 }
  
     
