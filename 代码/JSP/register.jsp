@@ -8,14 +8,15 @@
 href="css/login.css" type=text/css rel=stylesheet>
 <SCRIPT src="js/register/AjaxApp.js" type=text/javascript></SCRIPT>
 
-<SCRIPT src="js/register/RegisterInit.js" type=text/javascript></SCRIPT>
+<SCRIPT src="js/register/RegisterInit.js" 
+type=text/javascript></SCRIPT>
 
 <!--<SCRIPT src="js/register/trace.js" type=text/javascript></SCRIPT>-->
 </head>
 
 <body>
 <BODY onload=javascript:isCookieEnabled()>
-<FORM id=form1 name=form1 action=success.jsp method=post>
+<FORM id=form1 name=form1 action=do_register.jsp method=post>
 <DIV><INPUT id=__EVENTTARGET type=hidden name=__EVENTTARGET> <INPUT 
 id=__EVENTARGUMENT type=hidden name=__EVENTARGUMENT> <INPUT id=__LASTFOCUS 
 type=hidden name=__LASTFOCUS> <INPUT id=__VIEWSTATE type=hidden 
@@ -46,6 +47,8 @@ function sS(a){WebForm_DoCallback('__Page',a,rS,null,null,false);}function invok
 //]]>
 </SCRIPT>
 
+<SCRIPT src="用户注册%20-%20当当网_files/WebResource.axd" 
+type=text/javascript></SCRIPT>
 <!--页头-->
 <DIV class=login_top><IMG 
 class=logo src="images/logo.jpg" width=100px heigth=120px>
@@ -128,7 +131,9 @@ class=red_bold>1.填写信息</SPAN>　&gt;　2.注册成功</DIV>
       style="DISPLAY: none">
       <P class=t1>您输入的验证码不正确，请重新输入。<A 
       href="javascript:changeImage()">看不清楚？换个图片</A></P></DIV></TD></TR></TBODY></TABLE>
-<DIV class=login_in><INPUT class=button_1 id=validatemsg onclick=btnCheckLogin_Click() type=button value="注 册" name=""><INPUT id=btnRegister style="DISPLAY: none" onclick="__doPostBack('btnRegister','')" type=button name=btnRegister> 
+<DIV class=login_in>
+<INPUT class=button_1  type=submit value="注 册" name="">
+<INPUT id=btnRegister style="DISPLAY: none" onclick="__doPostBack('btnRegister','')" type=button name=btnRegister> 
 <SPAN id=lblCookie style="COLOR: red"></SPAN></DIV></DIV>
 <SCRIPT type=text/javascript>
 //<![CDATA[

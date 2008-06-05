@@ -11,13 +11,13 @@
 		if(con!=null)
 			out.println("success");
 
-       ResultSet rst = con.excuteQuery("select * from mem");
-       if(rst!=null){
-      while (rst.next()) {
-          out.println(rst.getString(1));
+      con.excuteQuery("select * from order_detail");
+      // if(con.next()!=null){
+      while (con.next()) {
+          out.println(con.getString(1));
        }
-       }
-       else out.println("error");
+    //   }
+      // else out.println("error");
        con.Close();
     } catch (Exception e) {
        out.println(e.toString());
