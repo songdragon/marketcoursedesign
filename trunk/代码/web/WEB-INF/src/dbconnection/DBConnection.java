@@ -111,7 +111,10 @@ public class DBConnection {
 		//return _rst;
 	}
 
-	public ResultSet excuteQuery(String select,int a){
+	/*
+	 * 查询用于返回表中行数
+	 */
+	public void excuteQuery(String select,int a){
 		try{
 			_selstmt = _con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
 			_rst=_selstmt.executeQuery(select);
@@ -119,7 +122,7 @@ public class DBConnection {
 		catch(Exception e){
 			e.printStackTrace();
 		}
-		return _rst;
+		//return _rst;
 	}
 
 	/*
@@ -245,7 +248,7 @@ public class DBConnection {
 		}
 	}
 
-	//返回结果集行数 2008-06-03添加，用于生成新的订单号、管理员编号
+	//返回结果集行数 2008-06-03添加，用于生成新的订单号、管理员编号，查询验证
 	public int rows(){
 		int row=0;
 		try{
