@@ -4,14 +4,16 @@
  *功能描述：实现管理员的登陆、修改密码操作
  */
 package manager;
-import MD5.*;                     /*包名待定*/
+import tools.*;                     /*包名待定*/
 import dbconnection.*;                   /*包名待定*/
 public class ManagerOperator extends ManagerAbstract{
-
+	
+	
 	/*验证用户名,若用户名正确将用户信息提取到此类中*/
 	public boolean getManagerInfo(String managerid){
 		String sqlselect="select * from manager where manager_id='"+managerid+"'";
-		
+		String _ConnectionUrl="jdbc:sqlserver://localhost:1433;"+
+		"databaseName=shopping;user=sa;password=''";
 		DBConnection conn=new DBConnection();                 
 		conn.excuteQuery(sqlselect);
 		try{
@@ -30,8 +32,8 @@ public class ManagerOperator extends ManagerAbstract{
 	/*验证密码*/
 	public boolean checkPassword(String password){
 		MD5 md5=new MD5();
-		String pwd=md5.getMD5ofStr(password);                   
-		if(getPassword().equals(pwd)){
+		String pwd=password;//md5.getMD5ofStr(password);                   
+		if(getPassword().equals(password)){
 			return true;
 		}
 		else{
@@ -76,7 +78,7 @@ public class ManagerOperator extends ManagerAbstract{
 		}
 	}
         /*添加管理员*/
-	public boolean deleteManager(String managerid,String managername,String password,String actor){
+	public boolean insertManager(String managerid,String managername,String password,String actor){
 		MD5 md5=new MD5();
 		String pwd=md5.getMD5ofStr(password);  
 
