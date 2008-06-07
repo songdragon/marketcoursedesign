@@ -1,33 +1,60 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"%>
+<%@ page language="java" contentType="text/html; charset=gb2312"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
-<title>ç®¡ç†å‘˜ç™»é™†</title>
+<title>¹ÜÀíÔ±µÇÂ½</title>
 </head>
+<script type=text/javascript>
+
+function checkform(){
+if(document.form1.user_name.value==""){
+	alert("ÓÃ»§Ãû²»ÄÜÎª¿Õ£¡");
+}
+else if(document.form1.user_pwd.value==""){
+	alert("ÃÜÂë²»ÄÜÎª¿Õ£¡");
+}
+else 
+	document.form1.submit();
+}
+ 
+</script>
 <body>
-<h1 align="center">ç½‘ä¸Šè´­ç‰©ç®¡ç†ç³»ç»Ÿ</h1>
-<h3 align="center">åå°ç®¡ç†</h3>
-<form>
+<h1 align="center">ÍøÉÏ¹ºÎï¹ÜÀíÏµÍ³</h1>
+<h3 align="center">ºóÌ¨¹ÜÀí</h3>
+<form method=post action="checklogin.jsp" name="form1" id="form1">
+
 <table align=center width=200px>
 <TR>
+<%
+String info=request.getParameter("info");
+if(("1").equals(info))
+	out.println("<font sizes=4 color='red'>ÓÃ»§Ãû²»´æÔÚ£¬ÇëÖØĞÂµÇÂ½£¡</font><br><br>");
+else if(("2").equals(info))
+	out.println("<font sizes=4 color='red'>ÃÜÂë²»ÕıÈ·£¬ÇëÖØĞÂµÇÂ½£¡</font><br><br>");
+
+else if(("3").equals(info))
+	out.println("<font sizes=4 color='red'>ÎŞ´Ë½ÇÉ«£¬ÇëÖØĞÂµÇÂ½£¡</font><br><br>");
+info="";
+%>
 <TD>
-<label>ç”¨æˆ·å</label></TD>
+<label>ÓÃ»§Ãû</label></TD>
 <TD>
 <input name="user_name" type="text" class=input id="user_name" style="FONT-SIZE: 12px; WIDTH: 110px" size="10" maxlength="18">
 </TD>
+
 </TR>
 <TR>
 <Td>
-<label>å¯† ç </label></Td>
+<label>ÃÜ Âë</label></Td>
 <TD>
-<input name="user_pwd" type="text" class=input id="user_pwd" style="FONT-SIZE: 12px; WIDTH: 110px" size="10" maxlength="18">
+<input name="user_pwd" type="password" class=input id="user_pwd" style="FONT-SIZE: 12px; WIDTH: 110px" size="10" maxlength="18">
 </TD>
 </TR>
 <TR>
 <Td colspan="2" align="center" valign="middle">
-  <input type="submit" name="Submit" value="ç™»å½•">
-<input type="reset" name="resetB" value="é‡å¡«" onClick=""></Td>
+  <input type=button name="" onClick="checkform()" value="µÇÂ¼">
+<input type="reset" name="resetB" value="ÖØÌî" onClick=""></Td>
 </TR>
 </TR>
 </table>
