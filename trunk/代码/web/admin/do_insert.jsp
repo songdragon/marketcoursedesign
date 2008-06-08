@@ -1,3 +1,6 @@
+<!--
+ *×÷Õß£º¹¢ÐË»¶ 
+-->
 <%@ page language="java" contentType="text/html; charset=gb2312"%>
 <%@ page import="manager.*" %>
 
