@@ -260,6 +260,11 @@ public class DBConnection {
 		}
 		return row;
 	}
+	
+	//返回查询结果集 2008-06-08添加，用于分页显示
+	public ResultSet getRst(){
+		return _rst;
+	}
 
 
 }
