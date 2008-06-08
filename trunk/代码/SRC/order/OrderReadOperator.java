@@ -9,7 +9,7 @@ import java.util.*;
 import tools.*;
 
 /* 实现订单的读取*/
-public class OrderReadOperator extends OrderAbstract{
+public class OrderReadOperator extends OrderAbstract{ 
 	
 	public Iterator getOrder(String orderid){
 		ArrayList arraylist=new ArrayList();
