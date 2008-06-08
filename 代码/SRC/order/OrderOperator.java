@@ -21,16 +21,17 @@ public class OrderOperator extends OrderAbstract{
 		String detime=order.getDetime();
 		order.setOrderid();
 		String orderid=order.getOrderid();
-		String sqlStr="insert into order values('"+orderid+"',"+total+",'"+customername+"','"
+		String sqlStr="insert into order1 values('"+orderid+"',"+total+",'"+customername+"','"
 				+receiver+"','"+address+"','"+zipcode+"','"+tel+"','"+state+"',"
 				+orderdate+","+detime+")";
 		DBConnection dbconnection=null;
-
-			if(dbconnection.excuteUpdate(sqlStr)!=0)
+	
+		dbconnection=new DBConnection();
+		if(dbconnection.excuteUpdate(sqlStr)!=0)
 			return true;
-	                else
+		else
 			return false;
-		
+			
 
 	}
 
