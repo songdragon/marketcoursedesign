@@ -24,16 +24,21 @@ ManagerOperator mo=new ManagerOperator();
 boolean bool=mo.getManagerInfo(username);
 
 if(bool){                      //用户名已存在
+	out.println("<tr>用户名已存在！</tr>");
 	response.sendRedirect("insertmanager.jsp?info=1");
-	response.setHeader("Refresh", "3; URL=insertmanager.jsp");
+
 }
 else{
 	bool=mo.insertManager(username,managerrelname,password,actor);
 	if(bool){
-		out.println("添加成功！");
+		out.println("<h1 align='center'>添加成功！</h1>");
 		response.sendRedirect("allmanager.jsp");
 		response.setHeader("Refresh", "3; URL=allmanager.jsp");
-	}	
+	}
+	else{
+		out.println("<h1 align='center'>添加失败！</h1>");
+		response.setHeader("Refresh", "3; URL=insertmanager.jsp");
+	}
 }
 
 %>

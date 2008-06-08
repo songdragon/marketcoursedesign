@@ -24,10 +24,10 @@ else
 <h3 align="center">后台管理</h3>
 <form method=post action="checklogin.jsp" name="form1" id="form1">
 
-<table align=center width=200px>
+<table align=center width=250px>
 <TR>
 <%
-String info=request.getParameter("info");
+String info=(String)session.getAttribute("info");//request.getParameter("info");
 if(("1").equals(info))
 	out.println("<font sizes=4 color='red'>用户名不存在，请重新登陆！</font><br><br>");
 else if(("2").equals(info))
@@ -35,7 +35,7 @@ else if(("2").equals(info))
 
 else if(("3").equals(info))
 	out.println("<font sizes=4 color='red'>无此角色，请重新登陆！</font><br><br>");
-info="";
+session.removeAttribute("info");
 %>
 <TD>
 <label>用户名</label></TD>
