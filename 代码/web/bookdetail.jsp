@@ -40,30 +40,26 @@ BookOperator bookoperator=new BookOperator();
 %>
 
 <DIV class=right>
-<DIV class=right_wai>
-<DIV class=shuming>
 <DIV class=shuming_left><SPAN class=black000></A><B><%=productsname%></B> 
 </SPAN></DIV>
 <DIV class=empty_box style="HEIGHT: 20px"></DIV>
 <DIV class=book_left><IMG id=img_show_prd 
 src="" width=150  />
 </DIV>
-<DIV id=author_>作　　者： <%=productsname%> 著</DIV>
+<DIV class="book_right">
+<DIV id=author_>作　　者： <%=author%> 著</DIV>
 <DIV id=publisher_>出 版 社：<%=publisher %></DIV>
 <UL class=nostyle>
+  <LI>商品名称：<%=productsname%></LI>
   <LI>点击率：<%=clickrate %> </LI>
   <LI>售价： <%=price %> </LI>
   <LI>I S B N ：<%=isbn %></LI>
   <LI>开本：<%=booksize %></LI></UL>
-  <DIV class=goumai><A title=购买 href="" 
-name=purchase_bk><IMG src="images/book/booksale.gif"></A>
+  <DIV class=goumai ><A title=购买 href="" ><IMG src="images/book/booksale.gif"></A></DIV>
 <DIV id=__zhinengbiaozhu_bk>
 <DIV class=dashed></DIV>
 <H2 class=right_title1> 商品描述</H2>
 <DIV class=right_content>
 <%=description %>
 </DIV>
-</DIV>
-
-</body>
-</html>
+</DIV></DIV></DIV></</DIV></DIV></DIV></DIV>

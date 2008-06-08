@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=utf-8" language="java" import="java.sql.*" errorPage="" %>
+<%@ page contentType="text/html; charset=gb2312" language="java" import="java.sql.*" errorPage="" %>
 <%@ page import="shop.*" %>
 <%@ page import="java.util.Iterator" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -6,7 +6,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>æ— æ ‡é¢˜æ–‡æ¡£</title>
+<LINK href="css/book.css" type=text/css 
+rel=stylesheet>
+<title>ÎÞ±êÌâÎÄµµ</title>
 </head>
 
 <body>
@@ -58,122 +60,44 @@ String description="";
   }
 %>
 
-<table width="503" height="501" border="0">
- <tr>
-    <td rowspan="2" width="300">&nbsp;</td>
-    <td width="100">å•†å“åç§°</td>
-  <td>&nbsp;<%=productsname%></td>
-  <tr>
-    <td width=100>ç‚¹å‡»çŽ‡</td>
-    <td width=81>&nbsp;<%=clickrate %></td>
-  </tr>
-  <tr>
-    <td colspan="3"><table width="499" height="300" border="0">
-      <tr>
-        <td><table width="200" border="0">
-          <tr>
-            <td>å”®ä»·</td>
-            <td>&nbsp;<%=price %></td>
-          </tr>
-        </table></td>
-        <td><table width="200" border="0">
-          <tr>
-            <td>å“ç‰Œ</td>
-            <td>&nbsp;<%=brand %></td>
-          </tr>
-        </table></td>
-      </tr>
-      <tr>
-        <td><table width="300" border="0">
-          <tr>
-            <td>å±å¹•å¤§å°</td>
-            <td>&nbsp;<%=screen%></td>
-          </tr>
-        </table></td>
-        <td><table width="300" border="0">
-          <tr>
-            <td>ç½‘ç»œåˆ¶å¼</td>
-            <td>&nbsp;<%=nettype%></td>
-          </tr>
-        </table></td>
-      </tr>
-      <tr>
-        <td><table width="300" border="0">
-          <tr>
-            <td>å¤–è§‚æ ·å¼</td>
-            <td>&nbsp;<%=appearance%></td>
-          </tr>
-        </table></td>
-        <td><table width="300" border="0">
-          <tr>
-            <td>ä¸»å±</td>
-            <td>&nbsp;<%=screencolor%></td>
-          </tr>
-        </table></td>
-      </tr>
-      <tr>
-        <td><table width="300" border="0">
-          <tr>
-            <td>æ•°æ®ä¼ è¾“</td>
-            <td>&nbsp;<%=datatransport%></td>
-          </tr>
-        </table></td>
-        <td><table width="300" border="0">
-          <tr>
-            <td>æ‘„åƒå¤´</td>
-            <td>&nbsp;<%=camera%></td>
-          </tr>
-        </table></td>
-      </tr>
-      <tr>
-        <td><table width="300" border="0">
-          <tr>
-            <td>ä¸Šå¸‚æ—¶é—´</td>
-            <td>&nbsp;<%=ontime%></td>
-          </tr>
-        </table></td>
-        <td><table width="200" border="0">
-          <tr>
-            <td>åž‹å·</td>
-            <td>&nbsp;<%=mptype%></td>
-          </tr>
-        </table></td>
-      </tr>
-      <tr>
-        <td><table width="300" border="0">
-          <tr>
-            <td>å­˜å‚¨åŠŸèƒ½ </td>
-            <td>&nbsp;<%=storage%></td>
-          </tr>
-        </table></td>
-        <td><table width="200" border="0">
-          <tr>
-            <td>é¢œè‰²</td>
-            <td>&nbsp;<%=color%></td>
-          </tr>
-        </table></td>
-      </tr>
-      <tr>
-        <td><table width="300" border="0">
-          <tr>
-            <td>å±å¹•ç§ç±»</td>
-            <td>&nbsp;<%=screentype%></td>
-          </tr>
-        </table></td>
-        <td>æ”¾å…¥è´­ç‰©è½¦</td>
-      </tr>
-      <tr>
-        <td colspan="2"><table width="499" border="0">
-          <caption>
-            å•†å“æè¿°
-            </caption>
-          <tr>
-            <th scope="col">&nbsp;<%=description %></th>
-          </tr>
-        </table></td>
-        </tr>
-    </table></td>
-  </tr>
-</table>
+<DIV class=right>
+<DIV class=shuming_left><SPAN class=black000></A><B><%=productsname%></B> 
+</SPAN></DIV>
+<DIV class=empty_box style="HEIGHT: 20px"></DIV>
+<DIV class=book_left><IMG id=img_show_prd 
+src="" width=150  />
+</DIV>
+<Div class=book_right>
+<DIV id=author_>ÉÌÆ·Ãû³Æ£º <%=productsname%></DIV>
+<DIV id=publisher_>Æ·ÅÆ£º<%=brand %></DIV>
+<UL class=nostyle>
+  <LI>µã»÷ÂÊ£º<%=clickrate %> </LI>
+  <LI>ÊÛ¼Û£º <%=price %> </LI>
+  <LI>ÍøÂçÖÆÊ½£º <%=nettype%> </LI>
+  <LI>Íâ¹ÛÑùÊ½£º <%=appearance%> </LI>
+  <LI> Ö÷ÆÁ£º <%=screencolor%> </LI>
+  <LI>Êý¾Ý´«Êä£º<%=datatransport%></LI>
+  <LI>ÆÁÄ»´óÐ¡£º<%=screen%></LI>
+  <LI>ÉãÏñÍ· £º<%=camera%></LI>
+  <LI>ÉÏÊÐÊ±¼ä £º<%=ontime%></LI>
+  <LI>ÐÍºÅ £º<%=mptype%></LI>
+  <LI>´æ´¢¹¦ÄÜ £º<%=storage%></LI>
+  <LI>ÑÕÉ« £º<%=color%></LI>
+  <LI>ÆÁÄ»ÖÖÀà £º<%=screentype%></LI></UL></DIV>
+  <DIV class=goumai><A title=¹ºÂò href="" 
+name=purchase_bk><IMG src="images/book/booksale.gif"></A>
+<DIV id=__zhinengbiaozhu_bk>
+<DIV class=dashed></DIV>
+<H2 class=right_title1> ÉÌÆ·ÃèÊö</H2>
+<DIV class=right_content>
+<%=description %>
+</DIV>
+</DIV>
+</DIV></DIV>
+
+
+
+
+
 </body>
 </html>
