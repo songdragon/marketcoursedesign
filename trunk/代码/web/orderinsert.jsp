@@ -3,6 +3,11 @@
 <%@page import="dbconnection.*" %>
 <%@page import="java.sql.*;"%>
 <%@page import="order.*;"%>
+<%
+//作者：江军
+//日期：2008-6-8
+//功能描述：实现在订单插入数据库的功能。
+%>
 
 <% 
 String orderid=request.getParameter("orderid");
