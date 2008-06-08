@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=utf-8" language="java" import="java.sql.*" errorPage="" %>
+<%@ page contentType="text/html; charset=gb2312" language="java" import="java.sql.*" errorPage="" %>
 <%@ page import="shop.*" %>
 <%@ page import="java.util.Iterator" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -6,7 +6,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>æ— æ ‡é¢˜æ–‡æ¡£</title>
+<LINK href="css/book.css" type=text/css 
+rel=stylesheet>
+<title>ÎÞ±êÌâÎÄµµ</title>
 </head>
 
 <body>
@@ -37,66 +39,31 @@ BookOperator bookoperator=new BookOperator();
   }
 %>
 
-<table width="503" height="501" border="0">
- <tr>
-    <td rowspan="2" width="300">&nbsp;</td>
-    <td width="100">å•†å“åç§°</td>
-  <td>&nbsp;<%=productsname%></td>
-  <tr>
-    <td width=100>ç‚¹å‡»çŽ‡</td>
-    <td width=81>&nbsp;<%=clickrate %></td>
-  </tr>
-  <tr>
-    <td colspan="3"><table width="499" height="300" border="0">
-      <tr>
-        <td><table width="200" border="0">
-          <tr>
-            <td>å”®ä»·</td>
-            <td>&nbsp;<%=price %></td>
-          </tr>
-        </table></td>
-        <td><table width="200" border="0">
-          <tr>
-            <td>ä½œè€…</td>
-            <td>&nbsp;<%=author %></td>
-          </tr>
-        </table></td>
-      </tr>
-      <tr>
-        <td><table width="200" border="0">
-          <tr>
-            <td>åºåˆ—å·</td>
-            <td>&nbsp;<%=isbn %></td>
-          </tr>
-        </table></td>
-        <td><table width="200" border="0">
-          <tr>
-            <td>å‡ºç‰ˆç¤¾</td>
-            <td>&nbsp;<%=publisher %></td>
-          </tr>
-        </table></td>
-      </tr>
-      <tr>
-        <td><table width="200" border="0">
-          <tr>
-            <td>å¼€æœ¬</td>
-            <td>&nbsp;<%=booksize %></td>
-          </tr>
-        </table></td>
-        <td>æ”¾å…¥è´­ç‰©è½¦</td>
-      </tr>
-      <tr>
-        <td colspan="2"><table width="499" border="0">
-          <caption>
-            å•†å“æè¿°
-            </caption>
-          <tr>
-            <th scope="col">&nbsp;<%=description %></th>
-          </tr>
-        </table></td>
-        </tr>
-    </table></td>
-  </tr>
-</table>
+<DIV class=right>
+<DIV class=right_wai>
+<DIV class=shuming>
+<DIV class=shuming_left><SPAN class=black000></A><B><%=productsname%></B> 
+</SPAN></DIV>
+<DIV class=empty_box style="HEIGHT: 20px"></DIV>
+<DIV class=book_left><IMG id=img_show_prd 
+src="" width=150  />
+</DIV>
+<DIV id=author_>×÷¡¡¡¡Õß£º <%=productsname%> Öø</DIV>
+<DIV id=publisher_>³ö °æ Éç£º<%=publisher %></DIV>
+<UL class=nostyle>
+  <LI>µã»÷ÂÊ£º<%=clickrate %> </LI>
+  <LI>ÊÛ¼Û£º <%=price %> </LI>
+  <LI>I S B N £º<%=isbn %></LI>
+  <LI>¿ª±¾£º<%=booksize %></LI></UL>
+  <DIV class=goumai><A title=¹ºÂò href="" 
+name=purchase_bk><IMG src="images/book/booksale.gif"></A>
+<DIV id=__zhinengbiaozhu_bk>
+<DIV class=dashed></DIV>
+<H2 class=right_title1> ÉÌÆ·ÃèÊö</H2>
+<DIV class=right_content>
+<%=description %>
+</DIV>
+</DIV>
+
 </body>
 </html>
