@@ -6,7 +6,7 @@
 
 package user;
 
-public abstract class CustomerAbstract implements UserInterface{
+public abstract class CustomerAbstract implements CustomerInterface{
 	private String _userId;           //用户名
 	private String _password;		 //密码
 	private String _customType;       //会员类别

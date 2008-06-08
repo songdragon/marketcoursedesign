@@ -5,22 +5,27 @@
  */
 
 package user;
+import java.util.ArrayList;
+import java.util.Iterator;
+import tools.*;
+
 import dbconnection.DBConnection;
-import tools.MD5;
 
 public class CustomerOperator extends CustomerAbstract{
 	
 	/*
 	 * 获取用户信息
 	 */
-	private static CustomerAbstract getCustomerInfor(String customerId){
-		CustomerAbstract customer=null;
+	public static Iterator getCustomerInfor(String customerId){ //将返回的抽象类改为返回为Iterator类 2008-6-7
+		ArrayList arraylist=new ArrayList();
+	
 		String sqlStr="select * from customer where customername='"+customerId+"'";
 		DBConnection dbconnection=null;
 		try{
 			dbconnection=new DBConnection();
 			dbconnection.excuteQuery(sqlStr);
-			if(dbconnection.next()){
+			while(dbconnection.next()){
+				CustomerInterface customer=Factory.getInstance().initCustomerOperator();
 				customer.setUserId(dbconnection.getString(1));
 				customer.setCustomType(dbconnection.getString(2));
 				customer.setPassword(dbconnection.getString(3));
@@ -28,6 +33,7 @@ public class CustomerOperator extends CustomerAbstract{
 				customer.setExpenditure(dbconnection.getFloat(5));
 				customer.setDiscount(dbconnection.getFloat(6));
 				customer.setEmail(dbconnection.getString(7));
+				arraylist.add(customer);
 			}
 		}catch(Exception e){
 			e.printStackTrace();
@@ -35,7 +41,7 @@ public class CustomerOperator extends CustomerAbstract{
 			if(dbconnection!=null)
 			dbconnection.Close();
 		}
-		return customer;
+		return arraylist.iterator();
 	}
 	
 	/*
@@ -43,8 +49,13 @@ public class CustomerOperator extends CustomerAbstract{
 	 */
 	public static int login(String customerId,String password){
 		try{
-			CustomerAbstract customer=getCustomerInfor(customerId);
-			if(customer.getPassword().equals(MD5.toMD5(password))){          //添加了MD5加密 2008-6-4
+			CustomerOperator customer=Factory.getInstance().initCustomerOperator();
+			Iterator it=customer.getCustomerInfor(customerId);              //修改：通过Iterator获取用户信息  2008-6-7
+			CustomerInterface customer1=null;
+			while(it.hasNext()){
+			customer1=(CustomerInterface)it.next();
+			}
+			if(customer1.getPassword().equals(MD5.toMD5(password))){          //添加了MD5加密 2008-6-4
 				return 1;                    //登录成功
 			}
 			return 0;                        //密码错误 
@@ -88,10 +99,15 @@ public class CustomerOperator extends CustomerAbstract{
 	 */
 	public static boolean updateCustomer(String customerId,String oldPassword,String newPassword){
 		try{
-			CustomerAbstract customer=getCustomerInfor(customerId);
-			if(customer!=null){
-				if(customer.getPassword().equals(MD5.toMD5(oldPassword))){
-                                        String MD5NewPassword=MD5.toMD5(newPassword);       //添加了MD5加密 2008-6-4
+			CustomerOperator customer=Factory.getInstance().initCustomerOperator();
+			Iterator it=customer.getCustomerInfor(customerId);        //修改：通过Iterator获取用户信息 2008-6-7
+			CustomerInterface customer1=null;
+			while(it.hasNext()){
+			customer1=(CustomerInterface)it.next();
+			}
+		
+				if(customer1.getPassword().equals(MD5.toMD5(oldPassword))){
+                    String MD5NewPassword=MD5.toMD5(newPassword);       //添加了MD5加密 2008-6-4
 					String sqlStr="update customer set cpassword='"+MD5NewPassword+"'"
 					+"where customername='"+customerId+"'";
 					DBConnection dbconnection=null;
@@ -107,7 +123,7 @@ public class CustomerOperator extends CustomerAbstract{
 					}
 					customer.setPassword(newPassword);
 				}
-			}
+			
 		}catch(Exception e){
 			e.printStackTrace();
 			return false;
