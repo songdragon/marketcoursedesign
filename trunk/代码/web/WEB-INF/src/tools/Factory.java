@@ -29,5 +29,8 @@ public abstract class Factory {
 	public abstract CustomerInterface initUser();
 	public abstract CustomerOperator initCustomerOperator();
 	
+	public abstract InterfaceOrder initOrder();
+	
+	
 
 }

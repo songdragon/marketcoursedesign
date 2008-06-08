@@ -24,13 +24,13 @@ String maker="";
 String outdate="";
 String shelflife="";
 String description="";
-
+String productid="";
 
 %>
 <%
-
+productid=request.getParameter("id");
 MakeupOperator makeupoperator=new MakeupOperator();
-  Iterator iterator=makeupoperator.getInformation("11");
+  Iterator iterator=makeupoperator.getInformation(productid);
   while(iterator.hasNext()){
 	  MakeupOperator makeup=(MakeupOperator)iterator.next();
 	  productsname=makeup.getProductsname();
@@ -69,7 +69,7 @@ src="" width=150  />
   <LI>I S B N £º<%=isbn %></LI>
   <LI>²ÄÖÊ£º  <%=mtype %></LI>
   <LI>¹¦ÄÜ£º<%=mfunction%></LI></UL>
-  <DIV class=goumai><A title=¹ºÂò href="" 
+  <DIV class=goumai><A title=¹ºÂò href="shopcart/addProduction.jsp?id=<%= productid %>" 
 name=purchase_bk><IMG src="images/book/booksale.gif"></A></DIV>
 <DIV id=__zhinengbiaozhu_bk>
 <DIV class=dashed></DIV>

@@ -25,13 +25,13 @@ String color="";
 String season="";
 String sex="";
 String description="";
-
+String productid="";
 
 %>
 <%
-
+productid=request.getParameter("id");
 DressOperator dressoperator =new DressOperator();
-  Iterator iterator=dressoperator.getInformation("1");
+  Iterator iterator=dressoperator.getInformation(productid);
   while(iterator.hasNext()){
 	  DressOperator dress=(DressOperator)iterator.next();
 	  productsname=dress.getProductsname();
@@ -69,7 +69,7 @@ src="" width=150  />
   <LI>适合性别：<%=sex%> </LI>
   <LI>I S B N ：<%=isbn %></LI>
   <LI>适合季节：<%=season%></LI></UL>
-  <DIV class=goumai><A title=购买 href="" 
+  <DIV class=goumai><A title=购买 href="shopcart/addProduction.jsp?id=<%= productid %>" 
 name=purchase_bk><IMG src="images/book/booksale.gif"></A></DIV>
 <DIV id=__zhinengbiaozhu_bk>
 <DIV class=dashed></DIV>

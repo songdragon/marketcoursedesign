@@ -23,5 +23,9 @@ public class SqlFactory extends Factory{
 	public CustomerOperator initCustomerOperator(){
 		return new CustomerOperator();
 	}
+	
+	public  InterfaceOrder initOrder(){
+		return (InterfaceOrder)new OrderReadOperator();
+	}
 
 }

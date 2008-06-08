@@ -29,13 +29,13 @@ String storage="";
 String screen="";
 String screentype="";
 String description="";
-
+String productid="";
 
 %>
 <%
-
+productid=request.getParameter("id");
  MobileOperator mobileoperator=new MobileOperator();
-  Iterator iterator=mobileoperator.getInformation("7");
+  Iterator iterator=mobileoperator.getInformation(productid);
   while(iterator.hasNext()){
 	  MobileOperator mobile=(MobileOperator)iterator.next();
 	  productsname=mobile.getProductsname();
@@ -84,7 +84,7 @@ src="" width=150  />
   <LI>存储功能 ：<%=storage%></LI>
   <LI>颜色 ：<%=color%></LI>
   <LI>屏幕种类 ：<%=screentype%></LI></UL></DIV>
-  <DIV class=goumai><A title=购买 href="" 
+  <DIV class=goumai><A title=购买 href="shopcart/addProduction.jsp?id=<%= productid %>" 
 name=purchase_bk><IMG src="images/book/booksale.gif"></A>
 <DIV id=__zhinengbiaozhu_bk>
 <DIV class=dashed></DIV>

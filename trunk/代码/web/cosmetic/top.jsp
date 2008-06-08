@@ -22,7 +22,7 @@ type=text/javascript></SCRIPT>
 </UL>
 <UL class=n_help>
   <LI><A href="../shoppingcart.jsp" target="_blank">购物车</A> </LI>
-  <LI class=help_r><A href="register.jsp" 
+  <LI class=help_r><A href="../register.jsp" 
   target=_blank>新用户注册</A> </LI></UL></DIV>
 </DIV></DIV>
 <!--页头搜索部分-->
