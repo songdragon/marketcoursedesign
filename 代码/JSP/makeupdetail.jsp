@@ -14,26 +14,37 @@
 String productsname="";
 long clickrate=0;
 float price=0;
-String author="";
+String brand="";
 String isbn="";
-String publisher="";
-String booksize="";
+String mtype="";
+String mfunction="";
+String capacity="";
+String maker="";
+String outdate="";
+String shelflife="";
 String description="";
+
+
 %>
 <%
 
-BookOperator bookoperator=new BookOperator();
-  Iterator iterator=bookoperator.getInformation("15");
+MakeupOperator makeupoperator=new MakeupOperator();
+  Iterator iterator=makeupoperator.getInformation("11");
   while(iterator.hasNext()){
-	  BookOperator book=(BookOperator)iterator.next();
-	  productsname=book.getProductsname();
-	  clickrate=book.getClickrate();
-	  price=book.getPrice();
-	  author=book.getAuthor();
-	  isbn=book.getIsbn();
-	  publisher=book.getPublisher();
-	  booksize=book.getBooksize();
-	  description=book.getDiscription();
+	  MakeupOperator makeup=(MakeupOperator)iterator.next();
+	  productsname=makeup.getProductsname();
+	  clickrate=makeup.getClickrate();
+	  price=makeup.getPrice();
+	  brand=makeup.getBrand();
+	  isbn=makeup.getIsbn();
+	  mtype=makeup.getMtype();
+	  mfunction=makeup.getMfunction();
+	  description=makeup.getDiscription();
+	  capacity=makeup.getCapacity();
+	  maker=makeup.getMaker();
+	  outdate=makeup.getOutdate();
+	  shelflife=makeup.getShelflife();
+	  
   }
 %>
 
@@ -57,8 +68,36 @@ BookOperator bookoperator=new BookOperator();
         </table></td>
         <td><table width="200" border="0">
           <tr>
-            <td>作者</td>
-            <td>&nbsp;<%=author %></td>
+            <td>品牌</td>
+            <td>&nbsp;<%=brand %></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><table width="200" border="0">
+          <tr>
+            <td>容量</td>
+            <td>&nbsp;<%=capacity %></td>
+          </tr>
+        </table></td>
+        <td><table width="200" border="0">
+          <tr>
+            <td>制造商</td>
+            <td>&nbsp;<%=maker%></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><table width="300" border="0">
+          <tr>
+            <td>出厂日期</td>
+            <td>&nbsp;<%=outdate%></td>
+          </tr>
+        </table></td>
+        <td><table width="200" border="0">
+          <tr>
+            <td>保质期</td>
+            <td>&nbsp;<%=shelflife %></td>
           </tr>
         </table></td>
       </tr>
@@ -71,16 +110,16 @@ BookOperator bookoperator=new BookOperator();
         </table></td>
         <td><table width="200" border="0">
           <tr>
-            <td>出版社</td>
-            <td>&nbsp;<%=publisher %></td>
+            <td>材质</td>
+            <td>&nbsp;<%=mtype %></td>
           </tr>
         </table></td>
       </tr>
       <tr>
-        <td><table width="200" border="0">
+        <td><table width="300" border="0">
           <tr>
-            <td>开本</td>
-            <td>&nbsp;<%=booksize %></td>
+            <td>功能</td>
+            <td>&nbsp;<%=mfunction%></td>
           </tr>
         </table></td>
         <td>放入购物车</td>

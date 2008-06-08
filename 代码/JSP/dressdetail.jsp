@@ -14,26 +14,37 @@
 String productsname="";
 long clickrate=0;
 float price=0;
-String author="";
+String brand="";
 String isbn="";
-String publisher="";
-String booksize="";
+String dsize="";
+String style="";
+String material="";
+String color="";
+String season="";
+String sex="";
 String description="";
+
+
 %>
 <%
 
-BookOperator bookoperator=new BookOperator();
-  Iterator iterator=bookoperator.getInformation("15");
+DressOperator dressoperator =new DressOperator();
+  Iterator iterator=dressoperator.getInformation("1");
   while(iterator.hasNext()){
-	  BookOperator book=(BookOperator)iterator.next();
-	  productsname=book.getProductsname();
-	  clickrate=book.getClickrate();
-	  price=book.getPrice();
-	  author=book.getAuthor();
-	  isbn=book.getIsbn();
-	  publisher=book.getPublisher();
-	  booksize=book.getBooksize();
-	  description=book.getDiscription();
+	  DressOperator dress=(DressOperator)iterator.next();
+	  productsname=dress.getProductsname();
+	  clickrate=dress.getClickrate();
+	  price=dress.getPrice();
+	  brand=dress.getBrand();
+	  isbn=dress.getIsbn();
+	  dsize=dress.getDsize();
+	  style=dress.getStyle();
+	  description=dress.getDiscription();
+	  material=dress.getMaterial();
+	  color=dress.getColor();
+	  season=dress.getSeason();
+	  sex=dress.getSex();
+	  
   }
 %>
 
@@ -57,8 +68,36 @@ BookOperator bookoperator=new BookOperator();
         </table></td>
         <td><table width="200" border="0">
           <tr>
-            <td>作者</td>
-            <td>&nbsp;<%=author %></td>
+            <td>品牌</td>
+            <td>&nbsp;<%=brand %></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><table width="200" border="0">
+          <tr>
+            <td>大小</td>
+            <td>&nbsp;<%=dsize %></td>
+          </tr>
+        </table></td>
+        <td><table width="200" border="0">
+          <tr>
+            <td>款式</td>
+            <td>&nbsp;<%=style%></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><table width="300" border="0">
+          <tr>
+            <td>颜色</td>
+            <td>&nbsp;<%=color%></td>
+          </tr>
+        </table></td>
+        <td><table width="200" border="0">
+          <tr>
+            <td>适合性别</td>
+            <td>&nbsp;<%=sex%></td>
           </tr>
         </table></td>
       </tr>
@@ -71,16 +110,16 @@ BookOperator bookoperator=new BookOperator();
         </table></td>
         <td><table width="200" border="0">
           <tr>
-            <td>出版社</td>
-            <td>&nbsp;<%=publisher %></td>
+            <td>面料</td>
+            <td>&nbsp;<%=material%></td>
           </tr>
         </table></td>
       </tr>
       <tr>
-        <td><table width="200" border="0">
+        <td><table width="300" border="0">
           <tr>
-            <td>开本</td>
-            <td>&nbsp;<%=booksize %></td>
+            <td>适合季节</td>
+            <td>&nbsp;<%=season%></td>
           </tr>
         </table></td>
         <td>放入购物车</td>
