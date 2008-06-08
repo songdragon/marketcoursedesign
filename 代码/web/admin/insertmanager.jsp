@@ -1,3 +1,6 @@
+<!--
+ *×÷Õß£º¹¢ÐË»¶ 
+-->
 <%@ page language="java" contentType="text/html; charset=GBK"%>
 <%@ page import="dbconnection.*"%>
 
@@ -31,8 +34,7 @@ else
 	document.form1.submit();
 }
  
- 
- function ischinese(s){
+function ischinese(s){
 var ret;
 for(var i=0;i<s.length;i++)
 {

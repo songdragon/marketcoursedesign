@@ -1,8 +1,11 @@
+<!--
+ *作者：耿兴欢 
+-->
 <%@ page language="java" contentType="text/html; charset=gb2312"%>
 <%@ page import="dbconnection.*"%>
 <%@ page import="manager.*"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<%@ include file="checksession.jsp" %>
+
 <br>
 <h3 align="center">修改密码</h3>
 <hr width="95%" color="#CCCCCC" size="1px">
