@@ -15,6 +15,16 @@
 <META HTTP-EQUIV="Refresh" CONTENT="3; URL=allmanager.jsp">
 <title>checklogin</title>
 </head>
+<div id=oDiv>2秒后自动返回</div>
+<script language="javascript">
+var i=2;
+function timeReload(){
+  
+     oDiv.innerText="2秒后自动返回，还剩"+i+"秒";
+     i--;
+}
+setInterval("timeReload()",1000);
+</script>
 <%
 String info="0";
 String username=request.getParameter("user_name");
@@ -36,15 +46,16 @@ else{
 	if(bool){
 		out.println("<h1 align='center'>添加成功！</h1>");
 		response.sendRedirect("allmanager.jsp");
-		response.setHeader("Refresh", "3; URL=allmanager.jsp");
+		response.setHeader("Refresh", "2; URL=allmanager.jsp");
 	}
 	else{
 		out.println("<h1 align='center'>添加失败！</h1>");
-		response.setHeader("Refresh", "3; URL=insertmanager.jsp");
+		response.setHeader("Refresh", "2; URL=insertmanager.jsp");
 	}
 }
 
 %>
+
 <body>
 
 </body>

@@ -16,3 +16,12 @@
 <a href="#" target="mainFrame"> &nbsp;&nbsp;销售信息统计</a></div>
 <div id="father4" style="color:blue" >
 <a href="index.jsp" target="_parent" > &nbsp;&nbsp;注销</a></div>
+
+<script type="text/javascript"> 
+function logout(){ 
+<% 
+session.invalidate(); //运用invalidate()比较好，退出时使session失效 
+%> 
+} 
+</script> 
+<input type="button" value="退出登录" onclick="logout()">

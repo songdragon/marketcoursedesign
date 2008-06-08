@@ -4,6 +4,11 @@
 <%@ page language="java" contentType="text/html; charset=gb2312"%>
 <%@ page import="dbconnection.*"%>
 <%@ page import="manager.*"%>
+<%
+if(session.getAttribute("actor").equals("1"))
+	response.sendRedirect("no_right.jsp");
+%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <br>
