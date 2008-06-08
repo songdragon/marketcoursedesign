@@ -11,7 +11,7 @@ type=text/javascript></SCRIPT>
 <DIV class=part_top>
 <UL class=n_main>
   <LI class="m_left"><A href="../index.jsp">首页</A> </LI>
-  <LI class="m_right"><A href="book.jsp">图书</A> 
+  <LI class="m_right"><A href="../book.jsp">图书</A> 
   </LI>
   <LI class="m_right"><A href="../elctr/electron.jsp">电子</A> 
   </LI>

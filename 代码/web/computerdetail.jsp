@@ -6,8 +6,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<LINK href="css/book.css" type=text/css rel=stylesheet>
-<title>无标题文档</title>
+<LINK href="css/book.css" type=text/css rel=stylesheet></LINK>
+<title>电脑详细信息</title>
 </head>
 
 <body>
@@ -26,13 +26,14 @@ String speed="";
 String color="";
 String type="";
 String description="";
-
+String productid="";
 
 %>
 <%
 
+productid=request.getParameter("productid");
 ComputerOperator computeroperator =new ComputerOperator();
-  Iterator iterator=computeroperator.getInformation("5");
+  Iterator iterator=computeroperator.getInformation(productid);
   while(iterator.hasNext()){
 	  ComputerOperator computer=(ComputerOperator)iterator.next();
 	  productsname=computer.getProductsname();
@@ -76,7 +77,7 @@ src="" width=150  />
   <LI>颜色 ：<%=color%></LI>
   <LI>类型 ：<%=type%></LI>
   <LI>速度：<%=speed%></LI></UL>
-  <DIV class=goumai><A title=购买 href="" 
+  <DIV class=goumai><A title=购买 href="shopcart/addProduction.jsp?id=<%= productid %>" 
 name=purchase_bk><IMG src="images/book/booksale.gif"></A></DIV>
 <DIV id=__zhinengbiaozhu_bk>
 <DIV class=dashed></DIV>

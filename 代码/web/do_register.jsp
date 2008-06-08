@@ -1,5 +1,6 @@
 <%@ page import="user.*;"%>
 <%
+	request.setCharacterEncoding("gb2312");
 	CustomerOperator user=new CustomerOperator();
 	String username=request.getParameter("txtNickName");
 	String email=request.getParameter("txtEmail");

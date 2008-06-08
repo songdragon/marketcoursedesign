@@ -4,7 +4,6 @@ public class ProductionInfo {
     private int id;
     private String name;
     private float price;
-    private String photo;
     private float rate;
     public int getId() {
         return id;
@@ -18,9 +17,6 @@ public class ProductionInfo {
         return price;
     }
 
-    public String getPhoto() {
-        return photo;
-    }
     
     public float getRate(){
     	return rate;
@@ -38,9 +34,7 @@ public class ProductionInfo {
         this.price = price;
     }
 
-    public void setPhoto(String photo) {
-        this.photo = photo;
-    }
+   
     
     public void setRate(float rate){
     	this.rate=rate;

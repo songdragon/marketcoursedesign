@@ -199,6 +199,10 @@ A:hover {
 .select_merch A {
 	COLOR: #ff7100; TEXT-DECORATION: none
 }
+.select_clear {
+BACKGROUND: url(../images/bg_dot_long.gif) no-repeat right 4px; FLOAT: left; MARGIN: 8px 0px 0px 12px; WIDTH: 98px; LINE-HEIGHT: 20px; HEIGHT: 34px
+      
+}
 .select_merch A:hover {
 	COLOR: #ff7100; TEXT-DECORATION: underline
 }
