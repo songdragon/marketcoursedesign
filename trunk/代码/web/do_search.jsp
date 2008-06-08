@@ -35,9 +35,7 @@ request.setCharacterEncoding("gb2312");
 	  key=(String)session.getAttribute("key");
   AllOperator alloperator=new AllOperator();
   ResultSet set=alloperator.getPro_by_Proname(key);
- try{ 
-	 out.println(set.getString("productsname"));
-	 }catch(Exception e){}
+ 
 if(intPage< 1){
 intPage = 1; 
 } 
