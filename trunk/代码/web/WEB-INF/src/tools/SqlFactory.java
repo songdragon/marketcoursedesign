@@ -16,5 +16,12 @@ public class SqlFactory extends Factory{
 	public OrderdetailOperator initOrderdetailOperator (){
 		return  new OrderdetailOperator();
 	}
+	
+	public CustomerInterface initUser(){
+		return (CustomerInterface)new CustomerOperator();
+	}
+	public CustomerOperator initCustomerOperator(){
+		return new CustomerOperator();
+	}
 
 }

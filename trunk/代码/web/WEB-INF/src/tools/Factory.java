@@ -25,5 +25,9 @@ public abstract class Factory {
 	public abstract InterfaceOrderdetail initOrderdetail();
 	public abstract OrderdetailOperator initOrderdetailOperator();
 	
+	//声明user包中需要的初始化方法,增加：2008-6-8 13：34
+	public abstract CustomerInterface initUser();
+	public abstract CustomerOperator initCustomerOperator();
+	
 
 }
