@@ -22,8 +22,6 @@
 	conn.excuteQuery(selectall);
 	
 	out.println("<table width='80%' border='1' bordercolor='#CCC000' align='center'>");
-	out.println("<tr><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th>"+
-	"<th>&nbsp;</th><th><a href='insertmanager.jsp'>添加管理员</a></th></tr>");
 	
 	out.println("<tr><th>用户名</th>"+
 			"<th>姓名</th>"+
