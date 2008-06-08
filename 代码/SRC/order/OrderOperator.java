@@ -25,17 +25,12 @@ public class OrderOperator extends OrderAbstract{
 				+receiver+"','"+address+"','"+zipcode+"','"+tel+"','"+state+"',"
 				+orderdate+","+detime+")";
 		DBConnection dbconnection=null;
-		try{
-			dbconnection=new DBConnection();
-			dbconnection.excuteUpdate(sqlStr);
+
+			if(dbconnection.excuteUpdate(sqlStr)!=0)
 			return true;
-		}catch(Exception e){
-			e.printStackTrace();
+	                else
 			return false;
-		}finally{
-			if(dbconnection!=null)
-				dbconnection.Close();
-		}
+		
 
 	}
 
