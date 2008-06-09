@@ -43,7 +43,7 @@ type=text/javascript></SCRIPT>
             <H1>商品搜索</H1><INPUT class=search_text name=key> 
             <DIV id=div01 >
             <UL>
-              <LI class=reduce_l_w><INPUT id=selbook0 type=radio value=0 
+              <LI class=reduce_l_w><INPUT id=selbook0 type=radio CHECKED value=0 
               name=selbook> 商品名</LI>
               <LI><INPUT id=selbook2 type=radio value=2 name=selbook>品牌 </LI>
               <LI><INPUT id=selbook3 type=radio value=3 name=selbook>价格 </LI>

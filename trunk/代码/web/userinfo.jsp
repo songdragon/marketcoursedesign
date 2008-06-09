@@ -5,14 +5,14 @@
 <TR>
 		<td> <div align="center"> <FONT 
               style="FONT-SIZE: 12px"><FONT 
-              color=#cc6600><%out.println(session.getAttribute("username"));%>,您好</FONT></FONT></div></td>
+              color=#cc6600><%out.println(session.getAttribute("user_name"));%>,您好</FONT></FONT></div></td>
         <td>
 		</td>
 		</TR>
 		<TR>
 		<td> <div align="center"><FONT 
               style="FONT-SIZE: 12px"><FONT 
-              color=#cc6600>会员类型
+              color=#cc6600>会员类型:<%=session.getAttribute("user_type") %>
 			  </FONT></FONT></div></td>
         <td > 
         </td>
@@ -20,14 +20,14 @@
 		<TR>
 		<td ><div align="center"><FONT 
               style="FONT-SIZE: 12px"><FONT 
-              color=#cc6600>积分
+              color=#cc6600>积分<%=session.getAttribute("point") %>
 			  </FONT></FONT></div></td>
 			<td></td>
 		</TR>
 		<TR>
 		<td ><div align="center"><FONT 
               style="FONT-SIZE: 12px"><FONT 
-              color=#cc6600>累计消费金额
+              color=#cc6600><a href="mypassword.jsp">修改密码</a>&nbsp;<a href="logout.jsp">注销</a>
 			  </FONT></FONT></div></td>
 			<td></td>
 		</TR>

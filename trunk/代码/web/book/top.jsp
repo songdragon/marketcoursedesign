@@ -43,11 +43,11 @@ type=text/javascript></SCRIPT>
             <H1>商品搜索</H1><INPUT class=search_text name=key> 
             <DIV id=div01 >
             <UL>
-              <LI class=reduce_l_w><INPUT id=selbook1 type=radio value=1 
+              <LI class=reduce_l_w><INPUT id=selbook1 type=radio CHECKED value=1 
               name=selbook> 书名</LI>
               <LI><INPUT id=selbook2 type=radio value=2 name=selbook>作者 </LI>
               <LI><INPUT id=selbook3 type=radio value=3 name=selbook>出版社 </LI>
-              <LI><INPUT id=selbook0 type=radio CHECKED value=0 
+              <LI><INPUT id=selbook0 type=radio  value=0 
               name=selbook>全文
             </LI></UL></DIV>
             

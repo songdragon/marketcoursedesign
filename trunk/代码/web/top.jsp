@@ -13,7 +13,7 @@ type=text/javascript></SCRIPT>
   <LI class="m_left"><A href="index.jsp">首页</A> </LI>
   <LI class="m_right"><A href="book/book.jsp">图书</A> 
   </LI>
-  <LI class="m_right"><A href="elctr/elctronc.jsp">电子</A> 
+  <LI class="m_right"><A href="elctr/electron.jsp">电子</A> 
   </LI>
   <LI class="m_right"><A href="cloth/clothes.jsp">服饰</A> 
   </LI>
@@ -68,7 +68,7 @@ type=text/javascript></SCRIPT>
                 
                 </TR></TBODY></TABLE><!--关键表格结束--></TD></TR>
         <FORM name=searchform onSubmit="return gotosearch();" 
-        action=http://search.dangdang.com/search.aspx method=get>
+        action="searchresult.jsp" method=get>
         <TR>
           <TD align=middle>
             <DIV class=search_main>
@@ -76,22 +76,22 @@ type=text/javascript></SCRIPT>
             <H1>商品搜索</H1><INPUT class=search_text name=key> 
             <DIV id=div01 style="DISPLAY: none">
             <UL>
-              <LI class=reduce_l_w><INPUT id=selbook1 type=radio value=1 
+              <LI class=reduce_l_w><INPUT id=selbook1 type=radio CHECKED value=1 
               name=selbook><SPAN onclick=selectradio(this)> 书名</SPAN> </LI>
               <LI><INPUT id=selbook2 type=radio value=2 name=selbook><SPAN 
               onclick=selectradio(this)> 作者</SPAN> </LI>
               <LI><INPUT id=selbook3 type=radio value=3 name=selbook><SPAN 
               onclick=selectradio(this)> 出版社</SPAN> </LI>
-              <LI><INPUT id=selbook0 type=radio CHECKED value=0 
+              <LI><INPUT id=selbook0 type=radio  value=0 
               name=selbook><SPAN onclick=selectradio(this)> 全文</SPAN> 
             </LI></UL></DIV>
             <DIV id=div03 style="DISPLAY: none">
             <UL>
-              <LI class=reduce_l_w><INPUT id=selmusic1 type=radio value=1 
+              <LI class=reduce_l_w><INPUT id=selmusic0 type=radio  CHECKED value=0
               name=selmusic><SPAN onclick=selectradio(this)> 商品名</SPAN> </LI>
-              <LI><INPUT id=selmusic2 type=radio value=2 name=selmusic><SPAN 
+              <LI><INPUT id=selmusic1 type=radio value=1 name=selmusic><SPAN 
               onclick=selectradio(this)> 品牌</SPAN> </LI>
-              <LI><INPUT id=selmusic3 type=radio value=3 name=selmusic><SPAN 
+              <LI><INPUT id=selmusic2 type=radio value=2 name=selmusic><SPAN 
               onclick=selectradio(this)> 价格</SPAN> </LI>
               <!--<LI><INPUT id=selmusic4 type=radio value=4 name=selmusic><SPAN 
               onclick=selectradio(this)> 曲目</SPAN> </LI>
@@ -100,20 +100,20 @@ type=text/javascript></SCRIPT>
             </LI></UL></DIV>
             <DIV id=div05 style="DISPLAY: none">
             <UL>
-              <LI class=reduce_l_w><INPUT id=selmovie1 type=radio value=1 
-              name=selmovie><SPAN onclick=selectradio(this)> 商品名</SPAN> </LI>
-              <LI><INPUT id=selmovie4 type=radio value=4 name=selmovie><SPAN 
+              <LI class=reduce_l_w><INPUT id=selcloth0 type=radio CHECKED value=0 
+              name=selcloth><SPAN onclick=selectradio(this)> 商品名</SPAN> </LI>
+              <LI><INPUT id=selcloth1 type=radio value=1 name=selcloth><SPAN 
               onclick=selectradio(this)> 品牌</SPAN> </LI>
-              <LI><INPUT id=selmovie2 type=radio value=2 name=selmovie><SPAN 
+              <LI><INPUT id=selcloth2 type=radio value=2 name=selcloth><SPAN 
               onclick=selectradio(this)> 价格</SPAN> </LI>
               <!--<LI><INPUT id=selmovie0 type=radio CHECKED value=0 
               name=selmovie><SPAN onclick=selectradio(this)> 全文</SPAN> -->
             </LI></UL></DIV>
             <DIV id=div07 style="DISPLAY: none">
             <UL>
-              <LI class=reduce_l_w><INPUT id=selmovie1 type=radio value=1 
+              <LI class=reduce_l_w><INPUT id=selmovie0 type=radio CHECKED value=0
               name=selmovie><SPAN onclick=selectradio(this)> 商品名</SPAN> </LI>
-              <LI><INPUT id=selmovie4 type=radio value=4 name=selmovie><SPAN 
+              <LI><INPUT id=selmovie1 type=radio value=1 name=selmovie><SPAN 
               onclick=selectradio(this)> 品牌</SPAN> </LI>
               <LI><INPUT id=selmovie2 type=radio value=2 name=selmovie><SPAN 
               onclick=selectradio(this)> 价格</SPAN> </LI>
