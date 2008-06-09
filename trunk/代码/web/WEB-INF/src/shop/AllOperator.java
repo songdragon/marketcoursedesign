@@ -6,17 +6,22 @@
 package shop;
 
 import dbconnection.DBConnection;
+import java.sql.ResultSet;
 import java.util.*;
 
+
 public class AllOperator extends Products{
-	public static Iterator getPro_by_Proname(String proname){
-		ArrayList arraylist=new ArrayList();
+	public static ResultSet getPro_by_Proname(String proname){
+	//	ArrayList arraylist=new ArrayList();
 		String sqlstr="select * from products_information where productsname='"
 			+proname+"'";
-		AllOperator alloperator=new AllOperator();
+		DBConnection dbc=null;
+		ResultSet rst=null;
+		//AllOperator alloperator=new AllOperator();
 		try{
-			DBConnection dbc=new DBConnection();
-			dbc.excuteQuery(sqlstr);
+			dbc=new DBConnection();
+			rst=dbc.excuteQuery(sqlstr,0);
+			/*
 			while(dbc.next()){
 				alloperator.setProducts_id(dbc.getString("products_id"));
 				alloperator.setProductsname(dbc.getString("productsname"));
@@ -24,10 +29,20 @@ public class AllOperator extends Products{
 				alloperator.setImage(dbc.getString("image"));
 				arraylist.add(alloperator);
 			}
-			return arraylist.iterator();
+			return arraylist.iterator();*/
+			
+			
 		}catch(Exception e){
 			e.printStackTrace();
 			return null;
 		}
+		finally{
+			if(dbc!=null)
+			{
+				//dbc.Close();
+				
+			}
+		}
+		return rst;
 	}
 }
