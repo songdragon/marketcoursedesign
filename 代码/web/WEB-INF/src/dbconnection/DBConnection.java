@@ -114,7 +114,7 @@ public class DBConnection {
 	/*
 	 * 查询用于返回表中行数
 	 */
-	public void excuteQuery(String select,int a){
+	public ResultSet excuteQuery(String select,int a){
 		try{
 			_selstmt = _con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
 			_rst=_selstmt.executeQuery(select);
@@ -122,7 +122,7 @@ public class DBConnection {
 		catch(Exception e){
 			e.printStackTrace();
 		}
-		//return _rst;
+		return _rst;
 	}
 
 	/*
