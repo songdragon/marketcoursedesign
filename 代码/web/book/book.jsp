@@ -53,37 +53,40 @@
           <TD width=6><IMG height=21 alt="" 
             src="../images/left.gif" width=6></TD>
           <TD class=colorbai width="99%" 
-          background=../images/center.gif><SPAN 
-            class=font14>用户登录</SPAN></TD>
+          background=../images/center.gif><div id=userlogin>
+		  <%
+			if(session.getAttribute("logged")==null||session.getAttribute("logged")=="0")
+			{
+			%>
+		  <SPAN class=font14>用户登录</SPAN></div>
+		  <%
+			}
+			else
+			{
+			%>
+          <SPAN class=font14>登陆成功</SPAN><%}%>
+		  </TD>
           <TD width=7><IMG height=21 alt="" 
             src="../images/right.gif" width=6></TD></TR></TBODY></TABLE>
-			<TABLE id=Parent_t cellSpacing=0 cellPadding=0 width="100%" border=0 class="boardlr">
-			
- 		<form action="" method="get" name="login">
-        <TR>
-		<td> <div align="center"> <FONT 
-              style="FONT-SIZE: 12px"><FONT 
-              color=#cc6600>用户名</FONT></FONT></div></td>
-        <td> 
-        <input name="user_name" type="text" class=input id="user_name" style="FONT-SIZE: 12px; WIDTH: 110px" size="10" maxlength="18">
-                </td>
-		</TR>
-		<TR>
-		<td> <div align="center"><FONT 
-              style="FONT-SIZE: 12px"><FONT 
-              color=#cc6600>密码
-			  </FONT></FONT></div></td>
-        <td > 
-        <input style="FONT-SIZE: 12px; WIDTH: 110px" type="password" name="user_pass" size="10" class=input maxlength="18">
-                </td>
-		</TR>
-		<TR>
-		<td colspan="2" nowrap><div align="center">
-        <input type="submit" name="Submit" value="登录">							 
-        <input type="reset" name="resetB" value="重填" onClick=""></div></td>
-		</TR>
-		</form>
-		</TABLE>
+		<%
+			if(session.getAttribute("logged")==null||session.getAttribute("logged")=="0")
+			{
+			%>
+			<%@ include file="../loginform.jsp"%>
+			<%
+			}
+			else
+			{
+			%>
+			<%@ include file="../userinfo.jsp"%>
+			<%}%>
+		
+
+	
+		<div id=userinfo style="display:none">
+		<p><table TABLE id=Parent_t cellSpacing=0 cellPadding=0 width="100%" border=0 class="boardlr">
+		</table>
+		</div>
 		
 		<TABLE cellSpacing=0 cellPadding=0 width="100%"  height="100%" border=0>
         <TBODY>

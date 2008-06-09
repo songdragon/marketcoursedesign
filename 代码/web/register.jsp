@@ -13,7 +13,11 @@ type=text/javascript></SCRIPT>
 
 <!--<SCRIPT src="js/register/trace.js" type=text/javascript></SCRIPT>-->
 </head>
-
+<%
+//作者：宋肇腾
+//时间：2008-06-05
+//功能：用户注册
+%>
 <body>
 <BODY onload=javascript:isCookieEnabled()>
 <FORM id=form1 name=form1  method=post action="do_register.jsp">

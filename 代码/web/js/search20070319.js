@@ -71,8 +71,8 @@ function showtopsearch(sortid,obj)
     document.getElementById("li_sort"+sortid).className=liclassName;
     
 	objfrm.key.className="search_text";
-	if(sortid=="01" || sortid=="05"||sortid=="07") objfrm.key.className="search_text reduce_w2";
-	if(sortid=="03") objfrm.key.className="search_text reduce_w";
+	if(sortid=="01" ) objfrm.key.className="search_text reduce_w2";
+	if(sortid=="03"|| sortid=="05"||sortid=="07") objfrm.key.className="search_text reduce_w";
     var uiarr=["01","03","05","07"];
     for(var i=0;i<uiarr.length;i++){    
     document.getElementById("div"+uiarr[i]).style.display=(sortid==uiarr[i]) ? "" : "none";	    

@@ -47,7 +47,7 @@ function singcheck()
     
        
     var errormsg= document.getElementById("signerror");
-   // var errormsg1= document.getElementById("signerror1");
+   var errormsg1= document.getElementById("signerror1");
     //onticemsg.style.display='none';
 //window.alert(email);
     
@@ -71,4 +71,129 @@ function singcheck()
     {
         document.getElementById("btnSign").click();
     }
+}
+
+
+
+function txtPassword_check()
+{
+    var validnull = requireFieldValid('txtPassword','passwordValidMsg');
+    if(!validnull)
+        return validnull;
+    var validregular = regularExpressionValid('txtPassword',PASSWORD_REGULAR_EXPRESSION,'passwordValidMsg')
+    if(!validregular)
+        return validregular;
+        
+    return true;
+	//return requireFieldValid('txtPassword','passwordValidMsg') && regularExpressionValid('txtPassword',PASSWORD_REGULAR_EXPRESSION,'passwordValidMsg',MSG_PASSWORD_FORMAT_ERROR); 
+}
+function txtRepeatPass_check()
+{
+    var validnull = requireFieldValid('txtRepeatPass','repeatPassValidMsg');
+    if(!validnull)
+        return validnull;
+    var validregular = compareFieldValid('txtRepeatPass','txtPassword','repeatPassValidMsg')
+    if(!validregular)
+        return validregular;
+        
+    return true;
+	//return requireFieldValid('txtRepeatPass','repeatPassValidMsg') && compareFieldValid('txtRepeatPass','txtPassword','repeatPassValidMsg',MSG_PASSWORD_NOT_IDENTICAL);
+}
+
+
+
+
+String.prototype.trim=function() 
+{ 
+	return this.replace(/(\s*$)|(^\s*)/g, ''); 
+} 
+
+
+function requireFieldValid(controlToValidID,msgSpanID,errorMessage)
+{
+    var objControlToValid=document.getElementById(controlToValidID);
+    var objSpan=document.getElementById(msgSpanID);
+    var objMsgSpan = document.getElementById(msgSpanID+"1");
+    var objnullSpan = document.getElementById(msgSpanID+"0");
+    var objserver = document.getElementById(msgSpanID+"2");
+    var isValid=objControlToValid.value.trim()!='';
+    //objMsgSpan.innerHTML=isValid?'':errorMessage;
+    if(!isValid)
+    {
+        objSpan.style.display = "none";
+        objnullSpan.style.display ="block";
+        objMsgSpan.style.display ="none";
+        if(objserver != null)
+        {
+            objserver.style.display ="none";
+        }
+    }
+    else
+    {
+        objSpan.style.display = "block";
+        objnullSpan.style.display ="none";
+        objMsgSpan.style.display ="none";
+        if(objserver != null)
+        {
+            objserver.style.display ="none";
+        }
+    }
+    return isValid;
+}
+
+function compareFieldValid(controlToValidID,compareToValidID,msgSpanID)
+{
+	var objControlToValid=document.getElementById(controlToValidID);
+	var objCompareToValid=document.getElementById(compareToValidID);
+	var objSpan=document.getElementById(msgSpanID);
+	var objMsgSpan=document.getElementById(msgSpanID+"1");
+	var objnullSpan = document.getElementById(msgSpanID+"0");
+	var isValid=objControlToValid.value.trim()==objCompareToValid.value.trim();
+    //objMsgSpan.innerHTML=isValid? '' : errorMessage;
+    if(!isValid)
+    {
+        objSpan.style.display = "none";
+        objnullSpan.style.display ="none";
+        objMsgSpan.style.display ="block";
+    }
+    else
+    {
+        objSpan.style.display = "block";
+        objnullSpan.style.display ="none";
+        objMsgSpan.style.display ="none";
+    }
+    return isValid;
+}
+
+function regularExpressionValid(controlToValidID,validationExpression,msgSpanID)
+{
+    var objRegExp = new RegExp(validationExpression,"g");
+    var objControlToValid=document.getElementById(controlToValidID);
+    var objSpan=document.getElementById(msgSpanID);
+	var objMsgSpan=document.getElementById(msgSpanID+"1");
+    var objnullSpan = document.getElementById(msgSpanID+"0");
+    var objserver = document.getElementById(msgSpanID+"2");
+    var isValid=objRegExp.test(objControlToValid.value);
+    //objMsgSpan.innerHTML=isValid? '' : errorMessage;
+    if(!isValid)
+    {
+        objSpan.style.display = "none";
+        objnullSpan.style.display ="none";
+        objMsgSpan.style.display ="block";
+        if(objserver != null)
+        {
+            objserver.style.display ="none";
+        }
+    }
+    else
+    {
+        objSpan.style.display = "block";
+        objnullSpan.style.display ="none";
+        objMsgSpan.style.display ="none";
+        if(objserver != null)
+        {
+            objserver.style.display ="none";
+        }
+    }
+    return isValid;
 }

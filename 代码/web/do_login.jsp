@@ -1,4 +1,4 @@
-<%@ page language="java" pageEncoding="GB18030"%> 
+<%@ page language="java" pageEncoding="GB2312"%> 
 
 <%@ page import="user.*"%>
 <%@ page import="tools.*" %>

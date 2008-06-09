@@ -55,7 +55,7 @@
           background=images/center.gif>
 		  <div id=userlogin>
 		  <%
-			if(session.getAttribute("username")==null)
+			if(session.getAttribute("logged")==null||session.getAttribute("logged")=="0")
 			{
 			%>
 		  <SPAN class=font14>ÓÃ»§µÇÂ¼</SPAN></div>
@@ -69,7 +69,7 @@
           <TD width=7><IMG height=21 alt="" 
             src="images/right.gif" width=6></TD></TR></TBODY></TABLE>
 			<%
-			if(session.getAttribute("username")==null)
+			if(session.getAttribute("logged")==null||session.getAttribute("logged")=="0")
 			{
 			%>
 			<%@ include file="loginform.jsp"%>

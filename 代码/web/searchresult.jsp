@@ -147,6 +147,7 @@
         width=4></TD></TR></TBODY></TABLE></DIV>
 </td>
 <td id=searchresult_middle >
+<%@ include file="do_search.jsp" %>
 </td>
 </TR>
 </TBODY>
