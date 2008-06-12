@@ -1,7 +1,7 @@
 <%@page language="java" contentType="text/html; charset=GBK"%>
 <%@page import="tools.*" %>
 <%@page import="dbconnection.*" %>
-<%@page import="java.sql.*;"%>
+<%@page import="java.sql.*"%>
 <%@page import="order.*;"%>
 <%
 //作者：江军

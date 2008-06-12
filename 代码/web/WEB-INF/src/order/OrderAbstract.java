@@ -104,10 +104,10 @@ public abstract class OrderAbstract {
 	//自动生成订单号
 	private String NewId(){
 		DBConnection con=new DBConnection();
-		con.excuteQuery("select order_id from order");
+		con.excuteQuery("select order_id from orders",1);
 		int row=con.rows();
 		if(row>0)
-			return String.format("%1$010d", Integer.toString(row));
+			return String.format("%1$,010d", row+1);
 		else return "0000000001";
 	}
 

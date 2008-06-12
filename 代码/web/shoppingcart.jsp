@@ -95,9 +95,10 @@ id=total_economy><%=float2.f2f2(cost) %></SPAN></SPAN><SPAN id=total_vip_economy
 其中享有优惠：<SPAN class=c_red>￥<SPAN id=span_vip_economy><%=float2.f2f2(cost)%></SPAN></SPAN> )</SPAN> 
 <SPAN style="FONT-SIZE: 14px">|</SPAN> <SPAN class=t_add>商品金额总计：</SPAN><SPAN 
 class=c_red_b>￥<SPAN id=total_account><%=num%></SPAN></SPAN></DIV>
-<DIV class=balance id=balance><A ><IMG title=结算 alt=结算 
+<DIV class=balance id=balance><A href="ordercheck.jsp"><IMG title=结算 alt=结算 
 src="images/cart/butt_balance.gif" 
-border=0></A></DIV></DIV></DIV></DIV></DIV>
+border=0></A></DIV></DIV></DIV>
+</form>
 <DIV id=divCartItemsRemoved></DIV>
 <DIV class=objhide id=locListDiv></DIV>
 

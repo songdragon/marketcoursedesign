@@ -16,14 +16,16 @@ public class OrderOperator extends OrderAbstract{
 		String address=order.getAddress();
 		String zipcode=order.getZipcode();
 		String tel=order.getTel();
-		String state=order.getState();
+		//String state=order.getState();
+		String state="Î´·¢";
 		String orderdate=order.getOrderdate();
-		String detime=order.getDetime();
+		//String detime=order.getDetime();
+		String detime="20090909";
 		order.setOrderid();
 		String orderid=order.getOrderid();
-		String sqlStr="insert into order values('"+orderid+"',"+total+",'"+customername+"','"
-				+receiver+"','"+address+"','"+zipcode+"','"+tel+"','"+state+"',"
-				+orderdate+","+detime+")";
+		String sqlStr="insert into orders values('"+orderid+"',"+total+",'"+customername+"','"
+				+receiver+"','"+address+"','"+zipcode+"','"+tel+"','"+state+"','"
+				+orderdate+"','"+detime+"')";
 		DBConnection dbconnection=null;
 		try{
 			dbconnection=new DBConnection();

@@ -44,6 +44,6 @@ if(flag)shoplist.add(buyList);
 session.setAttribute("cart",shoplist);
 %>
 <script language="javascript" type="text/javascript">
-alert("商品已成功添加到购物车");
+window.alert("商品已成功添加到购物车");
 window.location.href="../shoppingcart.jsp";
 </script>

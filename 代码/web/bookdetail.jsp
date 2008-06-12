@@ -22,7 +22,7 @@ String isbn="";
 String publisher="";
 String booksize="";
 String description="";
-String productid="";
+String productid=(String)session.getAttribute("productid");
 %>
 <%
 

@@ -6,7 +6,7 @@
 
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
 <META HTTP-EQUIV="Pragma" CONNECT="no-cache">
 <META HTTP-EQUIV="Cache-Control" CONNECT="no-cache">
 <META HTTP-EQUIV="Expires" CONNECT="0">
@@ -14,6 +14,7 @@
 </head>
 <%
 String info="0";
+request.setCharacterEncoding("gb2312");
 String username=request.getParameter("user_name");
 String password=request.getParameter("user_pwd");
 
