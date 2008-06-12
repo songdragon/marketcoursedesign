@@ -7,6 +7,7 @@ package order;
 import dbconnection.*;
 import java.util.*;
 import tools.*;
+import shopcart.*;
 
 /* 实现商品的读取*/
 public class OrderdetailOperator extends OrderdetailAbstract{
@@ -40,4 +41,31 @@ public class OrderdetailOperator extends OrderdetailAbstract{
 			return null;
 		}
 	}
+	
+	public static boolean  savaOrderDetail(BuyList shop,String orderid){
+		DBConnection conn=null;
+		String sql="insert into order_detail(order_id,products_id,productsname,price,discount,quantity)"+
+					"values (%orderid%,%productid%,%productname%,%price%,%discount%,%quantity%)";
+		String productid=shop.id;
+		String productname=shop.warename;
+		String price=String.valueOf(shop.price);
+		String discount=String.valueOf(shop.rate); 
+		String quantity=String.valueOf(shop.number);
+		
+		try{
+			conn=new DBConnection();
+	     	sql.replace("%orderid%",orderid).replace("%productid%", productid)
+	     		.replace("%productname%", productname)
+	     		.replace("%price%",price)
+	     		.replace("%discount%",discount)
+	     		.replace("%quatity%",quantity);
+	     	conn.excuteQuery(sql);
+	     	return true;
+		}
+		catch(Exception e){
+			return false;
+		}
+	}
+	
+
 }

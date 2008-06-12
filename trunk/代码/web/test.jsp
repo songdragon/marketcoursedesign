@@ -58,3 +58,13 @@ out.println("111"+MD5.toMD5(oldPassword)+"  "+MD5.toMD5(newPassword));
 		customer.setPassword(newPassword);
 	}
 %>
+
+
+<%
+DBConnection con=new DBConnection();
+con.excuteQuery("select order_id from orders",2);
+int row=con.rows();
+if(row>0)
+	out.println( String.format("%1$,010d", row+1));
+else out.println("0000000001");
+%>

@@ -10,6 +10,8 @@
 </head>
 
 <body>
+<SCRIPT src="../js/login/signin.js" 
+type=text/javascript></SCRIPT>
 <TABLE id=homepage_main>
   <TBODY>
   <TR>

@@ -197,10 +197,11 @@
       <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
         <TBODY>
         <TR>
-		<TD class=boardlr style="PADDING-LEFT: 9px; HEIGHT: 17px" 
-            align=left><FONT class=colortuhuang 
-            style="FONT-SIZE: 14px; COLOR: #cc6600"><STRONG>网站公告</STRONG></FONT></TD>
+		<TD class=boardlr style="PADDING-LEFT: 9px; HEIGHT: 22px" 
+            align=left valign="top"><div align="left"><FONT class=colortuhuang 
+            style="FONT-SIZE: 14px; COLOR: #cc6600"><STRONG>网站公告</STRONG></FONT></div></TD>
 		</TR>
+		<TR><td align=left height=30 ><div style="height:25px"><font style="font-size:12px"><br />shopping购物网成立了</font></div></td></TR>
 		</TBODY>
 	</TABLE>
 	</div>

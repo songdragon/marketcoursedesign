@@ -1,18 +1,18 @@
 <!--
  *×÷Õß£º¹¢ÐË»¶ 
 -->
-<%@ page language="java" contentType="text/html; charset=GBK"%>
+<%@ page language="java" contentType="text/html; charset=gb2312"%>
 <%@ page import="dbconnection.*" %>
-<%@ include file="checksession.jsp" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
       "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
 
 <title>¹ÜÀíÔ±ÐÅÏ¢</title>
 </head>
-
+<%@ include file="checksession.jsp" %>
 <%
 	
 	out.println("<h3 align='center'>¹ÜÀíÔ±ÐÅÏ¢ÁÐ±í</h3>"+
@@ -29,7 +29,7 @@
 	out.println("<tr><th>ÓÃ»§Ãû</th>"+
 			"<th>ÐÕÃû</th>"+
 			"<th>½ÇÉ«</th>"+"<th>&nbsp;</th><th>&nbsp;</th></tr>");
-	String actor=new String();
+	String actor="";
 	while(conn.next()){
 		out.println("<tr>");
 		out.println("<th>"+conn.getString(1)+"</th><th>"+conn.getString(2));

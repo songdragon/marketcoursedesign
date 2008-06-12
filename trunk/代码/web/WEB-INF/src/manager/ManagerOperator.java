@@ -32,8 +32,9 @@ public class ManagerOperator extends ManagerAbstract{
 	/*—È÷§√‹¬Î*/
 	public boolean checkPassword(String password){
 		MD5 md5=new MD5();
-		String pwd=password;//md5.getMD5ofStr(password);                   
-		if(getPassword().equals(password)){
+		String pwd=md5.getMD5ofStr(password); 
+		String pwd1=getPassword();
+		if(pwd1.equals(pwd)){
 			return true;
 		}
 		else{

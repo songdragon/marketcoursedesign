@@ -24,4 +24,4 @@ session.invalidate(); //运用invalidate()比较好，退出时使session失效
 %> 
 } 
 </script> 
-<input type="button" value="退出登录" onclick="logout()">
+<!--<input type="button" value="退出登录" onclick="logout()">-->

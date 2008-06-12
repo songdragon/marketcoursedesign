@@ -15,7 +15,7 @@ if(document.form1.user_name.value==""){
 	alert("用户名不能为空！");
 }
 else if(document.form1.user_pwd.value==""){
-	alert("密码不能为空！");
+	alert("密码不能为空");
 }
 else 
 	document.form1.submit();
@@ -59,7 +59,7 @@ session.removeAttribute("info");
   <input type=button name="" onClick="checkform()" value="登录">
 <input type="reset" name="resetB" value="重填" onClick=""></Td>
 </TR>
-</TR>
+
 </table>
 </form>
 </body>

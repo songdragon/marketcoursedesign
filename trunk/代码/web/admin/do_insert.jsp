@@ -45,7 +45,7 @@ else{
 	bool=mo.insertManager(username,managerrelname,password,actor);
 	if(bool){
 		out.println("<h1 align='center'>Ìí¼Ó³É¹¦£¡</h1>");
-		response.sendRedirect("allmanager.jsp");
+		//response.sendRedirect("allmanager.jsp");
 		response.setHeader("Refresh", "2; URL=allmanager.jsp");
 	}
 	else{
