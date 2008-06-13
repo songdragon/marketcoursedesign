@@ -10,6 +10,6 @@ function timeReload(){
 setInterval("timeReload()",1000);
 </script>
 <% 
-out.println("<h3 align='center'>您无权修改!请找系统管理员修改</h3>");
-response.setHeader("Refresh", "2; URL=main2.jsp");
+out.println("<h3 align='center'>您的权限不够！！</h3>");
+response.setHeader("Refresh", "2; URL=resend.jsp");
 %>

@@ -1,8 +1,17 @@
 <!--
  *作者：耿兴欢 
 -->
-<%@ page language="java" contentType="text/html; charset=GBK"%>
+<%@ page language="java" contentType="text/html; charset=gb2312"%>
 <%@ page import="dbconnection.*"%>
+ 
+<%
+String admin=null;
+admin=request.getParameter("admin");
+if(admin!=null)
+	session.setAttribute("admin",admin);
+if(session.getAttribute("admin")==null)
+	response.sendRedirect("no_right.jsp");	
+%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -12,7 +21,7 @@
 <title>添加管理员</title>
 </head>
 
-<script type=text/javascript>
+<script type="text/javascript">
 function checkform1(){
 if(document.form1.user_name.value==""||!(document.form1.user_name.value).indexOf("/")||!
 (document.form1.user_name.value).indexOf(".")||ischinese(document.form1.user_name.value)){
@@ -20,7 +29,7 @@ if(document.form1.user_name.value==""||!(document.form1.user_name.value).indexOf
 }
 else if(document.form1.user_relname.value==""){
 	alert("密码为空！");
-}else if(document.form1.user_pwd.value==""||(document.form1.user_pwd.value).length<6){
+}else if(document.form1.user_pwd.value==""||(document.form1.user_pwd.value).length<6||(document.form1.user_pwd.value).length>18){
 	alert("密码为空或太短，为了安全请重新填写！");
 	document.form1.user_pwd.focus();
 }else if(document.form1.user_ckpwd.value==""||document.form1.user_ckpwd.value

@@ -16,5 +16,5 @@
 <div id="father4" style="color:blue" >
 <a href="#" target="mainFrame"> &nbsp;&nbsp;销售信息统计</a></div>
 <div id="father4" style="color:blue" >
-<a href="index.jsp" target="_parent"> &nbsp;&nbsp;注销</a></div>
+<a href="logout.jsp" target="_parent"> &nbsp;&nbsp;注销</a></div>
 

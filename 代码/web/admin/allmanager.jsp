@@ -3,6 +3,15 @@
 -->
 <%@ page language="java" contentType="text/html; charset=gb2312"%>
 <%@ page import="dbconnection.*" %>
+<!-- check 权限 -->
+<%
+String admin=null;
+admin=request.getParameter("admin");
+if(admin!=null)
+	session.setAttribute("admin",admin);
+if(session.getAttribute("admin")==null)
+	response.sendRedirect("no_right.jsp");
+%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
       "http://www.w3.org/TR/html4/loose.dtd">
@@ -12,7 +21,7 @@
 
 <title>管理员信息</title>
 </head>
-<%@ include file="checksession.jsp" %>
+
 <%
 	
 	out.println("<h3 align='center'>管理员信息列表</h3>"+
@@ -37,9 +46,9 @@
 			actor="系统管理员";
 		else if(conn.getString(4).equals("1"))
 			actor="后台管理员";
-		out.println("</th><th>"+actor+"</th>&nbsp;"+
+		out.println("</th><th>"+actor+"</th>"+
 				"<th align='center'><a href='deluser.jsp?username="+    //删除
-				conn.getString(1)+"'>删除</a>&nbsp;</th>"+
+				conn.getString(1)+"'>删除</a></th>"+
 				"<th align='center'><a href='changepwd.jsp?username="+    //修改密码
 						conn.getString(1)+"'>修改密码</a>&nbsp;</th>");
 		out.println("</tr>");	
