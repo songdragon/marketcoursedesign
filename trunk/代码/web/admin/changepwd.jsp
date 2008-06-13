@@ -4,9 +4,22 @@
 <%@ page language="java" contentType="text/html; charset=gb2312"%>
 <%@ page import="dbconnection.*"%>
 <%@ page import="manager.*"%>
+<!-- check 权限 -->
 <%
-if(session.getAttribute("actor").equals("1"))
+String admin=null;
+admin=request.getParameter("admin");
+if(admin!=null)
+	session.setAttribute("admin",admin);
+if(session.getAttribute("admin")==null)
+	response.sendRedirect("no_right.jsp");	
+
+String actor=(String)session.getAttribute("actor");
+if(("1").equals(actor))
 	response.sendRedirect("no_right.jsp");
+
+String name=request.getParameter("username");       //获取用户名
+if(name==null)
+	name="";
 %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -16,7 +29,9 @@ if(session.getAttribute("actor").equals("1"))
 <hr width="95%" color="#CCCCCC" size="1px">
 <script type=text/javascript>
 function checkform(){
-	if(document.form1.user_pwd.value==""||(document.form1.user_pwd.value).length<6){
+	if(document.form1.user_name.value=="")
+		alert("请输入用户名！");
+	else if(document.form1.user_pwd.value==""||(document.form1.user_pwd.value).length<6){
 		alert("密码为空或太短，为了安全请重新填写！");
 		document.form1.user_pwd.focus();
 	}
@@ -35,18 +50,25 @@ function checkform(){
 
 <form method=post action="do_changepwd.jsp" name="form1" id="form1">
 
-<table align=center width=200px>
+<table align=center width=400px>
 
 <TR>
 <TD>
 <label>用户名:</label>
 </TD>
 <td>
-<%out.println(request.getParameter("username"));
+<input name="user_name" type="text" id="user_name" value="<%=name%>"
+	style="FONT-SIZE: 12px; WIDTH: 110px" size="10" maxlength="18">
+
+<%
+
 	if(session.getAttribute("adminpwdchg")==null)
 		session.setAttribute("adminpwdchg",request.getParameter("username"));
-	%>
+%>
 
+</td>
+<td align=left>
+<font size=2 color='red'>用户名不能为中文和特殊字符</font>
 </td>
 </TR>
 
@@ -56,6 +78,9 @@ function checkform(){
 <TD>
 <input name="user_pwd" type="password" id="user_pwd" style="FONT-SIZE: 12px; WIDTH: 110px" size="10" maxlength="18">
 </TD>
+<td>
+<font size=2 color='red'>密码长度为6-18个字符</font>
+</td>
 </TR>
 
 <TR>

@@ -11,8 +11,8 @@
 <META HTTP-EQUIV="Cache-Control" CONNECT="no-cache">
 <META HTTP-EQUIV="Expires" CONNECT="0">
 
-<META HTTP-EQUIV="Refresh" CONTENT="3; URL=insertmanager.jsp">
-<META HTTP-EQUIV="Refresh" CONTENT="3; URL=allmanager.jsp">
+<META HTTP-EQUIV="Refresh" CONTENT="2; URL=insertmanager.jsp">
+<META HTTP-EQUIV="Refresh" CONTENT="2; URL=allmanager.jsp">
 <title>checklogin</title>
 </head>
 <div id=oDiv>2秒后自动返回</div>
@@ -42,6 +42,8 @@ if(bool){                      //用户名已存在
 
 }
 else{
+	out.println("username="+username+",managerrelname="+managerrelname+
+				",password="+password+",actor="+actor);
 	bool=mo.insertManager(username,managerrelname,password,actor);
 	if(bool){
 		out.println("<h1 align='center'>添加成功！</h1>");

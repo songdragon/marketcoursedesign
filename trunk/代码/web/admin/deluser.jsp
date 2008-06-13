@@ -15,6 +15,16 @@
 
 <title>删除管理员信息</title>
 </head>
+<!-- check 权限 -->
+<%
+String admin=null;
+admin=request.getParameter("admin");
+if(admin!=null)
+	session.setAttribute("admin",admin);
+if(session.getAttribute("admin")==null)
+	response.sendRedirect("no_right.jsp");	
+%>
+
 
 <div id=oDiv>2秒后自动返回</div>
 <script language="javascript">
@@ -31,7 +41,10 @@ setInterval("timeReload()",1000);
 <br>
 <hr width="95%" color="#CCCCCC" size="1px">
 <%
-String username=request.getParameter("username");
+String username=null;
+username=request.getParameter("username");
+if(username==null)
+	username="";
 if(username.equals("admin")){
 	out.println("<h3 align='center'>该账户不允许删除！</h3>");
 }
