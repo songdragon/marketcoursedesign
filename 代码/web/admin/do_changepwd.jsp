@@ -24,9 +24,10 @@ setInterval("timeReload()",1000);
 <br>
 <hr width="95%" color="#CCCCCC" size="1px">
 <%
-String username=(String)session.getAttribute("adminpwdchg");
+String username=request.getParameter("user_name");
 String password=request.getParameter("user_pwd");
 ManagerOperator mo=new ManagerOperator();
+
 if(mo.updateManagerpassword(username,password))
 {
 	out.println("<h3 align='center'>ÐÞ¸Ä³É¹¦£¡</h3>");
