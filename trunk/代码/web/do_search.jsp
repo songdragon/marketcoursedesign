@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=gb2312" language="java" pageEncoding="GB18030"%>
+<%@ page contentType="text/html; charset=gb2312" language="java" %>
 <%@ page import="shop.*"%>
 <%@ page import="java.sql.*"%>
 <%
@@ -8,6 +8,8 @@
 %>
 
 <%
+	request.setCharacterEncoding("gb2312");
+    String key=request.getParameter("key");
  // public bs=rs.getString("leiID");
   int intPageSize; //一页显示的记录数
   int intRowCount; //记录总数 
@@ -29,12 +31,12 @@ if(strPage==null){//表明在QueryString中没有page这一个参数，此时显示第一页数据
   } else{//将字符串转换成整型 
         intPage = java.lang.Integer.parseInt(strPage); 
      }
-request.setCharacterEncoding("gb2312");
-  String key=request.getParameter("key");
+
+  
   if(key==null)
 	  key=(String)session.getAttribute("key");
   AllOperator alloperator=new AllOperator();
-  ResultSet set=alloperator.getPro_by_Proname(key);
+  ResultSet set=alloperator.getPro_by_Proname(key);  
  
 if(intPage< 1){
 intPage = 1; 
@@ -61,14 +63,14 @@ String bgcolor="#ffffff";
 int k=1;
 try{while(i< intPageSize && !set.isAfterLast()){
 %>
-        
-        <tr valign="middle" bgcolor="<%=bgcolor%>" height="25">
-<td width="364" height="18" ><div align="center"><a href=# onClick="MM_openBrWindow('../browbook.jsp?id=','','width=400,height=550')"><%=set.getString("productsname")%></a></div></td>
+
+        <tr valign="middle" bgcolor=<%=bgcolor%> height="25">
+<td width="364" height="24" ><div align="center"><a href=# ><%=set.getString("productsname")%></a></div></td>
 <td><%=set.getString("type_id")%></td>
 <td><div align="center">￥<%=set.getString("price")%>元</div></td>
 <td width="137"><%=set.getString("products_id")%></td>
 
-  <td colspan="2" nowrap><div align="center"><a href="#">修 改</a>/<a href="#">删 除</a></div>    </td>
+  <td colspan="2" nowrap><div align="center"><a href="shopcart/addProduction.jsp?id=<%=set.getString("products_id")%>" >购买</a></div>    </td>
   </tr>
         <tr>
           <td height=1 colspan="5" background="../image/dian.gif"><img src="../images/blank.gif" width=378 height=1></td>
@@ -92,5 +94,5 @@ set.close();
 共<%=intRowCount%>个记录,分<%=intPageCount%>页显示,您所在本页是:第<%=intPage%>页
 <%for(int j=1;j<=intPageCount;j++)
 {	
-	out.print("&nbsp;&nbsp;<a href='do_search.jsp?page="+j+"'>"+j+"</a>");
+	out.print("&nbsp;&nbsp;<a href='searchresult.jsp?page="+j+"'>"+j+"</a>");
 }%>
