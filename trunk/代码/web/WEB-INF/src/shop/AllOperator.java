@@ -5,7 +5,7 @@
  */
 package shop;
 
-import dbconnection.DBConnection;
+import dbconnection.*; 
 import java.sql.ResultSet;
 import java.util.*;
 
@@ -13,8 +13,8 @@ import java.util.*;
 public class AllOperator extends Products{
 	public static ResultSet getPro_by_Proname(String proname){
 	//	ArrayList arraylist=new ArrayList();
-		String sqlstr="select * from products_information where productsname='"
-			+proname+"'";
+		String sqlstr="select * from products_information where productsname like'%"
+			+proname+"%'";
 		DBConnection dbc=null;
 		ResultSet rst=null;
 		//AllOperator alloperator=new AllOperator();
