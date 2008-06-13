@@ -42,8 +42,7 @@ if(bool){                      //用户名已存在
 
 }
 else{
-	out.println("username="+username+",managerrelname="+managerrelname+
-				",password="+password+",actor="+actor);
+
 	bool=mo.insertManager(username,managerrelname,password,actor);
 	if(bool){
 		out.println("<h1 align='center'>添加成功！</h1>");

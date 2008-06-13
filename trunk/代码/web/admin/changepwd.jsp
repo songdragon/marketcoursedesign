@@ -60,11 +60,6 @@ function checkform(){
 <input name="user_name" type="text" id="user_name" value="<%=name%>"
 	style="FONT-SIZE: 12px; WIDTH: 110px" size="10" maxlength="18">
 
-<%
-
-	if(session.getAttribute("adminpwdchg")==null)
-		session.setAttribute("adminpwdchg",request.getParameter("username"));
-%>
 
 </td>
 <td align=left>
