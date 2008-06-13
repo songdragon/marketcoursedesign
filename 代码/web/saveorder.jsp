@@ -50,7 +50,7 @@
 	List shopList= (List) session.getAttribute("cart");
  	for (int i = 0; i < shopList.size(); i++) {
      	BuyList shop = (BuyList) shopList.get(i);
-     	if(!OrderdetailOperator.savaOrderDetail(shop,orderid){
+     	if(!OrderdetailOperator.savaOrderDetail(shop,myorder.getOrderdate())){
      		out.println("error");
      		response.sendRedirect("error.jsp");
      		break;

@@ -56,9 +56,10 @@
             class=font14>ÓÃ»§µÇÂ¼</SPAN></TD>
           <TD width=7><IMG height=21 alt="" 
             src="images/right.gif" width=6></TD></TR></TBODY></TABLE>
+            <form action="../do_login.jsp" method=post name="login">
 			<TABLE id=Parent_t cellSpacing=0 cellPadding=0 width="100%" border=0 class="boardlr">
 			
- 		<form action="" method="get" name="login">
+ 		
         <TR>
 		<td> <div align="center"> <FONT 
               style="FONT-SIZE: 12px"><FONT 
@@ -81,8 +82,9 @@
         <input type="submit" name="Submit" value="µÇÂ¼">							 
         <input type="reset" name="resetB" value="ÖØÌî" onClick=""></div></td>
 		</TR>
-		</form>
+		
 		</TABLE>
+		</form>
 <TABLE cellSpacing=0 cellPadding=0 width="100%" height="100%" border=0>
         <TBODY>
         <TR>
@@ -147,7 +149,16 @@
         width=4></TD></TR></TBODY></TABLE></DIV>
 </td>
 <td id=searchresult_middle >
-<%@ include file="do_search.jsp" %>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+		<TD>
+ <%@ include file="do_search.jsp" %>
+</td>
+</tr>
+</tbody>
+</table>
+
 </td>
 </TR>
 </TBODY>

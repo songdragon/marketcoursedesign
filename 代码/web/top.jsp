@@ -67,8 +67,8 @@ type=text/javascript></SCRIPT>
                   </LI></UL></DIV></TD>
                 
                 </TR></TBODY></TABLE><!--关键表格结束--></TD></TR>
-        <FORM name=searchform onSubmit="return gotosearch();" 
-        action="searchresult.jsp" method=get>
+        <FORM name=searchform 
+        action="searchresult.jsp" method=post>
         <TR>
           <TD align=middle>
             <DIV class=search_main>

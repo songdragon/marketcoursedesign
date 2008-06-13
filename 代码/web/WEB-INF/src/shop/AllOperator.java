@@ -45,4 +45,41 @@ public class AllOperator extends Products{
 		}
 		return rst;
 	}
+
+
+
+	public static ResultSet getPro_by_ID(String id){
+		//	ArrayList arraylist=new ArrayList();
+			String sqlstr="select * from products_information where products_id = '"
+				+id+"'";
+			DBConnection dbc=null;
+			ResultSet rst=null;
+			//AllOperator alloperator=new AllOperator();
+			try{
+				dbc=new DBConnection();
+				rst=dbc.excuteQuery(sqlstr,0);
+				/*
+				while(dbc.next()){
+					alloperator.setProducts_id(dbc.getString("products_id"));
+					alloperator.setProductsname(dbc.getString("productsname"));
+				    alloperator.setPrice(dbc.getFloat("price"));
+					alloperator.setImage(dbc.getString("image"));
+					arraylist.add(alloperator);
+				}
+				return arraylist.iterator();*/
+				
+				
+			}catch(Exception e){
+				e.printStackTrace();
+				return null;
+			}
+			finally{
+				if(dbc!=null)
+				{
+					//dbc.Close();
+					
+				}
+			}
+			return rst;
+		}
 }

@@ -33,13 +33,15 @@
 			String usertype=userinterface.getCustomType();
 			Integer point=userinterface.getPoint();
 		session.setAttribute("logged",logged);
+		session.setAttribute("point",point);
 		session.setAttribute("user_name",username);
 		session.setAttribute("user_type",usertype);
-		session.setAttribute("user_point",point);
+		
 		}
 	}
 	else                    //µÇÂ¼²»³É¹¦
 		session.setAttribute("logged",logged);
 	response.sendRedirect("index.jsp");
+	
 	
 %>

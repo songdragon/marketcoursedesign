@@ -19,6 +19,8 @@
 	if(CustomerOperator.saveUser((CustomerAbstract)user)){ //注册成功，跳转到首页
 		session.setAttribute("user_name",username);
 		session.setAttribute("logged","1");
+		session.setAttribute("user_type","普通");
+		session.setAttribute("point",0);
 		response.sendRedirect("success_register.jsp");
 	
 		
