@@ -1,4 +1,6 @@
-<%@ page contentType="text/html; charset=gb2312" language="java" import="java.sql.*" errorPage="" %>
+<%@ page contentType="text/html; charset=gb2312" language="java"  errorPage="" %>
+<%@ page import="java.sql.*"%>
+<%@ page import="dbconnection.*"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <%@ include file="top.jsp"%>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -151,7 +153,7 @@
             src="images/06default_0726_03_2.gif" 
         width=4></TD></TR></TBODY></TABLE></DIV>
 </td>
-<td id=homepage_middle >
+<td id=homepage_middle valign="top">
 <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0 >
         <TBODY>
         <TR>
@@ -160,9 +162,21 @@
             class=bigtuhuang><IMG 
             src="images/ll060828_lanmu.gif">商品推荐</SPAN></A>
 			</DIV>
+			<div class=adTitle2>
             <TABLE id=UCAdRotate1_dlstRotate__ctl0__ctl0_dlstRotateItems 
-            cellSpacing=4 cellPadding=0 border=0>
+            cellSpacing=4 cellPadding=0 border=0 width="100%">
+			<tr>
+			<td width="33%" align="center"><img src="pic/elctr/T1.VNbXc0XLMxXXXXX.jpg_100x100.jpg" height="140" width="160"></td>
+			<td width="33%" align="center"><img src="pic/cloth/4.bmp" height="140" width="160" /> </td>
+			<td width="33%" align="center"><img src="pic/makeup/7195.jpg" height="140" width="160" /></td>
+			</tr>
+			<tr>
+			<td width="33%" align="center"></td>
+			<td width="33%" align="center"><a href="dressdetail.jsp?productid=0000000004" target="_blank">Levi's T恤</a></td>
+			<td width="33%" align="center"></td>
+			</tr>
 			</TABLE>
+			</div>
 </TD></TR></TBODY></TABLE>
 
 <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0 >
@@ -173,9 +187,21 @@
             class=bigtuhuang><IMG 
             src="images/ll060828_lanmu.gif">新品上架</SPAN></A>
 		</DIV>
+		<div class=adTitle2>
             <TABLE id=UCAdRotate1_dlstRotate__ctl0__ctl0_dlstRotateItems 
-            cellSpacing=4 cellPadding=0 border=0>
+            cellSpacing=4 cellPadding=0 border=0 width="100%">
+			<tr>
+			<td width="33%" align="center"><img src="pic/elctr/T1.VNbXc0XLMxXXXXX.jpg_100x100.jpg" height="140" width="160"></td>
+			<td width="33%" align="center"><img src="pic/cloth/4.bmp" height="140" width="160" /> </td>
+			<td width="33%" align="center"><img src="pic/makeup/7195.jpg" height="140" width="160" /></td>
+			</tr>
+			<tr>
+			<td width="33%" align="center"></td>
+			<td width="33%" align="center"><a href="dressdetail.jsp?productid=0000000004" target="_blank">Levi's T恤</a></td>
+			<td width="33%" align="center"></td>
+			</tr>
 			</TABLE>
+		</div>
 </TD></TR></TBODY></TABLE>
 
 <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
@@ -186,9 +212,21 @@
             class=bigtuhuang><IMG 
             src="images/ll060828_lanmu.gif">热销商品</SPAN></A>
 			</DIV>
+			<div class=adTitle2>
             <TABLE id=UCAdRotate1_dlstRotate__ctl0__ctl0_dlstRotateItems 
-            cellSpacing=4 cellPadding=0 border=0>
+            cellSpacing=4 cellPadding=0 border=0 width="100%">
+			<tr>
+			<td width="33%" align="center"><img src="pic/elctr/T1.VNbXc0XLMxXXXXX.jpg_100x100.jpg" height="140" width="160"></td>
+			<td width="33%" align="center"><img src="pic/cloth/4.bmp" height="140" width="160" /> </td>
+			<td width="33%" align="center"><img src="pic/makeup/7195.jpg" height="140" width="160" /></td>
+			</tr>
+			<tr>
+			<td width="33%" align="center"></td>
+			<td width="33%" align="center"><a href="dressdetail.jsp?productid=0000000004" target="_blank">Levi's T恤</a></td>
+			<td width="33%" align="center"></td>
+			</tr>
 			</TABLE>
+			</div>
 </TD></TR></TBODY></TABLE>
 
 </td>
@@ -215,8 +253,21 @@
             10</FONT></TD>
 	  </TR>
 	  <TR>
-	  <!--<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
-	  </TABLE>-->
+	  <td>
+	  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+	  <% 
+	  	DBConnection con=new DBConnection();
+		String sql="select productsname,products_id from books";
+		ResultSet rst=con.excuteQuery(sql,0);
+		int i=1;
+		while(rst.next()){
+			out.println("<tr align=left><td ><div style='height:20px;padding-top:3px' ><font style='font-size:12px'>"+i+"."+"<a  href='bookdetail.jsp?productid="+rst.getString("products_id")+"' target='_blank'>"+rst.getString("productsname")+"</a></font></div></td></tr>");
+			i++;
+		}
+		
+	  %>
+	  </TABLE>
+	  </td>
 	  </TR>
 	  </TABLE>
 	</div>
@@ -230,6 +281,21 @@
             style="FONT-SIZE: 14px; COLOR: #cc6600"><STRONG>服饰排行榜</STRONG>&nbsp;TOP 
             10</FONT></TD>
         </TR>
+		 <TR>
+	  <td>
+	  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+	  <%
+		sql="select productsname,products_id from dresses";
+		rst=con.excuteQuery(sql,0);
+		i=1;
+		while(rst.next()){
+			out.println("<tr align=left><td ><div style='height:20px;padding-top:3px' ><font style='font-size:12px'>"+i+"."+"<a  href='dressdetail.jsp?productid="+rst.getString("products_id")+"' target='_blank'>"+rst.getString("productsname")+"</a></font></div></td></tr>");
+			i++;
+		}
+	  %>
+	  </TABLE>
+	  </td>
+	  </TR>
         </TBODY></TABLE>
 		</div>
 		
@@ -242,6 +308,21 @@
             style="FONT-SIZE: 14px; COLOR: #cc6600"><STRONG>化妆品排行榜</STRONG>&nbsp;TOP 
             10</FONT></TD>
         </TR>
+		 <TR>
+	  <td>
+	  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+	  <%
+		sql="select productsname,products_id from makeups";
+		rst=con.excuteQuery(sql,0);
+		i=1;
+		while(rst.next()){
+			out.println("<tr align=left><td ><div style='height:20px;padding-top:3px' ><font style='font-size:12px'>"+i+"."+"<a  href='makeupdetail.jsp?productid="+rst.getString("products_id")+"' target='_blank'>"+rst.getString("productsname")+"</a></font></div></td></tr>");
+			i++;
+		}
+	  %>
+	  </TABLE>
+	  </td>
+	  </TR>
         </TBODY></TABLE>
 		</div>
 		
@@ -254,6 +335,22 @@
             style="FONT-SIZE: 14px; COLOR: #cc6600"><STRONG>电子排行榜</STRONG>&nbsp;TOP 
             10</FONT></TD>
         </TR>
+		 <TR>
+	  <td>
+	  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+	  <%
+		sql="select top 10 productsname,products_id from computers union select top 10 productsname,products_id from mobiles";
+		rst=con.excuteQuery(sql,0);
+		i=1;
+		while(rst.next()){
+			out.println("<tr align=left><td ><div style='height:20px;padding-top:3px' ><font style='font-size:12px'>"+i+"."+rst.getString("productsname")+"</a></font></div></td></tr>");
+			i++;
+		}
+		con.Close();
+	  %>
+	  </TABLE>
+	  </td>
+	  </TR>
         </TBODY></TABLE>
 		</div>
 </td>

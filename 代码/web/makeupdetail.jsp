@@ -28,7 +28,7 @@ String productid="";
 
 %>
 <%
-productid=request.getParameter("id");
+productid=request.getParameter("productid");
 MakeupOperator makeupoperator=new MakeupOperator();
   Iterator iterator=makeupoperator.getInformation(productid);
   while(iterator.hasNext()){

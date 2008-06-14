@@ -83,7 +83,7 @@ type=text/javascript></SCRIPT>
               <LI><INPUT id=selbook3 type=radio value=3 name=selbook><SPAN 
               onclick=selectradio(this)> 出版社</SPAN> </LI>
               <LI><INPUT id=selbook0 type=radio  value=0 
-              name=selbook><SPAN onclick=selectradio(this)> 全文</SPAN> 
+              name=selbook><SPAN onclick=selectradio(this)>简介</SPAN> 
             </LI></UL></DIV>
             <DIV id=div03 style="DISPLAY: none">
             <UL>

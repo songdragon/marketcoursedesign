@@ -48,8 +48,9 @@ type=text/javascript></SCRIPT>
               <LI><INPUT id=selbook2 type=radio value=2 name=selbook>作者 </LI>
               <LI><INPUT id=selbook3 type=radio value=3 name=selbook>出版社 </LI>
               <LI><INPUT id=selbook0 type=radio  value=0 
-              name=selbook>全文
-            </LI></UL></DIV>
+              name=selbook>简介
+            </LI>
+            </UL></DIV>
             
 	    <INPUT class=search_button id=search_btn_top type=submit value=在图书商品中搜> 
             </DIV>

@@ -22,12 +22,12 @@ String isbn="";
 String publisher="";
 String booksize="";
 String description="";
-String productid=(String)session.getAttribute("productid");
+String productid=request.getParameter("productid");
 %>
 <%
 
 BookOperator bookoperator=new BookOperator();
-  Iterator iterator=bookoperator.getInformation("15");
+  Iterator iterator=bookoperator.getInformation(productid);
   while(iterator.hasNext()){
 	  BookOperator book=(BookOperator)iterator.next();
 	  productsname=book.getProductsname();
