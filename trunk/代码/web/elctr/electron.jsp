@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=gb2312" language="java" import="java.sql.*" errorPage="" %>
+<%@ page import="dbconnection.*"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <%@ include file="top.jsp"%>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -100,10 +101,56 @@ type=text/javascript></SCRIPT>
           background=../images/center.gif><SPAN 
             class=font14>电子销售TOP10</SPAN></TD>
           <TD width=7><IMG height=21 alt="" 
-            src="../images/right.gif" width=6></TD></TR></TBODY></TABLE></div>
+            src="../images/right.gif" width=6></TD></TR>
+			 <TR>
+	  <td colspan="3">
+	  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+	  <%
+	  	DBConnection con=new DBConnection();
+		String sql="select top 10 productsname,products_id from computers union select top 10 productsname,products_id from mobiles";
+		ResultSet rst=con.excuteQuery(sql,0);
+		int i=1;
+		while(rst.next()){
+			out.println("<tr align=left><td ><div style='height:20px;padding-top:3px' ><font style='font-size:12px'>"+i+"."+rst.getString("productsname")+"</a></font></div></td></tr>");
+			i++;
+		}
+		con.Close();
+	  %>
+	  </TABLE>
+	  </td>
+	  </TR>
+			
+			
+			</TBODY></TABLE></div>
 
 </TD>
-<TD class=searchresult_middle>
+<TD class=searchresult_middle valign="top">
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0 >
+        <TBODY>
+        <TR>
+		<TD>
+          <DIV class=adTitle0><A href=""><SPAN 
+            class=bigtuhuang><IMG 
+            src="../images/ll060828_lanmu.gif">电子消费</SPAN></A>
+			</DIV>
+			<div class=adTitle2>
+            <TABLE id=UCAdRotate1_dlstRotate__ctl0__ctl0_dlstRotateItems 
+            cellSpacing=4 cellPadding=0 border=0 width="100%">
+			<tr>
+			<td width="33%" align="center"><img src="../pic/makeup/7159.jpg" height="140" width="160"></td>
+			<td width="33%" align="center"><img src="../pic/cloth/4.bmp" height="140" width="160" /> </td>
+			<td width="33%" align="center"><img src="../pic/cloth/6.bmp" height="140" width="160" /></td>
+			</tr>
+			<tr>
+			<td width="33%" align="center"><a href="makeupdetail.jsp?productid=0000000001" target="_blank">微可短裤</a></td>
+			<td width="33%" align="center"><a href="makeupdetail.jsp?productid=0000000004" target="_blank">Levi's T恤</a></td>
+			<td width="33%" align="center"><a href="makeupdetail.jsp?productid=0000000041" target="_blank">Levi's 长裤</a></td>
+			</tr>
+			</TABLE>
+			</div>
+</TD></TR></TBODY></TABLE>
+
+
 </TD>
 </TR>
 

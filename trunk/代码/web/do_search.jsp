@@ -18,8 +18,9 @@
   int intPage; //待显示页码 
   String  strPage; 
   int i; 
+  String typeid;
   //设置一页显示的记录数 
- intPageSize =5; 
+ intPageSize =10; 
 //取得待显示页码 
 strPage = request.getParameter("page"); 
 //lei = request.getParameter("lei"); //图书类别
@@ -62,13 +63,45 @@ i = 0;
 String bgcolor="#ffffff";
 int k=1;
 try{while(i< intPageSize && !set.isAfterLast()){
+	typeid=set.getString("type_id");
 %>
 
         <tr valign="middle" bgcolor=<%=bgcolor%> height="20">
-<td width="364"  ><div align="center" style="height:19px; font-size:12px; padding-top:5px"><a href=# ><%=set.getString("productsname")%></a></div></td>
-<td><%=set.getString("type_id")%></td>
+        <%if(typeid.trim().equals("1"))
+        {%>
+<td width="264"  ><div  style="height:19px; font-size:12px; padding-top:5px"><a href="bookdetail.jsp?productid=<%=set.getString("products_id") %>" target="_blank" >&nbsp;&nbsp;<%=set.getString("productsname")%></a></div></td>
+<td><div align="center" style="height:19px; font-size:12px; padding-top:5px">分类：图书</div></td>
 <td><div align="center">￥<%=set.getString("price")%>元</div></td>
-<td width="137"><%=set.getString("products_id")%></td>
+<td width="137"><div align="center" style="height:19px; font-size:12px; padding-top:5px"><%=set.getString("discount")%>折</div></td>
+<%} %>
+        <%if(typeid.trim().equals("2"))
+        {%>
+<td width="264"  ><div align="left" style="height:19px; font-size:12px; padding-top:5px"><a href="makeupdetail.jsp?productid=<%=set.getString("products_id") %>" target="_blank">&nbsp;&nbsp;<%=set.getString("productsname")%></a></div></td>
+<td><div align="center" style="height:19px; font-size:12px; padding-top:5px">分类：化妆品</div></td>
+<td><div align="center">￥<%=set.getString("price")%>元</div></td>
+<td width="137"><div align="center" style="height:19px; font-size:12px; padding-top:5px"><%=set.getString("discount")%>折</div></td>
+<%} %>
+        <%if(typeid.trim().equals("3"))
+        {%>
+<td width="264"  ><div align="left" style="height:19px; font-size:12px; padding-top:5px"><a href="dressdetail.jsp?productid=<%=set.getString("products_id") %>" target="_blank">&nbsp;&nbsp;<%=set.getString("productsname")%></a></div></td>
+<td><div align="center" style="height:19px; font-size:12px; padding-top:5px">分类：服饰</div></td>
+<td><div align="center">￥<%=set.getString("price")%>元</div></td>
+<td width="137"><div align="center" style="height:19px; font-size:12px; padding-top:5px"><%=set.getString("discount")%>折</div></td>
+<%} %>
+        <%if(typeid.trim().equals("4"))
+        {%>
+<td width="264"  ><div align="left" style="height:19px; font-size:12px; padding-top:5px"><a href="computerdetail.jsp?productid=<%=set.getString("products_id") %>" target="_blank">&nbsp;&nbsp;<%=set.getString("productsname")%></a></div></td>
+<td><div align="center" style="height:19px; font-size:12px; padding-top:5px">分类：电脑</div></td>
+<td><div align="center">￥<%=set.getString("price")%>元</div></td>
+<td width="137"><div align="center" style="height:19px; font-size:12px; padding-top:5px"><%=set.getString("discount")%>折</div></td>
+<%} %>
+        <%if(typeid.trim().equals("5"))
+        {%>
+<td width="264"  ><div align="left" style="height:19px; font-size:12px; padding-top:5px"><a href="mobilephonedetail.jsp?productid=<%=set.getString("products_id") %>" target="_blank">&nbsp;&nbsp;<%=set.getString("productsname")%></a></div></td>
+<td><div align="center" style="height:19px; font-size:12px; padding-top:5px">分类：手机</div></td>
+<td><div align="center">￥<%=set.getString("price")%>元</div></td>
+<td width="137"><div align="center" style="height:19px; font-size:12px; padding-top:5px"><%=set.getString("discount")%>折</div></td>
+<%} %>
 
   <td colspan="2" nowrap><div align="center" style="height:19px; font-size:12px; padding-top:5px"><a href="shopcart/addProduction.jsp?id=<%=set.getString("products_id")%>" >购买</a></div>    </td>
   </tr>

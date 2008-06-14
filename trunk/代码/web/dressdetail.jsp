@@ -29,7 +29,7 @@ String productid="";
 
 %>
 <%
-productid=request.getParameter("id");
+productid=request.getParameter("productid");
 DressOperator dressoperator =new DressOperator();
   Iterator iterator=dressoperator.getInformation(productid);
   while(iterator.hasNext()){

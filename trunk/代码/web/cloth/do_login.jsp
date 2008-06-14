@@ -40,6 +40,6 @@
 	}
 	else                    //µÇÂ¼²»³É¹¦
 		session.setAttribute("logged",logged);
-	response.sendRedirect("cloth.jsp");
+	response.sendRedirect("clothes.jsp");
 	
 %>

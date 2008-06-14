@@ -33,7 +33,7 @@ String productid="";
 
 %>
 <%
-productid=request.getParameter("id");
+productid=request.getParameter("productid");
  MobileOperator mobileoperator=new MobileOperator();
   Iterator iterator=mobileoperator.getInformation(productid);
   while(iterator.hasNext()){
