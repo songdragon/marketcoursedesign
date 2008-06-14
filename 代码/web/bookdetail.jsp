@@ -58,7 +58,7 @@ src="" width=150  height="200"  />
 <DIV id=publisher_>出 版 社：<%=publisher %></DIV>
 <UL class=nostyle style="margin-top:2px">
   <LI>商品名称:<%=productsname%></LI>
-  <LI>点击率:<%=clickrate %> </LI>
+  <LI>点击率:<%=clickrate+1 %> </LI>
   <LI>售价: <%=price %> </LI>
   <LI>I S B N:<%=isbn %></LI>
   <LI>开本:<%=booksize %></LI></UL>

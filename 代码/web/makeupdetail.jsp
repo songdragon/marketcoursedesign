@@ -63,7 +63,7 @@ src="" width=150  />
 <DIV id=author_>商品名称： <%=productsname%></DIV>
 <DIV id=publisher_>品牌：<%=brand %></DIV>
 <UL class=nostyle>
-  <LI>点击率：<%=clickrate %> </LI>
+  <LI>点击率：<%=clickrate+1 %> </LI>
   <LI>售价： <%=price %> </LI>
   <LI>容量： <%=capacity %> </LI>
   <LI>制造商： <%=maker%> </LI>

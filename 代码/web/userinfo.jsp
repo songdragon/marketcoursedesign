@@ -27,6 +27,13 @@
 		<TR>
 		<td ><div align="center"><FONT 
               style="FONT-SIZE: 12px"><FONT 
+              color=#cc6600><a href="" target="_blank">查看历史订单</a>
+			  </FONT></FONT></div></td>
+			<td></td>
+		</TR>
+		<TR>
+		<td ><div align="center"><FONT 
+              style="FONT-SIZE: 12px"><FONT 
               color=#cc6600><a href="mypassword.jsp">修改密码</a>&nbsp;<a href="logout.jsp">注销</a>
 			  </FONT></FONT></div></td>
 			<td></td>

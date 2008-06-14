@@ -50,7 +50,7 @@ class=red_bold><B>1.填写核对订单信息</B></SPAN>&gt;&gt;　2.成功提交订单</DIV>
         <INPUT name="txt_ship_tel" id="txt_ship_mb" maxLength="20">
     </DIV>
 	<div>
-	<%if(!session.getAttribute("point").equals("0")) {%>
+	<%if(session.getAttribute("point")!=(Integer)0) {%>
 	用积分支付:<INPUT name="Input3" id="txt_ship_point" maxLength="10"> &nbsp;
 	<%} %>
 	可用积分：<%=session.getAttribute("point")%>

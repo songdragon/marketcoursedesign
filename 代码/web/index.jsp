@@ -173,7 +173,7 @@
 			<tr>
 			<td width="33%" align="center"></td>
 			<td width="33%" align="center"><a href="dressdetail.jsp?productid=0000000004" target="_blank"><div style='height:20px;padding-top:3px' >Levi's TÐô</div></a></td>
-			<td width="33%" align="center"></td>
+			<td width="33%" align="center"><a href="dressdetail.jsp?productid=0000000028" target="_blank"><div style='height:20px;padding-top:3px' >À¼Þ¢ÃæÄ¤</div></a></td>
 			</tr>
 			</TABLE>
 			</div>
