@@ -84,7 +84,7 @@ set.absolute((intPage-1) * intPageSize+1);
 //ÏÔÊ¾Êý¾Ý 
 }
 i = 0; 
-String bgcolor="#ffffff";
+String bgcolor="#ccccff";
 int k=1;
 try{while(i< intPageSize && !set.isAfterLast()){
 %>
@@ -108,8 +108,8 @@ else out.println("<td></td>");
         
          <%
 		 k++;
-		 if(k%2==0)
-		{bgcolor="#FBEEE1";}
+		 if(k%2!=0)
+		{bgcolor="#ccccff";}
 		else
 		{bgcolor="#ffffff";}
 		 set.next(); 
