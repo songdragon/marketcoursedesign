@@ -65,7 +65,7 @@ src="<%=picture %>" width=150  height="200"/>
 <DIV id=author_>商品名称： <%=productsname%></DIV>
 <DIV >品牌：<%=brand %></DIV>
 <UL class=nostyle style="padding-top:2px">
-  <LI>点击率：<%=clickrate %> </LI>
+  <LI>点击率：<%=clickrate+1 %> </LI>
   <LI>售价： <%=price %> </LI>
   <LI>大小： <%=dsize %> </LI>
   <LI>款式： <%=style%> </LI>
