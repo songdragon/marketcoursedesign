@@ -63,7 +63,26 @@ public class ManagerOperator extends ManagerAbstract{
 			return true;
 		}
 	}
+	
+	/*重载修改密码*/
+	public boolean updateManagerpassword(String managerid,String newpassword){
+		MD5 md5=new MD5();
+		String npwd=md5.getMD5ofStr(newpassword); 
 
+		String sqlupdate="update manager set mpassword='"+npwd+"' "+
+			"where manager_id='"+managerid+"'";
+
+		DBConnection conn=new DBConnection();                  /*连接字符串*/
+		if(conn.excuteUpdate(sqlupdate)==0){
+			conn.Close();
+			return false;
+		}
+		else{
+			conn.Close();
+			return true;
+		}
+	}
+	
 	/*删除管理员*/
 	public boolean deleteManager(String managerid){
 		String sqldelete="delete from manager where manager_id='"+managerid+"'";
