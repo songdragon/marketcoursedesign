@@ -38,7 +38,7 @@ BODY {
 	FLOAT: left; LIST-STYLE-TYPE: none; HEIGHT: 31px
 }
 .public_navi .navi_part .part_top .n_main LI {
-	FONT-SIZE: 14px; BACKGROUND: url(http://localhost:8080/web/images/navi_m_1.gif) no-repeat; FLOAT: left; WIDTH: 75px; HEIGHT: 31px; TEXT-ALIGN: center
+	FONT-SIZE: 14px; BACKGROUND: url(../images/navi_m_1.gif) no-repeat; FLOAT: left; WIDTH: 75px; HEIGHT: 31px; TEXT-ALIGN: center
 }
 .public_navi .navi_part .part_top .n_main LI A {
 	DISPLAY: block; FONT-SIZE: 14px; WIDTH: 75px; PADDING-TOP: 10px; HEIGHT: 21px
@@ -50,61 +50,61 @@ BODY {
 	WIDTH: 75px; COLOR: #fff; PADDING-TOP: 10px; HEIGHT: 21px; TEXT-DECORATION: none
 }
 .public_navi .navi_part .part_top .n_main LI A:hover {
-	BACKGROUND: url(http://localhost:8080/web/images/navi_m_2.gif) no-repeat; WIDTH: 75px; COLOR: #fff; PADDING-TOP: 10px; HEIGHT: 31px
+	BACKGROUND: url(../images/navi_m_2.gif) no-repeat; WIDTH: 75px; COLOR: #fff; PADDING-TOP: 10px; HEIGHT: 31px
 }
 .public_navi .navi_part .part_top .n_main LI A:active {
 	WIDTH: 75px; COLOR: #fff; PADDING-TOP: 10px; HEIGHT: 21px; TEXT-DECORATION: none
 }
 .public_navi .navi_part .part_top .n_main .new_left {
-	BACKGROUND: url(http://localhost:8080/web/images/navi_newleft_1.gif) no-repeat; MARGIN-LEFT: 5px
+	BACKGROUND: url(../images/navi_newleft_1.gif) no-repeat; MARGIN-LEFT: 5px
 }
 .public_navi .navi_part .part_top .n_main .new_left A:hover {
-	BACKGROUND: url(http://localhost:8080/web/images/navi_newleft_2.gif) no-repeat
+	BACKGROUND: url(../images/navi_newleft_2.gif) no-repeat
 }
 .public_navi .navi_part .part_top .n_main .new_middle {
-	BACKGROUND: url(http://localhost:8080/web/images/navi_newmiddle_1.gif) no-repeat
+	BACKGROUND: url(../images/navi_newmiddle_1.gif) no-repeat
 }
 .public_navi .navi_part .part_top .n_main .new_middle A:hover {
-	BACKGROUND: url(http://localhost:8080/web/images/navi_newmiddle_2.gif) no-repeat
+	BACKGROUND: url(../images/navi_newmiddle_2.gif) no-repeat
 }
 .public_navi .navi_part .part_top .n_main .new_right {
-	BACKGROUND: url(http://localhost:8080/web/images/navi_newright_1.gif) no-repeat
+	BACKGROUND: url(../images/navi_newright_1.gif) no-repeat
 }
 .public_navi .navi_part .part_top .n_main .new_right A:hover {
-	BACKGROUND: url(http://localhost:8080/web/images/navi_newright_2.gif) no-repeat
+	BACKGROUND: url(../images/navi_newright_2.gif) no-repeat
 }
 .public_navi .navi_part .part_top .n_main .m_left {
-	BACKGROUND: url(http://localhost:8080/web/images/navi_l_1.jpg) no-repeat
+	BACKGROUND: url(../images/navi_l_1.jpg) no-repeat
 }
 .public_navi .navi_part .part_top .n_main .m_left A:hover {
-	BACKGROUND: url(http://localhost:8080/web/images/navi_l_2.jpg) no-repeat
+	BACKGROUND: url(../images/navi_l_2.jpg) no-repeat
 }
 .public_navi .navi_part .part_top .n_main .m_right {
-	BACKGROUND: url(http://localhost:8080/web/images/navi_r_1.jpg) no-repeat
+	BACKGROUND: url(../images/navi_r_1.jpg) no-repeat
 }
 .public_navi .navi_part .part_top .n_main .m_right A:hover {
-	BACKGROUND: url(http://localhost:8080/web/images/navi_r_2.jpg) no-repeat
+	BACKGROUND: url(../images/navi_r_2.jpg) no-repeat
 }
 .public_navi .navi_part .part_top .n_main .navi_gray {
-	BACKGROUND: url(http://localhost:8080/web/images/navi_gray.jpg) no-repeat; PADDING-TOP: 10px
+	BACKGROUND: url(../images/navi_gray.jpg) no-repeat; PADDING-TOP: 10px
 }
 .public_navi .navi_part .part_top .n_help {
-	PADDING-RIGHT: 0px; DISPLAY: block; PADDING-LEFT: 15px; BACKGROUND: url(http://localhost:8080/web/images/p_gwc.gif) no-repeat 0px 10px; FLOAT: right; PADDING-BOTTOM: 0px; PADDING-TOP: 10px; LIST-STYLE-TYPE: none; HEIGHT: 15px
+	PADDING-RIGHT: 0px; DISPLAY: block; PADDING-LEFT: 15px; BACKGROUND: url(../images/p_gwc.gif) no-repeat 0px 10px; FLOAT: right; PADDING-BOTTOM: 0px; PADDING-TOP: 10px; LIST-STYLE-TYPE: none; HEIGHT: 15px
 }
 .public_navi .navi_part .part_top .n_help LI {
-	PADDING-RIGHT: 6px; DISPLAY: block; PADDING-LEFT: 10px; BACKGROUND: url(http://localhost:8080/web/images/bj_line.gif) no-repeat right 2px; FLOAT: left; PADDING-BOTTOM: 0px; PADDING-TOP: 2px; HEIGHT: 12px
+	PADDING-RIGHT: 6px; DISPLAY: block; PADDING-LEFT: 10px; BACKGROUND: url(../images/bj_line.gif) no-repeat right 2px; FLOAT: left; PADDING-BOTTOM: 0px; PADDING-TOP: 2px; HEIGHT: 12px
 }
 .public_navi .navi_part .part_top .n_help .help_r {
 	PADDING-RIGHT: 0px; BACKGROUND: none transparent scroll repeat 0% 0%
 }
 .public_navi .navi_part .n_main2 {
-	BACKGROUND: url(http://localhost:8080/web/images/navi2_right.gif) #eaeaea no-repeat right 50%; LIST-STYLE-TYPE: none; HEIGHT: 23px
+	BACKGROUND: url(../images/navi2_right.gif) #eaeaea no-repeat right 50%; LIST-STYLE-TYPE: none; HEIGHT: 23px
 }
 .public_navi .navi_part .n_main2 LI {
-	PADDING-RIGHT: 12px; DISPLAY: block; PADDING-LEFT: 12px; BACKGROUND: url(http://localhost:8080/web/images/bj_line.gif) no-repeat right 6px; FLOAT: left; PADDING-BOTTOM: 0px; PADDING-TOP: 6px; HEIGHT: 12px
+	PADDING-RIGHT: 12px; DISPLAY: block; PADDING-LEFT: 12px; BACKGROUND: url(../images/bj_line.gif) no-repeat right 6px; FLOAT: left; PADDING-BOTTOM: 0px; PADDING-TOP: 6px; HEIGHT: 12px
 }
 .public_navi .navi_part .n_main2 .navi2_left {
-	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: url(http://localhost:8080/web/images/navi2_left.gif) no-repeat left 50%; PADDING-BOTTOM: 0px; WIDTH: 39px; PADDING-TOP: 0px; HEIGHT: 23px
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: url(../images/navi2_left.gif) no-repeat left 50%; PADDING-BOTTOM: 0px; WIDTH: 39px; PADDING-TOP: 0px; HEIGHT: 23px
 }
 .public_navi .navi_part .n_main2 .navi2_right {
 	PADDING-RIGHT: 0px; BACKGROUND: none transparent scroll repeat 0% 0%
@@ -125,7 +125,7 @@ BODY {
 	BACKGROUND: none transparent scroll repeat 0% 0%; FLOAT: left; MARGIN: 5px 0px 0px 3px; OVERFLOW: hidden; WIDTH: 141px; HEIGHT: 26px
 }
 .public_navi .newbeta_book {
-	MARGIN-TOP: 3px; DISPLAY: block; FONT-SIZE: 12px; BACKGROUND: url(http://localhost:8080/web/images/book_beta_bg_book.gif) no-repeat; FLOAT: left; WIDTH: 93px; LINE-HEIGHT: 23px; HEIGHT: 23px; TEXT-ALIGN: center
+	MARGIN-TOP: 3px; DISPLAY: block; FONT-SIZE: 12px; BACKGROUND: url(../images/book_beta_bg_book.gif) no-repeat; FLOAT: left; WIDTH: 93px; LINE-HEIGHT: 23px; HEIGHT: 23px; TEXT-ALIGN: center
 }
 .public_navi .newbeta_book A:link {
 	COLOR: #fff; TEXT-DECORATION: none
@@ -140,7 +140,7 @@ BODY {
 	COLOR: #fff; TEXT-DECORATION: underline
 }
 .public_search {
-	FONT-SIZE: 12px; BACKGROUND: url(http://localhost:8080/web/images/search_m.gif) repeat-x; WIDTH: 100%; BORDER-COLLAPSE: collapse; HEIGHT: 71px
+	FONT-SIZE: 12px; BACKGROUND: url(../images/search_m.gif) repeat-x; WIDTH: 100%; BORDER-COLLAPSE: collapse; HEIGHT: 71px
 }
 .public_search A:link {
 	COLOR: #0041d3; TEXT-DECORATION: none
@@ -167,7 +167,7 @@ BODY {
 	FONT-SIZE: 12px
 }
 .public_search .search_left {
-	BACKGROUND: url(http://localhost:8080/web/images/search_l.gif) no-repeat; WIDTH: 6px
+	BACKGROUND: url(../images/search_l.gif) no-repeat; WIDTH: 6px
 }
 .public_search .search_middle {
 	WIDTH: 100%; BORDER-COLLAPSE: collapse; HEIGHT: 40px
@@ -186,7 +186,7 @@ BODY {
 	FLOAT: left; LIST-STYLE-TYPE: none
 }
 .public_search .search_middle .search_m_top .search_word UL LI {
-	PADDING-RIGHT: 9px; DISPLAY: block; PADDING-LEFT: 8px; BACKGROUND: url(http://localhost:8080/web/images/bj_line.gif) no-repeat right top; FLOAT: left; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; HEIGHT: 12px
+	PADDING-RIGHT: 9px; DISPLAY: block; PADDING-LEFT: 8px; BACKGROUND: url(../images/bj_line.gif) no-repeat right top; FLOAT: left; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; HEIGHT: 12px
 }
 .public_search .search_middle .search_m_top .search_word UL .word_right {
 	PADDING-RIGHT: 0px; BACKGROUND: none transparent scroll repeat 0% 0%
@@ -231,10 +231,10 @@ BODY {
 	FLOAT: right; MARGIN-LEFT: 8px; WIDTH: 101px; PADDING-TOP: 1px; HEIGHT: 22px
 }
 .public_search .search_middle .search_main .main_right {
-	PADDING-RIGHT: 0px; PADDING-LEFT: 10px; BACKGROUND: url(http://localhost:8080/web/images/search_bj.gif) no-repeat left 6px; FLOAT: left; PADDING-BOTTOM: 0px; WIDTH: 65px; PADDING-TOP: 12px; HEIGHT: 30px
+	PADDING-RIGHT: 0px; PADDING-LEFT: 10px; BACKGROUND: url(../images/search_bj.gif) no-repeat left 6px; FLOAT: left; PADDING-BOTTOM: 0px; WIDTH: 65px; PADDING-TOP: 12px; HEIGHT: 30px
 }
 .public_search .search_right {
-	BACKGROUND: url(http://localhost:8080/web/images/search_m.gif) no-repeat; WIDTH: 6px
+	BACKGROUND: url(../images/search_m.gif) no-repeat; WIDTH: 6px
 }
 .public_top_window {
 	BORDER-RIGHT: #b39f86 1px solid; PADDING-RIGHT: 28px; BORDER-TOP: #b39f86 1px solid; PADDING-LEFT: 28px; PADDING-BOTTOM: 3px; BORDER-LEFT: #b39f86 1px solid; WIDTH: 608px; PADDING-TOP: 3px; BORDER-BOTTOM: #b39f86 1px solid; HEIGHT: 154px; BACKGROUND-COLOR: #fff

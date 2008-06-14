@@ -8,7 +8,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
 <LINK href="css/book.css" type=text/css 
 rel=stylesheet>
-<title>无标题文档</title>
+<title>服饰商品详细信息</title>
 </head>
 
 <body>
@@ -26,6 +26,7 @@ String season="";
 String sex="";
 String description="";
 String productid="";
+String picture="";
 
 %>
 <%
@@ -46,8 +47,11 @@ DressOperator dressoperator =new DressOperator();
 	  color=dress.getColor();
 	  season=dress.getSeason();
 	  sex=dress.getSex();
+	  picture=dress.getImage();
 	  
   }
+  String sql="update products_information set clickrate="+(clickrate+1)+"where products_id="+productid;
+  dressoperator.updatePro(sql);
 %>
 
 <DIV class=right>
@@ -55,12 +59,12 @@ DressOperator dressoperator =new DressOperator();
 </SPAN></DIV>
 <DIV class=empty_box style="HEIGHT: 20px"></DIV>
 <DIV class=book_left><IMG id=img_show_prd 
-src="" width=150  />
+src="<%=picture %>" width=150  height="200"/>
 </DIV>
 <div class="book_right">
 <DIV id=author_>商品名称： <%=productsname%></DIV>
-<DIV id=publisher_>品牌：<%=brand %></DIV>
-<UL class=nostyle>
+<DIV >品牌：<%=brand %></DIV>
+<UL class=nostyle style="padding-top:2px">
   <LI>点击率：<%=clickrate %> </LI>
   <LI>售价： <%=price %> </LI>
   <LI>大小： <%=dsize %> </LI>

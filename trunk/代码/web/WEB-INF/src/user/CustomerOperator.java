@@ -72,7 +72,7 @@ public class CustomerOperator extends CustomerAbstract{
 	public static boolean saveUser(CustomerAbstract user){
 		String userId=user.getUserId();
 		String userPassword=MD5.toMD5(user.getPassword());     //添加用户密码MD5加密 2008-6-4
-		String customerType=user.getCustomType();
+		String customerType="普通";
 		String email=user.getEmail();
 		float expenditure=user.getExpenditure();
 		float discount=user.getDiscount();

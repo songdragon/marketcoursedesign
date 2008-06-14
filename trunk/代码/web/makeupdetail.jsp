@@ -25,6 +25,7 @@ String outdate="";
 String shelflife="";
 String description="";
 String productid="";
+String picture="";
 
 %>
 <%
@@ -45,8 +46,10 @@ MakeupOperator makeupoperator=new MakeupOperator();
 	  maker=makeup.getMaker();
 	  outdate=makeup.getOutdate();
 	  shelflife=makeup.getShelflife();
-	  
+	  picture=makeup.getImage();
   }
+  String sql="update products_information set clickrate="+(clickrate+1)+"where products_id="+productid;
+  makeupoperator.updatePro(sql);
 %>
 
 <DIV class=right>
