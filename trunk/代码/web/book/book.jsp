@@ -130,20 +130,20 @@ type=text/javascript></SCRIPT>
 		<TD>
           <DIV class=adTitle0><SPAN 
             class=bigtuhuang><IMG 
-            src="../images/ll060828_lanmu.gif">好书推荐</SPAN></A>
+            src="../images/ll060828_lanmu.gif">新书推荐</SPAN></A>
 			</DIV>
 			<div class=adTitle2>
             <TABLE id=UCAdRotate1_dlstRotate__ctl0__ctl0_dlstRotateItems 
             cellSpacing=4 cellPadding=0 border=0 width="100%">
 			<tr>
-			<td width="33%" align="center"><img src="../pic/book/" height="140" width="160"></td>
-			<td width="33%" align="center"><img src="../pic/book/" height="140" width="160" /> </td>
-			<td width="33%" align="center"><img src="../pic/book/" height="140" width="160" /></td>
+			<td width="33%" align="center"><img src="../pic/0000000033.bmp" height="140" width="160"></td>
+			<td width="33%" align="center"><img src="../pic/0000000034.bmp" height="140" width="160" /> </td>
+			<td width="33%" align="center"><img src="../pic/0000000037.bmp" height="140" width="160" /></td>
 			</tr>
 			<tr>
-			<td width="33%" align="center"></td>
-			<td width="33%" align="center"><a href="dressdetail.jsp?productid=0000000004" target="_blank">aa</a></td>
-			<td width="33%" align="center"></td>
+			<td width="33%" align="center"><a href="../bookdetail.jsp?productid=0000000033" target="_blank"><div style='height:20px;padding-top:3px' >人面岩画之谜</div></a></td>
+			<td width="33%" align="center"><a href="../bookdetail.jsp?productid=0000000034" target="_blank"><div style='height:20px;padding-top:3px' >余秋雨评传</div></a></td>
+			<td width="33%" align="center"><a href="../bookdetail.jsp?productid=0000000037" target="_blank"><div style='height:20px;padding-top:3px' >百年往事</div></a></td>
 			</tr>
 			</TABLE>
 			</div>

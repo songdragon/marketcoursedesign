@@ -35,7 +35,7 @@ type=text/javascript></SCRIPT>
     <TD>
       <TABLE class=search_middle>
         <TBODY>
-         <FORM name=searchform  action= method=post>
+         <FORM name=searchform  action="../searchresult.jsp" method=post>
           <script type="text/javascript">
         var key="";
         function checksearch(){

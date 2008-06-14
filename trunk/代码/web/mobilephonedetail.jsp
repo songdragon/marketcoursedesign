@@ -67,7 +67,7 @@ productid=request.getParameter("productid");
 </SPAN></DIV>
 <DIV class=empty_box style="HEIGHT: 20px"></DIV>
 <DIV class=book_left><IMG id=img_show_prd 
-src="" width=150  />
+src="<%=picture %>" width=150  />
 </DIV>
 <Div class=book_right>
 <DIV id=author_>ษฬฦทร๛ณฦฃบ <%=productsname%></DIV>

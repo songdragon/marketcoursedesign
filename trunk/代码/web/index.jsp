@@ -166,14 +166,14 @@
             <TABLE id=UCAdRotate1_dlstRotate__ctl0__ctl0_dlstRotateItems 
             cellSpacing=4 cellPadding=0 border=0 width="100%">
 			<tr>
-			<td width="33%" align="center"><img src="pic/elctr/T1.VNbXc0XLMxXXXXX.jpg_100x100.jpg" height="140" width="160"></td>
-			<td width="33%" align="center"><img src="pic/cloth/4.bmp" height="140" width="160" /> </td>
-			<td width="33%" align="center"><img src="pic/makeup/7195.jpg" height="140" width="160" /></td>
+			<td width="33%" align="center"><img src="pic/0000000007.jpg" height="140" width="160"></td>
+			<td width="33%" align="center"><img src="pic/0000000004.bmp" height="140" width="160" /> </td>
+			<td width="33%" align="center"><img src="pic/0000000028.jpg" height="140" width="160" /></td>
 			</tr>
 			<tr>
-			<td width="33%" align="center"></td>
+			<td width="33%" align="center"><a href="mobilephonedetail.jsp?productid=0000000007" target="_blank"><div style='height:20px;padding-top:3px' >诺基亚 N76</div></a></td>
 			<td width="33%" align="center"><a href="dressdetail.jsp?productid=0000000004" target="_blank"><div style='height:20px;padding-top:3px' >Levi's T恤</div></a></td>
-			<td width="33%" align="center"><a href="dressdetail.jsp?productid=0000000028" target="_blank"><div style='height:20px;padding-top:3px' >兰蔻面膜</div></a></td>
+			<td width="33%" align="center"><a href="makeupdetail.jsp?productid=0000000028" target="_blank"><div style='height:20px;padding-top:3px' >兰蔻面膜</div></a></td>
 			</tr>
 			</TABLE>
 			</div>
@@ -191,9 +191,9 @@
             <TABLE id=UCAdRotate1_dlstRotate__ctl0__ctl0_dlstRotateItems 
             cellSpacing=4 cellPadding=0 border=0 width="100%">
 			<tr>
-			<td width="33%" align="center"><img src="pic/book/11.bmp" height="140" width="160"></td>
-			<td width="33%" align="center"><img src="pic/book/12.bmp" height="140" width="160" /> </td>
-			<td width="33%" align="center"><img src="pic/elctr/T1SghbXaRcR3xXXXXX.jpg_310x310.jpg" height="140" width="160" /></td>
+			<td width="33%" align="center"><img src="pic/0000000033.bmp" height="140" width="160" /></td>
+			<td width="33%" align="center"><img src="pic/0000000034.bmp" height="140" width="160" /> </td>
+			<td width="33%" align="center"><img src="pic/0000000018.jpg" height="140" width="160" /></td>
 			</tr>
 			<tr>
 			<td width="33%" align="center" height="20"s><a href="bookdetail.jsp?productid=0000000033" target="_blank"><div style='height:20px;padding-top:3px' >人面岩画之谜</div></a></td>
@@ -216,14 +216,14 @@
             <TABLE id=UCAdRotate1_dlstRotate__ctl0__ctl0_dlstRotateItems 
             cellSpacing=4 cellPadding=0 border=0 width="100%">
 			<tr>
-			<td width="33%" align="center"><img src="pic/elctr/T1es8aXbX3DwztsdkX.jpg_310x310.jpg" height="140" width="160" /></td>
-			<td width="33%" align="center"><img src="pic/cloth/4.bmp" height="140" width="160" /> </td>
-			<td width="33%" align="center"><img src="pic/makeup/7195.jpg" height="140" width="160" /></td>
+			<td width="33%" align="center"><img src="pic/0000000020.jpg" height="140" width="160" /></td>
+			<td width="33%" align="center"><img src="pic/0000000004.bmp" height="140" width="160" /> </td>
+			<td width="33%" align="center"><img src="pic/0000000028.jpg" height="140" width="160" /></td>
 			</tr>
 			<tr>
-			<td width="33%" align="center"><a href="dressdetail.jsp?productid=0000000020" target="_blank"><div style='height:20px;padding-top:3px' >夏新 M680 </div></a></td>
+			<td width="33%" align="center"><a href="mobilephonedetail.jsp?productid=0000000020" target="_blank"><div style='height:20px;padding-top:3px' >夏新 M680 </div></a></td>
 			<td width="33%" align="center"><a href="dressdetail.jsp?productid=0000000004" target="_blank"><div style='height:20px;padding-top:3px' >Levi's T恤</div></a></td>
-			<td width="33%" align="center"><a href="dressdetail.jsp?productid=0000000028" target="_blank"><div style='height:20px;padding-top:3px' >兰蔻面膜</div></a></td>
+			<td width="33%" align="center"><a href="makeupdetail.jsp?productid=0000000028" target="_blank"><div style='height:20px;padding-top:3px' >兰蔻面膜</div></a></td>
 			</tr>
 			</TABLE>
 			</div>
