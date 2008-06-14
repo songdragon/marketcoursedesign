@@ -19,7 +19,7 @@ if(session.getAttribute("admin")==null)
 <link href="../css.css" rel="stylesheet" type="text/css">
 <frameset rows="363*" cols="184,*" framespacing="1" frameborder="yes" border="1" bordercolor="#999999">
   <frame src="left2.jsp" name="leftFrame" scrolling="NO" >
-  <frame src="" name="mainFrame">
+  <frame src="welcome.jsp" name="mainFrame">
 </frameset>
 <noframes>
 <body>
