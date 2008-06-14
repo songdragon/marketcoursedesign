@@ -11,7 +11,7 @@ response.setCharacterEncoding("gb2312");
 //日期：2008-6-14
 //功能描述：实现在所有商品中搜索结果的分页显示功能。
 %>
-<table >
+<table width="100%">
 <tr>
 <td><a href="do_searchOrder.jsp?key=no">未发订单</a></td>
 <td colspan="2"><a href="do_searchOrder.jsp?key=yes">已发订单</a></td>
@@ -27,8 +27,8 @@ response.setCharacterEncoding("gb2312");
 <td width="10%">收件人</td>
 <td width="32%">地址</td>
 <td width="8%">邮编</td>
-<td width="15%">联系电话</td>
-<td width="5%">总金额</td>
+<td width="12%">联系电话</td>
+<td width="8%">总金额</td>
 <td width="15%" colspan="2">订单时间</td>
 
 <%
@@ -89,8 +89,8 @@ int k=1;
 try{while(i< intPageSize && !set.isAfterLast()){
 %>
 <tr valign="middle" bgcolor=<%=bgcolor%> height="20" >
-       <td ><div  style="height:19px; font-size:12px; padding-top:5px"><a href="orderdetail.jsp?order_id=<%=set.getString("order_id") %>" target="_blank" >&nbsp;&nbsp;<%=set.getString("order_id")%></a></div></td>
-       <td><div  style="height:19px; font-size:12px; padding-top:5px"><%=set.getString("reciver") %></div></td>
+       <td ><div  style="height:19px; font-size:12px; padding-top:5px"><a href="orderdetail.jsp?order_id=<%=set.getString("order_id") %>" target="_blank" ><%=set.getString("order_id")%></a></div></td>
+       <td><div  style="height:19px; font-size:12px; padding-top:5px"><%=set.getString("receiver") %></div></td>
        <td><div  style="height:19px; font-size:12px; padding-top:5px"><%=set.getString("address") %></div></td>
        <td><div  style="height:19px; font-size:12px; padding-top:5px"><%=set.getString("zipcode") %></div></td>
        <td><div  style="height:19px; font-size:12px; padding-top:5px"><%=set.getString("tel") %></div></td>
@@ -119,10 +119,13 @@ else out.println("<td></td>");
 session.setAttribute("key",key);
 //set.close();
 			%>	
-</table>
-<p align="center">
-共<%=intRowCount%>个记录,分<%=intPageCount%>页显示,您所在本页是:第<%=intPage%>页
+			<tr align="center">
+			<td colspan="8" align="center">
+			共<%=intRowCount%>个记录,分<%=intPageCount%>页显示,您所在本页是:第<%=intPage%>页
 <%for(int j=1;j<=intPageCount;j++)
 {	
 	out.print("&nbsp;&nbsp;<a href='do_searchOrder.jsp?page="+j+"&key="+key+"'>"+j+"</a>");
 }%>
+</td>
+			</tr>
+</table>
