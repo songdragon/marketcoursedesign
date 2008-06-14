@@ -165,15 +165,15 @@ if(typeid!=null){
 
 		out.println("<tr><td align='right'>序列号：</td>"+
 				"<td><input name='isbn' type='text' id='score' style='FONT-SIZE: 12px; WIDTH: 150px'"+
-				" size='10' maxlength='20'></td><td align='left'><font size=2 color='red'>*</font></td></tr>");
+				" size='10' maxlength='20'></td></tr>");
 
 		out.println("<tr><td align='right'>出版社：</td>"+
 				"<td><input name='publisher' type='text' id='score' style='FONT-SIZE: 12px; WIDTH: 150px'"+
-				" size='10' maxlength='30'></td><td align='left'><font size=2 color='red'>*</font></td></tr>");
+				" size='10' maxlength='30'></td></tr>");
 
 		out.println("<tr><td align='right'>作者：</td>"+
 				"<td><input name='author' type='text' id='score' style='FONT-SIZE: 12px; WIDTH: 150px'"+
-				" size='10' maxlength='30'></td><td align='left'><font size=2 color='red'>*</font></td></tr>");
+				" size='10' maxlength='30'></td></tr>");
 		
 		out.println("<tr><td align='right'>开本：</td>"+
 			"<td>"+
@@ -183,7 +183,7 @@ if(typeid!=null){
 				"<option value=1>32开</option>"+
 				"<option value=2>大32开</option>"+
 			"</select>"+
-			"</TD><td align='left'><font size=2 color='red'>*</font></td></tr>");
+			"</TD></tr>");
 
 
 	out.println("<tr><td>&nbsp;</td><td>&nbsp;</td></tr><tr align=right><td></td><td align=left>"+

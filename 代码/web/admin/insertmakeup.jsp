@@ -51,9 +51,9 @@ function checkform1(){
 		alert("类型不能为空！");
 		document.form1.mtype.focus();
 	}
-	else if(document.form1.function.value==""){
+	else if(document.form1.mfunction.value==""){
 		alert("功能描述不能为空！");
-		document.form1.function.focus();
+		document.form1.mfunction.focus();
 	}
 	else if(document.form1.capacity.value==""){
 		alert("容量不能为空！");
@@ -196,7 +196,7 @@ if(typeid!=null){
 				" size='10' maxlength='10'></td></tr>");
 
 		out.println("<tr><td align='right'>功能描述：</td>"+
-				"<td><input name='function' type='text' id='score' style='FONT-SIZE: 12px; WIDTH: 150px'"+
+				"<td><input name='mfunction' type='text' id='score' style='FONT-SIZE: 12px; WIDTH: 150px'"+
 				" size='10' maxlength='10'></td></tr>");
 
 		out.println("<tr><td align='right'>容量：</td>"+

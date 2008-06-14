@@ -50,10 +50,6 @@ if(("1").equals(typeid)){
 		size="32开";
 	else if(("2").equals(size))
 		size="大32开";
-	//====================================================================测试
-	out.println("pdtid="+pdtid+" name="+name+" typeid="+typeid+" count="+count+" oprice="
-			+oprice+" image="+image+" discount="+discount+" discrib="+discrib+" inprice="+inprice+
-			" isbn="+isbn+" publisher="+publisher+" author="+author+" size="+size);
 
 	//设置属性
 	BookOperator bo=new BookOperator();
@@ -81,7 +77,7 @@ else if(("2").equals(typeid)){
 	String brand=request.getParameter("brand");
 	String isbn=request.getParameter("isbn");
 	String mtype=request.getParameter("mtype");
-	String function=request.getParameter("function");
+	String mfunction=request.getParameter("mfunction");
 	String capacity=request.getParameter("capacity");
 	String maker=request.getParameter("maker");
 	String outdate=request.getParameter("outdate");
@@ -102,18 +98,14 @@ else if(("2").equals(typeid)){
 	mo.setBrand(brand);
 	mo.setIsbn(isbn);
 	mo.setMtype(mtype);
-	mo.setMfunction(function);
+	mo.setMfunction(mfunction);
 	mo.setCapacity(capacity);
 	mo.setMaker(maker);
 	mo.setOutdate(outdate);
 	mo.setShelflife(shelflife);
 	
 	info=mo.setPro(mo);
-	//====================================================测试
-	out.println("pdtid="+pdtid+" name="+name+" typeid="+typeid+" count="+count+" oprice="
-			+oprice+" image="+image+" discount="+discount+" discrib="+discrib+" inprice="+inprice+
-			" brand="+brand+" isbn="+isbn+" mtype="+mtype+" function="+function+
-			" capacity="+capacity+" maker="+maker+" outdate="+outdate+" shelflife="+shelflife);
+
 }
 else if(("3").equals(typeid)){
 	//dress单独属性
