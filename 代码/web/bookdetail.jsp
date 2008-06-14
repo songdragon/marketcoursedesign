@@ -51,7 +51,7 @@ BookOperator bookoperator=new BookOperator();
 </SPAN></DIV>
 <DIV class=empty_box style="HEIGHT: 20px"></DIV>
 <DIV class=book_left><IMG id=img_show_prd 
-src="" width=150  height="200"  />
+src="<%=picture %>" width=150  height="200"  />
 </DIV>
 <DIV class="book_right">
 <DIV id=author_>×÷¡¡¡¡Õß£º <%=author%> Öø</DIV>

@@ -69,11 +69,23 @@ type=text/javascript></SCRIPT>
                 </TR></TBODY></TABLE><!--关键表格结束--></TD></TR>
         <FORM name=searchform 
         action="searchresult.jsp" method=post>
+        <script type="text/javascript">
+        var key;
+        function checksearch(){
+        	key=document.getElementById("searchkey").value;
+        	if(key=="")
+        	alert("请输入搜索词");
+        	else
+        	document.searchform.submit();
+        }
+        </script>
+        
+        
         <TR>
           <TD align=middle>
             <DIV class=search_main>
             <DIV class=main_left>
-            <H1>商品搜索</H1><INPUT class=search_text name=key> 
+            <H1>商品搜索</H1><INPUT class=search_text name=key id=searchkey> 
             <DIV id=div01 style="DISPLAY: none">
             <UL>
               <LI class=reduce_l_w><INPUT id=selbook1 type=radio CHECKED value=1 
@@ -97,7 +109,7 @@ type=text/javascript></SCRIPT>
               onclick=selectradio(this)> 曲目</SPAN> </LI>
               <LI><INPUT id=selmusic0 type=radio CHECKED value=0 
               name=selmusic><SPAN onclick=selectradio(this)> 全文</SPAN> -->
-            </LI></UL></DIV>
+            </UL></DIV>
             <DIV id=div05 style="DISPLAY: none">
             <UL>
               <LI class=reduce_l_w><INPUT id=selcloth0 type=radio CHECKED value=0 
@@ -108,7 +120,7 @@ type=text/javascript></SCRIPT>
               onclick=selectradio(this)> 价格</SPAN> </LI>
               <!--<LI><INPUT id=selmovie0 type=radio CHECKED value=0 
               name=selmovie><SPAN onclick=selectradio(this)> 全文</SPAN> -->
-            </LI></UL></DIV>
+            </UL></DIV>
             <DIV id=div07 style="DISPLAY: none">
             <UL>
               <LI class=reduce_l_w><INPUT id=selmovie0 type=radio CHECKED value=0
@@ -119,17 +131,19 @@ type=text/javascript></SCRIPT>
               onclick=selectradio(this)> 价格</SPAN> </LI>
               <!--<LI><INPUT id=selmovie0 type=radio CHECKED value=0 
               name=selmovie><SPAN onclick=selectradio(this)> 全文</SPAN> -->
-            </LI></UL></DIV>
-	    <INPUT class=search_button id=search_btn_top type=submit value=在所有商品中搜> 
+          </UL></DIV>
+	    <INPUT class=search_button id=search_btn_top type=button value=在所有商品中搜 onclick="checksearch()"> 
             </DIV>
             <DIV class=main_right><A 
             href="" 
-            name=link_ad_search>高级搜索</A></DIV></DIV></TD></TR><INPUT id=key1 
+            name=link_ad_search>高级搜索</A></DIV></DIV></TD></TR> 
+            <INPUT id=key1 
         type=hidden name=key1> <INPUT id=key2 type=hidden name=key2> <INPUT 
         id=key3 type=hidden name=key3> <INPUT id=key4 type=hidden name=key4> 
         <INPUT id=key5 type=hidden name=key5> <INPUT id=catalog type=hidden 
         name=catalog> <INPUT id=SearchFromTop type=hidden value=1 
-        name=SearchFromTop> </FORM></TBODY></TABLE></TD>
+        name=SearchFromTop>
+            </FORM></TABLE></TD>
 <SCRIPT type=text/javascript>
     showpage('','','');
 </SCRIPT>
