@@ -87,20 +87,20 @@ public class MakeupOperator extends MakeupAbstract{
 		String sql_insert_inf="INSERT INTO products_information"+
 		"(products_id, productsname,type_id,quantity,price,description," +
 		" inprice,discount,clickrate,image)"+
-		"values(makeup.getProducts_id(),makeup.getProductsname(),makeup.getType_id()," +
-		"makeup.getQuantity(),makeup.getPrice(),makeup.getDiscription()," +
-		"makeup.getInprice(),makeup.getDiscount()," +
-		"makeup.getClickrate()," +
-		"makeup.getImage())";
+		"values('"+makeup.getProducts_id()+"','"+makeup.getProductsname()+"','"+makeup.getType_id()+"','"+
+		makeup.getQuantity()+"','"+makeup.getPrice()+"','"+makeup.getDiscription()+"','"+
+		makeup.getInprice()+"','"+makeup.getDiscount()+"','"+
+		makeup.getClickrate()+"','"+
+		makeup.getImage()+"')";
 		
 		
 		String sql_insert_makeup="INSERT INTO makeup" +
 				"(products_id,brand,isbn,mtype,mfunction,capacity," +
 				"maker,outdate,shelflife)" +
-				"values(makeup.getProducts_id(),makeup.getBrand()," +
-				"makeup.getIsbn(),makeup.getMtype()," +
-				"makeup.getMfunction(),makeup.getCapacity(),makeup.getMaker()," +
-				"makeup.getOutdate(),makeup.getShelflife())";
+				"values('"+makeup.getProducts_id()+"','"+makeup.getBrand()+"','"+
+				makeup.getIsbn()+"','"+makeup.getMtype()+"','"+
+				makeup.getMfunction()+"','"+makeup.getCapacity()+"','"+makeup.getMaker()+"','"+
+				makeup.getOutdate()+"','"+makeup.getShelflife()+"')";
 		
 		
 		int result_insert_inf=0;

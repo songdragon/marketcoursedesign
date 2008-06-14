@@ -88,19 +88,19 @@ public class DressOperator extends DressAbstract{
 		String sql_insert_inf="INSERT INTO products_information"+
 		"(products_id, productsname,type_id,quantity,price,description," +
 		" inprice,discount,clickrate,image)"+
-		"values(dress.getProducts_id(),dress.getProductsname(),dress.getType_id()," +
-		"dress.getQuantity(),dress.getPrice(),dress.getDiscription()," +
-		"dress.getInprice(),dress.getDiscount()," +
-		"dress.getClickrate()," +
-		"dress.getImage())";
+		"values('"+dress.getProducts_id()+"','"+dress.getProductsname()+"','"+dress.getType_id()+"','"+
+		dress.getQuantity()+"','"+dress.getPrice()+"','"+dress.getDiscription()+"','"+
+		dress.getInprice()+"','"+dress.getDiscount()+"','"+
+		dress.getClickrate()+"','"+
+		dress.getImage()+"')";
 		
 		String sql_insert_dress="INSERT INTO dress" +
 				"(products_id,brand,isbn,dsize,style,color," +
 				"sex,material,season)" +
-				"values(dress.getProducts_id(),dress.getBrand()," +
-				"dress.getIsbn(),dress.getMtype()," +
-				"dress.getMfunction(),dress.getCapacity(),dress.getMaker()," +
-				"dress.getOutdate(),dress.getShelflife())";
+				"values('"+dress.getProducts_id()+"','"+dress.getBrand()+"','"+
+				dress.getIsbn()+"','"+dress.getDsize()+"','"+dress.getStyle()+"','"+
+				dress.getColor()+"','"+dress.getSex()+"','"+dress.getMaterial()+"','"+
+				dress.getSeason()+"')";
 		
 		
 		int result_insert_inf=0;

@@ -88,19 +88,19 @@ public class MobileOperator extends MobileAbstract{
 		String sql_insert_inf="INSERT INTO products_information"+
 		"(products_id, productsname,type_id,quantity,price,description," +
 		" inprice,discount,clickrate,image)"+
-		"values(mobile.getProducts_id(),mobile.getProductsname(),mobile.getType_id()," +
-		"mobile.getQuantity(),mobile.getPrice(),mobile.getDiscription()," +
-		"mobile.getInprice(),mobile.getDiscount()," +
-		"mobile.getClickrate()," +
-		"mobile.getImage())";
+		"values('"+mobile.getProducts_id()+"','"+mobile.getProductsname()+"','"+mobile.getType_id()+"','"+
+		mobile.getQuantity()+"','"+mobile.getPrice()+"','"+mobile.getDiscription()+"','"+
+		mobile.getInprice()+"','"+mobile.getDiscount()+"','0','"+
+		mobile.getImage()+"')";
 		
 		String sql_insert_mobile="INSERT INTO mobilephone" +
 				"(products_id,brand,screen,nettype,appearance,screencolor," +
-				"datatransport,camera,ontime,mptype,screentype,storage,color" +
-				"values(mobile.getProducts_id(),mobile.getBrand(),mobile.getScreen()," +
-				"mobile.getNettype(),mobile.getAppearance(),mobile.getScreencolor()," +
-				"mobile.getDatatransport(),mobile.getCamera(),mobile.getOntime()," +
-				"mobile.getMptype(),mobile.getScreentype(),mobile.getStorage(),mobile.getColor())" ;
+				"datatransport,camera,ontime,mptype,screentype,storage,color)" +
+				"values('"+mobile.getProducts_id()+"','"+mobile.getBrand()+"','"+mobile.getScreen()+"','"+
+				mobile.getNettype()+"','"+mobile.getAppearance()+"','"+mobile.getScreencolor()+"','"+
+				mobile.getDatatransport()+"','"+mobile.getCamera()+"','"+mobile.getOntime()+"','"+
+				mobile.getMptype()+"','"+mobile.getScreentype()+"','"+
+				mobile.getStorage()+"','"+mobile.getColor()+"')" ;
 		
 		
 		int result_insert_inf=0;
