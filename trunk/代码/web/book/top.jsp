@@ -35,12 +35,22 @@ type=text/javascript></SCRIPT>
     <TD>
       <TABLE class=search_middle>
         <TBODY>
-         <FORM name=searchform onSubmit="return gotosearch();" action= method=get>
+         <FORM name=searchform  action= method=post>
+          <script type="text/javascript">
+        var key="";
+        function checksearch(){
+        	key=document.getElementById("searchkey").value;
+        	if(key=="")
+        		alert("请填写搜索关键词");
+        	else
+        		document.searchform.submit();
+        }
+        </script>
         <TR>
           <TD align=middle>
             <DIV class=search_main>
             <DIV class=main_left>
-            <H1>商品搜索</H1><INPUT class=search_text name=key> 
+            <H1>商品搜索</H1><INPUT class=search_text name=key id=searchkey> 
             <DIV id=div01 >
             <UL>
               <LI class=reduce_l_w><INPUT id=selbook1 type=radio CHECKED value=1 
@@ -52,7 +62,7 @@ type=text/javascript></SCRIPT>
             </LI>
             </UL></DIV>
             
-	    <INPUT class=search_button id=search_btn_top type=submit value=在图书商品中搜> 
+	    <INPUT class=search_button id=search_btn_top type=button value=在图书商品中搜 onclick="checksearch()"> 
             </DIV>
             <DIV class=main_right><A 
             href="" 
