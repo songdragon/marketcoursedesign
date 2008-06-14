@@ -45,7 +45,7 @@ public class OrderdetailOperator extends OrderdetailAbstract{
 	public static boolean  savaOrderDetail(BuyList shop,String orderid){
 		DBConnection conn=null;
 		String sql="insert into order_detail(order_id,products_id,productsname,price,discount,quantity)"+
-					"values (%orderid%,%productid%,%productname%,%price%,%discount%,%quantity%)";
+					"values ('%orderid%','%productid%','%productname%',%price%,%discount%,%quantity%)";
 		String productid=shop.id;
 		String productname=shop.warename;
 		String price=String.valueOf(shop.price);
@@ -54,11 +54,11 @@ public class OrderdetailOperator extends OrderdetailAbstract{
 		
 		try{
 			conn=new DBConnection();
-	     	sql.replace("%orderid%",orderid).replace("%productid%", productid)
-	     		.replace("%productname%", productname)
-	     		.replace("%price%",price)
-	     		.replace("%discount%",discount)
-	     		.replace("%quatity%",quantity);
+			sql=sql.replace("%orderid%",orderid).replace("%productid%", productid)
+	 		.replace("%productname%", productname)
+	 		.replace("%price%",price)
+	 		.replace("%discount%",discount)
+	 		.replace("%quantity%",quantity);
 	     	conn.excuteQuery(sql);
 	     	return true;
 		}

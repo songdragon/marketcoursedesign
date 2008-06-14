@@ -10,6 +10,7 @@
 <%
 	request.setCharacterEncoding("gb2312");
     String key=request.getParameter("key");
+
  // public bs=rs.getString("leiID");
   int intPageSize; //一页显示的记录数
   int intRowCount; //记录总数 
@@ -48,7 +49,6 @@ try{
 		out.println(e.toString());
 		}
 intRowCount = set.getRow();
-
 //记算总页数 
 intPageCount = (intRowCount+intPageSize-1) / intPageSize; 
 //调整待显示的页码 
@@ -64,13 +64,13 @@ int k=1;
 try{while(i< intPageSize && !set.isAfterLast()){
 %>
 
-        <tr valign="middle" bgcolor=<%=bgcolor%> height="25">
-<td width="364" height="24" ><div align="center"><a href=# ><%=set.getString("productsname")%></a></div></td>
+        <tr valign="middle" bgcolor=<%=bgcolor%> height="20">
+<td width="364"  ><div align="center" style="height:19px; font-size:12px; padding-top:5px"><a href=# ><%=set.getString("productsname")%></a></div></td>
 <td><%=set.getString("type_id")%></td>
 <td><div align="center">￥<%=set.getString("price")%>元</div></td>
 <td width="137"><%=set.getString("products_id")%></td>
 
-  <td colspan="2" nowrap><div align="center"><a href="shopcart/addProduction.jsp?id=<%=set.getString("products_id")%>" >购买</a></div>    </td>
+  <td colspan="2" nowrap><div align="center" style="height:19px; font-size:12px; padding-top:5px"><a href="shopcart/addProduction.jsp?id=<%=set.getString("products_id")%>" >购买</a></div>    </td>
   </tr>
         <tr>
           <td height=1 colspan="5" background="../image/dian.gif"><img src="../images/blank.gif" width=378 height=1></td>

@@ -7,7 +7,7 @@ package manager;
 import tools.*;                     /*包名待定*/
 import dbconnection.*;                   /*包名待定*/
 public class ManagerOperator extends ManagerAbstract{
-	
+
 	
 	/*验证用户名,若用户名正确将用户信息提取到此类中*/
 	public boolean getManagerInfo(String managerid){

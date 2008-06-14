@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
 <title>用户注册</title>
-<META http-equiv=Content-Type content="text/html; charset=gb2312"><LINK 
+<LINK 
 href="css/login.css" type=text/css rel=stylesheet>
 <SCRIPT src="js/register/AjaxApp.js" type=text/javascript></SCRIPT>
 

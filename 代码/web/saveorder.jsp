@@ -10,7 +10,7 @@
 	String reciver=request.getParameter("txt_ship_name");
 	String address=request.getParameter("txt_ship_address");
 	String zip=request.getParameter("txt_ship_zip");
-	String tel=request.getParameter("txt_ship_mb");
+	String tel=request.getParameter("txt_ship_tel");
 	//String point=request.getParameter("txt_ship_point");
 	String total=request.getParameter("txt_ship_total");//×Ü½ð¶î
 	//String reciver="ËÎÕØÌÚ";
@@ -20,7 +20,7 @@
 	//String total="400";
 	DateTime a=new DateTime();
 	String ordate=a.getToday();
-	
+	total="10000";
 	OrderOperator myorder=new OrderOperator();
 	myorder.setAddress(address);
 	myorder.setCustomername((String)session.getAttribute("user_name"));
@@ -32,6 +32,7 @@
 	//Calendar c=Calendar.getInstance();   
 	//Date date=c.g 
 	myorder.setOrderid();
+	out.println((String)session.getAttribute("user_name"));
 	out.println(((OrderAbstract)myorder).getReceiver());
 	out.println(((OrderAbstract)myorder).getTotal());
 	out.println(((OrderAbstract)myorder).getTel());
@@ -50,7 +51,7 @@
 	List shopList= (List) session.getAttribute("cart");
  	for (int i = 0; i < shopList.size(); i++) {
      	BuyList shop = (BuyList) shopList.get(i);
-     	if(!OrderdetailOperator.savaOrderDetail(shop,myorder.getOrderdate())){
+     	if(!OrderdetailOperator.savaOrderDetail(shop,myorder.getOrderid())){
      		out.println("error");
      		response.sendRedirect("error.jsp");
      		break;
