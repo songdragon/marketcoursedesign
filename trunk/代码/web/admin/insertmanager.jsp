@@ -10,7 +10,7 @@ admin=request.getParameter("admin");
 if(admin!=null)
 	session.setAttribute("admin",admin);
 if(session.getAttribute("admin")==null)
-	response.sendRedirect("no_right.jsp");	
+	response.sendRedirect("no_right.jsp");
 %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">

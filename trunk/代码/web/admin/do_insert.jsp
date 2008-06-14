@@ -3,6 +3,14 @@
 -->
 <%@ page language="java" contentType="text/html; charset=gb2312"%>
 <%@ page import="manager.*" %>
+<%
+String admin=null;
+admin=request.getParameter("admin");
+if(admin!=null)
+	session.setAttribute("admin",admin);
+if(session.getAttribute("admin")==null)
+	response.sendRedirect("no_right.jsp");
+%>
 
 <html>
 <head>
@@ -45,12 +53,12 @@ else{
 
 	bool=mo.insertManager(username,managerrelname,password,actor);
 	if(bool){
-		out.println("<h1 align='center'>添加成功！</h1>");
+		out.println("<h3 align='center'>添加成功！</h3>");
 		//response.sendRedirect("allmanager.jsp");
 		response.setHeader("Refresh", "2; URL=allmanager.jsp");
 	}
 	else{
-		out.println("<h1 align='center'>添加失败！</h1>");
+		out.println("<h3 align='center'>添加失败！</h3>");
 		response.setHeader("Refresh", "2; URL=insertmanager.jsp");
 	}
 }

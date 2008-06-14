@@ -3,16 +3,21 @@
 <div id="father" style="color:blue" onclick="document.all.child1.style.display=(document.all.child1.style.display =='none')?'':'none'" >
 + 商品信息管理</div>
 <div id="child1" style="display:none">
-<a href="#" target="mainFrame">&nbsp; 商品添加</a> <br>
-<a href="#" target="mainFrame">&nbsp; 商品信息修改</a><br />
-<a href="#" target="mainFrame">&nbsp; 库存管理</a> 
+<%
+out.println("<a href='insertpdt.jsp?admin='"+session.getAttribute("admin")+
+		" target='mainFrame'>&nbsp; 商品添加 </a><br>");
+out.println("<a href='changepdtinfo.jsp?admin='"+session.getAttribute("admin")+
+		" target='mainFrame'>&nbsp; 商品信息修改</a> <br>");
+out.println("<a href='managestorage.jsp?admin='"+session.getAttribute("admin")+
+		" target='mainFrame'>&nbsp; 库存管理</a>");
+%>
 </div>
 <div id="father2" style="color:blue">
 <a hre="#" target="mainFrame">&nbsp; 商品展示管理</a></div>
 <div id="father3" style="color:blue" >
 <a href="#" target="mainFrame"> &nbsp;&nbsp;公告管理</a></div>
 <div id="father3" style="color:blue" >
-<a href="do_searchOrder.jsp" target="mainFrame"> &nbsp;&nbsp;订单管理</a></div>
+<a href="#" target="mainFrame"> &nbsp;&nbsp;订单管理</a></div>
 <div id="father4" style="color:blue" >
 <a href="#" target="mainFrame"> &nbsp;&nbsp;销售信息统计</a></div>
 <div id="father4" style="color:blue" >
