@@ -20,7 +20,7 @@ public class OrderOperator extends OrderAbstract{
 		String state="Î´·¢";
 		String orderdate=order.getOrderdate();
 		//String detime=order.getDetime();
-		String detime="20090909";
+		String detime="";
 		order.setOrderid();
 		String orderid=order.getOrderid();
 		String sqlStr="insert into orders values('"+orderid+"',"+total+",'"+customername+"','"

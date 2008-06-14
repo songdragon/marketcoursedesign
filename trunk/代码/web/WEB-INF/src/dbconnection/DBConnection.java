@@ -4,7 +4,7 @@
  * 功能描述：建立sqlserver2000连接
  */
 package dbconnection;
-
+ 
 import java.sql.*;
 import javax.naming.*;
 import javax.sql.DataSource;

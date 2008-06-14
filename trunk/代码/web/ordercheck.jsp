@@ -23,6 +23,7 @@ class=order_step>结算步骤：　<B>1.填写核对订单信息</B>　&gt;&gt;　2.成功提交订单
   <% List shopList= (List) session.getAttribute("cart");
  float num=0;//总金额
  float cost=0;//享有优惠
+ num=Float.valueOf(request.getParameter("num"));
  %>
  <%if (shopList==null ){%>
 <DIV class=no_select>您还没有挑选商品</DIV>
@@ -32,20 +33,20 @@ class=order_step>结算步骤：　<B>1.填写核对订单信息</B>　&gt;&gt;　2.成功提交订单
 	%>
   
   <div class="border">
-  <form id="order" action="" method="post" name="order">
+  <form id="order" action="saveorder.jsp" method="post" name="order">
     <H3>收货人信息 </H3>
     <DIV class="account_name">　收货人：
-        <INPUT name="Input" id="txt_ship_name" maxLength="40">
+        <INPUT name="txt_ship_name" id="txt_ship_name" maxLength="40">
     </DIV>
     
     <DIV >详细地址：
-        <INPUT name="Input2" id="txt_ship_address" maxLength="100">
+        <INPUT name="txt_ship_address" id="txt_ship_address" maxLength="100">
       <SPAN id="ship_address_valid_msg"></SPAN></DIV>
     <DIV >邮政编码：
-      <INPUT name="Input2" id="txt_ship_zip" maxLength="20">
+      <INPUT name="txt_ship_zip" id="txt_ship_zip" maxLength="20">
       <SPAN id="ship_zip_valid_msg"></SPAN>请务必正确填写您的邮编，以确保订单顺利送达。</DIV>
     <DIV>&nbsp;&nbsp;&nbsp;&nbsp;电话：
-        <INPUT name="Input2" id="txt_ship_mb" maxLength="20">
+        <INPUT name="txt_ship_tel" id="txt_ship_mb" maxLength="20">
     </DIV>
 	<div>
 	<%if(!session.getAttribute("point").equals("0")) {%>
@@ -56,17 +57,18 @@ class=order_step>结算步骤：　<B>1.填写核对订单信息</B>　&gt;&gt;　2.成功提交订单
     <INPUT name="submit" type="submit" id="btn_consignee_save" value="确认收货人信息">
     <div>
   <H3>订单详情 </H3>
+  </form>
   </div>
   <div>
-  <table width="910" border="1" align="center" cellpadding="0" cellspacing="0">
+  <table width="850" border="1" align="center" cellpadding="0" cellspacing="0">
 
       <tr align="center" bgcolor="#EFEFEF">
-        <td width="100" height="22">序号</td>
-        <td width="300">商品名称</td>
-        <td width="140">价格</td>
-        <td width="140">折扣</td>
-        <td width="140">数量</td>
-        <td width="140">总金额</td>
+        <td width="98" height="22">序号</td>
+        <td width="120">商品名称</td>
+        <td width="80">价格</td>
+        <td width="80">折扣</td>
+        <td width="80">数量</td>
+        <td width="80">总金额</td>
       </tr>
 
  		   <%
@@ -78,12 +80,12 @@ class=order_step>结算步骤：　<B>1.填写核对订单信息</B>　&gt;&gt;　2.成功提交订单
 		  cost=(1-shop.rate/10)*shop.price*shop.number;
     %>
 	<tr align="center" bgcolor="#EFEFEF">
-        <td height="21" width="100"><%=i+1%></td>
-        <td width="300"><%=shop.warename%></td>
-        <td width="140"><%=shop.price%></td>
-        <td width="140"><%=shop.rate %></td>
-        <td width="140"><%=shop.number%></td>
-        <td width="140"><%=shop.number*shop.price%></td>
+        <td height="21" width="98"><%=i+1%></td>
+        <td width="120"><%=shop.warename%></td>
+        <td width="80"><%=shop.price%></td>
+        <td width="80"><%=shop.rate %></td>
+        <td width="80"><%=shop.number%></td>
+        <td width="80"><%=shop.number*shop.price%></td>
       </tr>
  <%}
 		}
@@ -96,8 +98,8 @@ class=order_step>结算步骤：　<B>1.填写核对订单信息</B>　&gt;&gt;　2.成功提交订单
 		
  </table>
   </div>
-  <Input name="Input4" id="txt_ship_total" style="DISPLAY: none" value=num>
-	</form>
+
+	
 </DIV>
 
 <DIV id=div_ajax_canvas>
