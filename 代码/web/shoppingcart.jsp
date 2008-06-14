@@ -75,7 +75,7 @@ history.back();
         <td width="140"><%=shop.price%><input name="id<%=i%>" type="hidden" size="10" value="<%=shop.id%>"></td>
         <td width="140"><%=shop.rate %></td>
         <td width="140"><input name="number<%=i%>" type="text" size="10" value="<%=shop.number%>"></td>
-        <td width="140"><%=shop.number*shop.price%></td>
+        <td width="140"><%=shop.number*shop.price*shop.rate/10%></td>
       </tr>
  <%}%>
  <DIV class=select_clear>

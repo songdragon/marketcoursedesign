@@ -9,6 +9,7 @@
 //功能描述：实现用户登录处理。
 %>
 <%
+	request.setCharacterEncoding("gb2312");
 	String userid=request.getParameter("user_name");
 	String userpass=request.getParameter("user_pass");
 	CustomerOperator user=new CustomerOperator();
@@ -42,6 +43,7 @@
 	else                    //登录不成功
 		session.setAttribute("logged",logged);
 	response.sendRedirect("index.jsp");
+	
 	
 	
 %>

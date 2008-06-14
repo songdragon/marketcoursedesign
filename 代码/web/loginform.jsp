@@ -12,7 +12,7 @@ function doPostBack() {
 }
 </script>
 
-  <form action="do_login.jsp" method="get" name="login">
+  <form action="do_login.jsp" method="post" name="login">
     <tr>
     <td colspan="2" nowrap><div  id=signerror style="DISPLAY: none" align="center">
       <p><font color="#FF0000">请输入完整的用户信息</font></p></div>

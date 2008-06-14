@@ -6,7 +6,7 @@ type=text/javascript></SCRIPT>
 <SCRIPT language=javascript src="js/comm.js" 
 type=text/javascript></SCRIPT>
 <DIV class=public_navi>
-<DIV class=logo><IMG height=40  src="images/logo.jpg" width=87></DIV>
+<DIV class=logo><IMG height=80 src="images/logo.jpg" width=87></DIV>
 <DIV class=navi_part>
 <DIV class=part_top>
 <UL class=n_main>

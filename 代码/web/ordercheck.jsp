@@ -16,14 +16,15 @@
 href="" 
 target=_blank>帮助</A></DIV></DIV>
 <DIV 
-class=order_step>结算步骤：　<B>1.填写核对订单信息</B>　&gt;&gt;　2.成功提交订单</DIV>
+class=order_step>结算步骤：　　<SPAN 
+class=red_bold><B>1.填写核对订单信息</B></SPAN>&gt;&gt;　2.成功提交订单</DIV>
 
   <DIV class="order_content" >
   
   <% List shopList= (List) session.getAttribute("cart");
  float num=0;//总金额
  float cost=0;//享有优惠
- num=Float.valueOf(request.getParameter("num"));
+
  %>
  <%if (shopList==null ){%>
 <DIV class=no_select>您还没有挑选商品</DIV>
@@ -73,7 +74,7 @@ class=order_step>结算步骤：　<B>1.填写核对订单信息</B>　&gt;&gt;　2.成功提交订单
 
  		   <%
  
-        int pric=0;
+        
         for (int i = 0; i < shopList.size(); i++) {
           BuyList shop = (BuyList) shopList.get(i);
 		  num=num+shop.number*shop.price*shop.rate/10;
@@ -85,7 +86,7 @@ class=order_step>结算步骤：　<B>1.填写核对订单信息</B>　&gt;&gt;　2.成功提交订单
         <td width="80"><%=shop.price%></td>
         <td width="80"><%=shop.rate %></td>
         <td width="80"><%=shop.number%></td>
-        <td width="80"><%=shop.number*shop.price%></td>
+        <td width="80"><%=shop.number*shop.price*shop.rate/10%></td>
       </tr>
  <%}
 		}

@@ -27,7 +27,7 @@ String color="";
 String type="";
 String description="";
 String productid="";
-
+String picture="";
 %>
 <%
 
@@ -50,9 +50,11 @@ ComputerOperator computeroperator =new ComputerOperator();
 	  description=computer.getDiscription();
 	  type=computer.getType();
 	  color=computer.getColor();
-	 
+	  picture=computer.getImage();
 	  
   }
+  String sql="update products_information set clickrate="+(clickrate+1)+"where products_id="+productid;
+  computeroperator.updatePro(sql);
 %>
 
 <DIV class=right>

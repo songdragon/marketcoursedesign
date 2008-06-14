@@ -23,6 +23,7 @@ String publisher="";
 String booksize="";
 String description="";
 String productid=request.getParameter("productid");
+String picture="";
 %>
 <%
 
@@ -39,7 +40,10 @@ BookOperator bookoperator=new BookOperator();
 	  booksize=book.getBooksize();
 	  description=book.getDiscription();
 	  productid=book.getProducts_id();
+	  picture=book.getImage();
   }
+  String sql="update products_information set clickrate="+(clickrate+1)+"where products_id="+productid;
+  bookoperator.updatePro(sql);
 %>
 
 <DIV class=right>
@@ -47,12 +51,12 @@ BookOperator bookoperator=new BookOperator();
 </SPAN></DIV>
 <DIV class=empty_box style="HEIGHT: 20px"></DIV>
 <DIV class=book_left><IMG id=img_show_prd 
-src="" width=150  />
+src="" width=150  height="200"  />
 </DIV>
 <DIV class="book_right">
 <DIV id=author_>作　　者： <%=author%> 著</DIV>
 <DIV id=publisher_>出 版 社：<%=publisher %></DIV>
-<UL class=nostyle>
+<UL class=nostyle style="margin-top:2px">
   <LI>商品名称:<%=productsname%></LI>
   <LI>点击率:<%=clickrate %> </LI>
   <LI>售价: <%=price %> </LI>

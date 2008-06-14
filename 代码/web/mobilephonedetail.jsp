@@ -30,7 +30,7 @@ String screen="";
 String screentype="";
 String description="";
 String productid="";
-
+String picture="";
 %>
 <%
 productid=request.getParameter("productid");
@@ -54,10 +54,12 @@ productid=request.getParameter("productid");
 	  color=mobile.getColor();
 	  screentype=mobile.getScreentype();
 	  ontime=mobile.getOntime();
-	  
+	  picture=mobile.getImage();
 	 
 	  
   }
+  String sql="update products_information set clickrate="+(clickrate+1)+"where products_id="+productid;
+  mobileoperator.updatePro(sql);
 %>
 
 <DIV class=right>
