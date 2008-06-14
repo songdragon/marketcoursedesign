@@ -88,19 +88,18 @@ public class ComputerOperator extends ComputerAbstract{
 		String sql_insert_inf="INSERT INTO products_information"+
 		"(products_id, productsname,type_id,quantity,price,description," +
 		" inprice,discount,clickrate,image)"+
-		"values(computer.getProducts_id(),computer.getProductsname(),computer.getType_id()," +
-		"computer.getQuantity(),computer.getPrice(),computer.getDiscription()," +
-		"computer.getInprice(),computer.getDiscount()," +
-		"computer.getClickrate()," +
-		"computer.getImage())";
+		"values('"+computer.getProducts_id()+"','"+computer.getProductsname()+"','"+
+		computer.getType_id()+"','"+computer.getQuantity()+"','"+computer.getPrice()+"','"+
+		computer.getDiscription()+"','"+computer.getInprice()+"','"+computer.getDiscount()+"','0','"+
+		computer.getImage()+"')";
 		
 		String sql_insert_computer="INSERT INTO computer" +
 				"(products_id,cpu,hard,ramtype,ramsize,screen," +
-				"brand,weight,speed,color,type" +
-				"values(computer.getProducts_id(),computer.getCpu(),computer.getHard()," +
-				"computer.getRamtype(),computer.getRamsize(),computer.getScreen()," +
-				"computer.getBrand(),computer.getWeight(),computer.getSpeed()," +
-				"computer.getColor(),computer.getType())" ;
+				"brand,weight,speed,color,type) " +
+				"values('"+computer.getProducts_id()+"','"+computer.getCpu()+"','"+computer.getHard()+"','"+
+				computer.getRamtype()+"','"+computer.getRamsize()+"','"+computer.getScreen()+"','"+
+				computer.getBrand()+"','"+computer.getWeight()+"','"+computer.getSpeed()+"','"+
+				computer.getColor()+"','"+computer.getType()+"')" ;
 		
 		
 		int result_insert_inf=0;

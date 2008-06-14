@@ -83,18 +83,17 @@ public class BookOperator extends BookAbstract{
 		String sql_insert_inf="INSERT INTO products_information"+
 		"(products_id, productsname,type_id,quantity,price,description," +
 		" inprice,discount,clickrate,image)"+
-		"values(book.getProducts_id(),book.getProductsname(),book.getType_id()," +
-		"book.getQuantity(),book.getPrice(),book.getDiscription()," +
-		"book.getInprice(),book.getDiscount()," +
-		"book.getClickrate()," +
-		"book.getImage())";
+		"values('"+book.getProducts_id()+"','"+book.getProductsname()+"','"+book.getType_id()+"','" +
+		book.getQuantity()+"','"+book.getPrice()+"','"+book.getDiscription()+"','"+
+		book.getInprice()+"','"+book.getDiscount()+"','0','"+
+		book.getImage()+"')";
 	
 		
-		String sql_insert_book="INSERT INTO bookdetial" +
+		String sql_insert_book="INSERT INTO bookdetail" +
 				"(products_id,isbn,publisher,author,booksize)" +
-				"values(book.getProducts_id(),book.getIsbn()," +
-				"book.getPublisher(),book.getAuthor()," +
-				"book.getBooksize())";
+				"values('"+book.getProducts_id()+"','"+book.getIsbn()+"','"+
+				book.getPublisher()+"','"+book.getAuthor()+"','"+
+				book.getBooksize()+"')";
 		
 		
 		int result_insert_inf=0;
