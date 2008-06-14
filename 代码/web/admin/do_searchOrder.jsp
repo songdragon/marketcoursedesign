@@ -11,9 +11,25 @@ response.setCharacterEncoding("gb2312");
 //日期：2008-6-14
 //功能描述：实现在所有商品中搜索结果的分页显示功能。
 %>
+<table >
+<tr>
 <td><a href="do_searchOrder.jsp?key=no">未发订单</a></td>
-<td><a href="do_searchOrder.jsp?key=yes">已发订单</a></td>
+<td colspan="2"><a href="do_searchOrder.jsp?key=yes">已发订单</a></td>
+<td colspan="5"></td>
+</tr>
+<tr>
+<td colspan="8">
 <hr width="95%" color="#CCCCCC" size="px">
+</td>
+</tr>
+<tr width="100%">
+<td width="15%">订单号</td>
+<td width="10%">收件人</td>
+<td width="32%">地址</td>
+<td width="8%">邮编</td>
+<td width="15%">联系电话</td>
+<td width="5%">总金额</td>
+<td width="15%" colspan="2">订单时间</td>
 
 <%
 	//request.setCharacterEncoding("gb2312");
@@ -72,17 +88,21 @@ String bgcolor="#ffffff";
 int k=1;
 try{while(i< intPageSize && !set.isAfterLast()){
 %>
-<tr valign="middle" bgcolor=<%=bgcolor%> height="20">
-       <td width="264"  ><div  style="height:19px; font-size:12px; padding-top:5px"><a href="bookdetail.jsp?order_id=<%=set.getString("order_id") %>" target="_blank" >&nbsp;&nbsp;<%=set.getString("order_id")%></a></div></td>
+<tr valign="middle" bgcolor=<%=bgcolor%> height="20" >
+       <td ><div  style="height:19px; font-size:12px; padding-top:5px"><a href="orderdetail.jsp?order_id=<%=set.getString("order_id") %>" target="_blank" >&nbsp;&nbsp;<%=set.getString("order_id")%></a></div></td>
+       <td><div  style="height:19px; font-size:12px; padding-top:5px"><%=set.getString("reciver") %></div></td>
+       <td><div  style="height:19px; font-size:12px; padding-top:5px"><%=set.getString("address") %></div></td>
+       <td><div  style="height:19px; font-size:12px; padding-top:5px"><%=set.getString("zipcode") %></div></td>
+       <td><div  style="height:19px; font-size:12px; padding-top:5px"><%=set.getString("tel") %></div></td>
 <td><div align="center" style="height:19px; font-size:12px; padding-top:5px"><%=set.getString("total")%></div></td>
-<td><div align="center"><%=set.getString("suctomername")%></div></td>
-<td width="137"><div align="center" style="height:19px; font-size:12px; padding-top:5px"><%=set.getString("or_date")%></div></td>
+<td ><div align="center" style="height:19px; font-size:12px; padding-top:5px"><%=set.getString("or_date")%></div></td>
 
-<td width="100"><input type="button" name="watch_detail" id="watch_detail" onClick=""></td>
+
 <%  if(key.equals("no")){                       //未发订单显示订单状态确认按钮
-		out.print("<td colspan='2' nowrap><div align='center' style='height:19px; font-size:12px; padding-top:5px'>");
-		out.print("<a href='changestate.jsp?order_id="+set.getString("order_id")+"&intPage="+intPage+"' >确认</a></div>    </td>");
+		out.println("<td><div align='center' style='height:19px; font-size:12px; padding-top:5px'>");
+		out.println("<a href='changestate.jsp?order_id="+set.getString("order_id")+"&intPage="+intPage+"' >确认</a></div>    </td>");
 	}
+else out.println("<td></td>");
 %>
   </tr>
         
